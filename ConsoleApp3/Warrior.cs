@@ -8,6 +8,7 @@ namespace ConsoleApp3
     {
         public Warrior()
         {
+            MaxHealth = 90;
             Health = 90;
             Damage = 20;
         }
@@ -16,6 +17,7 @@ namespace ConsoleApp3
         {
             Health = heal;
             Damage = dam;
+            MaxHealth = 90;
         }
         
     }

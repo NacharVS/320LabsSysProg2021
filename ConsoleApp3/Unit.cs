@@ -10,6 +10,14 @@ namespace ConsoleApp3
 		public delegate void HealthChangedDelegate(string mes);
 		public event HealthChangedDelegate HealtChangedEvent;
 
+		private double _maxHealth;
+
+		public double MaxHealth
+		{
+			get { return _maxHealth; }
+			set { _maxHealth = value;  }
+		}
+
 		private double _health;
 
 		public double Health
@@ -17,7 +25,7 @@ namespace ConsoleApp3
 			get { return _health; }
 			set 
 			{
-				if (value > 0)
+				if (value > 0 && value <= MaxHealth)
 				{
 					double present = Health;
 					_health = value;

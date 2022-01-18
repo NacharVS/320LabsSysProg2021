@@ -10,11 +10,13 @@ namespace ConsoleApp3
         {
             Health = 90;
             Damage = 100;
+            MaxHealth = 90;
         }
         public Peasant(double heal, double dam)
         {
             Health = heal;
             Damage = dam;
+            MaxHealth = 90;
         }
     }
 }
