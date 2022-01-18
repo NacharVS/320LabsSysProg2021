@@ -7,16 +7,18 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Character character = new Character(100);
-            Console.WriteLine(character.Health);
-            character.HealthChangedEvent += ShowMessage;
-            character.Damage(40);
-            character.Heal(20);
-            character.Damage(100);
-            Console.WriteLine(character.Health);
+            Character warrior = new Warrior();
+            Character archer = new Archer();
+            Console.WriteLine(warrior.Health);
+            warrior.HealthChangedEvent += ShowMessage;
+            Attack(archer.Attack, warrior);
         }
 
-         static void ShowMessage(string mes)
+        public static void Attack(double damage, Character attackedCharacter)
+        {
+            attackedCharacter.Damage(damage);
+        }
+        public static void ShowMessage(string mes)
         {
             Console.WriteLine(mes);
         }

@@ -10,11 +10,14 @@ namespace ConsoleApp3
         public event HealthChangedDelegate HealthChangedEvent; 
         public double MaxHealth { get; set; }
         public double Health { get; set; }
+        public double Attack { get; set; }
 
-        public Character(double health)
+        public Character() { }
+        public Character(double health, double attack)
         {
             MaxHealth = health;
             Health = MaxHealth;
+            Attack = attack;
         }
 
         public void Heal(double health)
@@ -26,7 +29,8 @@ namespace ConsoleApp3
                 healing -= Health - MaxHealth;
                 Health = MaxHealth;
             }
-            HealthChangedEvent?.Invoke($"Получено лечение: {healing}");
+            HealthChangedEvent?.Invoke($"Получено лечение: {healing}" +
+                                       $"Текущее HP: { Health}");
         }
         public void Damage(double health)
         {
@@ -37,7 +41,8 @@ namespace ConsoleApp3
                 damage += Health;
                 Health = 0;
             }
-            HealthChangedEvent?.Invoke($"Получен урон: {damage}");
+            HealthChangedEvent?.Invoke($"Получен урон: {damage}\n" +
+                                       $"Текущее HP: {Health}");
         }
     }
 }
