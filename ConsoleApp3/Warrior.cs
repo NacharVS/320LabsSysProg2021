@@ -9,11 +9,13 @@ namespace ConsoleApp3
         public Warrior()
         {
             Health = 200;
+            Damage = 20;
         }
 
-        public Warrior(double hp)
+        public Warrior(double hp, double d)
         {
             Health = hp;
+            Damage = d;
         }
     }
 }

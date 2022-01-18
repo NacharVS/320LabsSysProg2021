@@ -7,14 +7,16 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Warrior warrior = new Warrior();
+            Warrior warrior = new Warrior(100, 50);
             warrior.HealthChangedEvent += ShowMessage;
             Peasant peasant = new Peasant();
             peasant.HealthChangedEvent += ShowMessage;
-            Console.WriteLine(peasant.Health);
+            Bishop bishop = new Bishop();
 
-            warrior.Attack(peasant, 60);
-            Console.WriteLine(peasant.Health);
+            Console.WriteLine(warrior.Health);
+            bishop.Heal(warrior);
+            Console.WriteLine(warrior.Health);
+
 
         }
         // 1. create methods for inflict damage

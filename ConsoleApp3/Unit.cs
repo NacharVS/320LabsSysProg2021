@@ -14,7 +14,7 @@ namespace ConsoleApp3
 			get { return _health; }
 			set
 			{
-				if (value >= 0)
+				if (value > 0)
 				{
 					_health = value;
 					HealthChangedEvent?.Invoke("Health has changed");
@@ -27,12 +27,20 @@ namespace ConsoleApp3
 			}
 		}
 
+		private double _damage;
+
+		public double Damage
+		{
+			get { return _damage; }
+			set { _damage = value; }
+		}
+
+
 		public event HealthChangedDelegate HealthChangedEvent;
 
-		public void Attack(Unit unit, double damage)
+		public void Attack(Unit unit)
 		{
-			if (damage >= 0)
-				unit.Health -= damage;
+			unit.Health -= Damage;
 		}
 	}
 }
