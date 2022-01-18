@@ -12,10 +12,7 @@ namespace ConsoleApp3
             get { return _health; }
             set
             {
-                if (_health - value < _health)
-                    HealthChandgedEvent?.Invoke("Unit has been damaged: " + (value - _health) + "\n" + "Units health: " + value);
-                else
-                    HealthChandgedEvent?.Invoke("Unit has been healed: " + value + "\n" + "Units health: " + (_health + value));
+                HealthChandgedEvent?.Invoke("Unit has been changed: " + (value - _health) + "\n" + "Units health: " + value);
                 _health = value;
             }
         }

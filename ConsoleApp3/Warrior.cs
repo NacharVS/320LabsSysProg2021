@@ -27,7 +27,7 @@ namespace ConsoleApp3
             if (unit.Health - _damage < 0)
                 unit.Health = 0;
             else
-                unit.Health -= _damage;
+                unit.Health += -_damage;
         }
     }
 }
