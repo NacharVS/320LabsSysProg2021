@@ -6,11 +6,6 @@ namespace ConsoleApp3
 {
     class Warrior : Character
     {
-        public Warrior()
-        {
-            MaxHealth = 100;
-            Health = MaxHealth;
-            Attack = 10;
-        }
+        public Warrior() : base(100, 10) { }
     }
 }

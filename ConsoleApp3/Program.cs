@@ -7,16 +7,31 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Character warrior = new Warrior();
-            Character archer = new Archer();
-            Console.WriteLine(warrior.Health);
+            var warrior = new Warrior();
+            var archer = new Archer();
+            var cleric = new Cleric();
+            Console.WriteLine($"HP: {warrior.Health}");
             warrior.HealthChangedEvent += ShowMessage;
-            Attack(archer.Attack, warrior);
+            Attack(archer, warrior);
+            Attack(archer, warrior);
+            Attack(archer, warrior);
+            Attack(archer, warrior);
+            Attack(archer, warrior);
+            Attack(archer, warrior);
+            Attack(archer, warrior);
+            Attack(archer, warrior);
+
+            Heal(cleric, warrior);
         }
 
-        public static void Attack(double damage, Character attackedCharacter)
+        public static void Attack(Character attackingCharacter, Character attackedCharacter)
         {
-            attackedCharacter.Damage(damage);
+            attackedCharacter.Damage(attackingCharacter.Attack);
+        }
+
+        public static void Heal(Character healingCharacter, Character healedCharacter)
+        {
+            healedCharacter.Heal((healingCharacter as Cleric).Healing);
         }
         public static void ShowMessage(string mes)
         {

@@ -6,11 +6,6 @@ namespace ConsoleApp3
 {
     class Archer : Character
     {
-        public Archer()
-        {
-            MaxHealth = 100;
-            Health = MaxHealth;
-            Attack = 5;
-        }
+        public Archer() : base(100, 5) { }
     }
 }
