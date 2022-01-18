@@ -14,7 +14,11 @@ namespace ConsoleApp3
         {
             Heal = 125;
         }
-        
-        public double ToHeal() => Heal;
+
+        public void ToHeal(double health)
+        {
+            health += Heal;
+            GetEvent($"You're healed for {Heal} points");
+        }
     }
 }

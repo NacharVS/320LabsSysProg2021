@@ -25,17 +25,18 @@ namespace ConsoleApp3
             peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
             peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
 
-            peasant.Health += cleric.ToHeal();
-            peasant.Health += cleric.ToHeal();
-            peasant.Health += cleric.ToHeal();
-            peasant.Health += cleric.ToHeal();
-            peasant.Health += cleric.ToHeal();
-            peasant.Health += cleric.ToHeal();
-            peasant.Health += cleric.ToHeal();
-            peasant.Health += cleric.ToHeal();
-            peasant.Health += cleric.ToHeal();
-            peasant.Health += cleric.ToHeal();
-            peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            //peasant.Health += cleric.ToHeal();
+            cleric.ToHeal(peasant.Health);
 
 
             //-----------------------------------------------------------------------

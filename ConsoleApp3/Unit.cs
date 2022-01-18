@@ -42,5 +42,10 @@ namespace ConsoleApp3
         }
 
         internal event GetDamageDelegate GetDamageEvent;
+
+        internal void GetEvent(string message)
+        {
+            GetDamageEvent?.Invoke(message);
+        }
     }
 }
