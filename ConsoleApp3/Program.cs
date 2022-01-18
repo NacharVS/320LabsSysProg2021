@@ -7,12 +7,17 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Warrior war = new Warrior(110,100);
+            Warrior war = new Warrior(110,80);
             war.HealtChangedEvent += ShowMessage;
+
             Peasant peas = new Peasant();
             peas.HealtChangedEvent += ShowMessage;
-            Console.WriteLine(war.Health);
-            peas.Attack(war);
+
+            Bishop bishop = new Bishop(150, 10);
+            bishop.HealtChangedEvent += ShowMessage;
+
+            bishop.Heal(war);
+            war.Attack(peas);
         }
 
         static void ShowMessage(string mes)

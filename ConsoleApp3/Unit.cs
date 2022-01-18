@@ -11,19 +11,21 @@ namespace ConsoleApp3
 		public event HealthChangedDelegate HealtChangedEvent;
 
 		private double _health;
+
 		public double Health
 		{
 			get { return _health; }
 			set {
 				if (value > 0)
 				{
+					double present = Health;
 					_health = value;
-					HealtChangedEvent?.Invoke($"{_health}");
+					HealtChangedEvent?.Invoke($"Health: {_health}, difference: {Health-present}");
 				}
 				else
 				{
 					_health = 0;
-					HealtChangedEvent?.Invoke($"Died");
+					HealtChangedEvent?.Invoke($"Died, health:{_health}");
 				};
 			}
 		}
