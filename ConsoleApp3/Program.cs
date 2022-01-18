@@ -11,9 +11,7 @@ namespace ConsoleApp3
             Console.WriteLine(character.Health);
             character.HealthChangedEvent += ShowMessage;
             character.Damage(40);
-            character.HealthChangedEvent += ShowMessage;
             character.Heal(20);
-            character.HealthChangedEvent += ShowMessage;
             character.Damage(100);
             Console.WriteLine(character.Health);
         }
