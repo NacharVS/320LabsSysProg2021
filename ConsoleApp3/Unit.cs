@@ -15,7 +15,8 @@ namespace ConsoleApp3
 		public double Health
 		{
 			get { return _health; }
-			set {
+			set 
+			{
 				if (value > 0)
 				{
 					double present = Health;
@@ -25,7 +26,7 @@ namespace ConsoleApp3
 				else
 				{
 					_health = 0;
-					HealtChangedEvent?.Invoke($"Died, health:{_health}");
+					HealtChangedEvent?.Invoke($"Unit died");
 				};
 			}
 		}
@@ -34,8 +35,7 @@ namespace ConsoleApp3
 		public double Damage
 		{
 			get { return _damage; }
-			set { _damage = value;
-			}
+			set { _damage = value; }
 		}
 
 		public void Attack(Unit unit)
