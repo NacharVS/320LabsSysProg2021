@@ -7,10 +7,32 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-
+            Warrior warrior = new Warrior();
+            Peasant peasant = new Peasant();
+            peasant.UnitHealthEvent += Show;
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
+            Attack(warrior.Attack, peasant);
         }
-        // 1. create methods for inflict damage
-        // 2. health value can not be less than 0
+
+        public static  void Attack(int damage, Unit attackedUnit)
+        {
+            attackedUnit.Health -= damage;
+        }
+
+        public static  void Show(string mes)
+        {
+            Console.WriteLine(mes);
+        }
 
     }
 }
