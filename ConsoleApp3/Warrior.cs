@@ -6,5 +6,11 @@ namespace ConsoleApp3
 {
     class Warrior : Unit
     {
+        public Warrior()
+        {
+            Health = 90;
+            Damage = 20;
+        }
+        
     }
 }
