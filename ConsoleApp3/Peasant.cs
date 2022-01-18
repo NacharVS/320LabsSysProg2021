@@ -8,7 +8,14 @@ namespace ConsoleApp3
     {
         public Peasant()
         {
+            Health = 50;
+            Damage = 20;
+        }
 
+        public Peasant(double heal, double damage)
+        {
+            Health = heal;
+            Damage = damage;
         }
     }
 }

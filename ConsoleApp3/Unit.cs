@@ -29,5 +29,10 @@ namespace ConsoleApp3
 			set { _damage = value; }
 		}
 
+		public void Attack(Unit unit)
+		{
+			unit.Damage -= Damage;
+		}
+
 	}
 }

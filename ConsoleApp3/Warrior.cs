@@ -8,7 +8,15 @@ namespace ConsoleApp3
     {
         public Warrior()
         {
+            Health = 40;
+            Damage = 10;
+        }
 
+        public Warrior(double heal, double damage)
+        {
+            Health = heal;
+            Damage = damage;
         }
     }
 }
+
