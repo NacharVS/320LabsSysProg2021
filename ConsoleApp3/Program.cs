@@ -17,7 +17,7 @@ namespace ConsoleApp3
             Console.WriteLine(std.Group);
         }
 
-         static void ShowMessage(string mes)
+        static void ShowMessage(string mes)
         {
             Console.WriteLine(mes);
         }
