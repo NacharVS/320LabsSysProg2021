@@ -8,9 +8,9 @@ namespace ConsoleApp3
     {
         internal Peasant()
         {
+            MaxHealth = 1500;
             Health = 1000;
+            
         }
-        
-
     }
 }

@@ -9,6 +9,7 @@ namespace ConsoleApp3
         {
             Warrior warrior = new Warrior();
             Peasant peasant = new Peasant();
+            Cleric cleric = new Cleric(); 
 
             Console.WriteLine($"Peasant's HP: {peasant.Health}");
 
@@ -23,29 +24,21 @@ namespace ConsoleApp3
             peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
             peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
             peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+
+            peasant.Health += cleric.ToHeal();
+            peasant.Health += cleric.ToHeal();
+            peasant.Health += cleric.ToHeal();
+            peasant.Health += cleric.ToHeal();
+            peasant.Health += cleric.ToHeal();
+            peasant.Health += cleric.ToHeal();
+            peasant.Health += cleric.ToHeal();
+            peasant.Health += cleric.ToHeal();
+            peasant.Health += cleric.ToHeal();
+            peasant.Health += cleric.ToHeal();
+            peasant.Health += cleric.ToHeal();
 
 
-            //-----------------------------------------------------------------------------------
+            //-----------------------------------------------------------------------
             static double ToDamageHero(double health, double damage)
             {
                return health -= damage;

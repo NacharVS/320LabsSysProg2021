@@ -8,6 +8,14 @@ namespace ConsoleApp3
     {
         internal delegate void GetDamageDelegate(string message);
 
+        private double _maxHeal;
+
+        public double MaxHealth
+        {
+            get => _maxHeal;
+            set => _maxHeal = value;
+        }
+
         private double _health;
 
         public double Health
@@ -17,7 +25,12 @@ namespace ConsoleApp3
             {
                 if(value > 0)
                 {
-                    _health = value;
+                    if (value >= MaxHealth)
+                        _health = MaxHealth;
+                    else
+                    {
+                        _health = value;
+                    }
                     GetDamageEvent?.Invoke($"Your HP: {_health}");
                 }
                 else
