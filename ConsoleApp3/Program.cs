@@ -10,7 +10,7 @@ namespace ConsoleApp3
 
         }
         // 1. create methods for inflict damage
-        // 2. health value can not be less than 0
+        // 2. health value can not be less than 0/
 
     }
 }
