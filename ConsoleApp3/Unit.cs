@@ -17,8 +17,8 @@ namespace ConsoleApp3
 			{
 				if (value > 0)
 				{
+					HealthChangedEvent?.Invoke($"Health was changed on {value - Health}hp and now it is: {value}");
 					_health = value;
-					HealthChangedEvent?.Invoke("Unit was damaged");
 				}
 				else
 				{
@@ -27,7 +27,10 @@ namespace ConsoleApp3
 				}
 			}
 		}
-
+		public void DamageUnit(Unit unit)
+		{
+			unit.Health -= 10;
+		}
 
 	}
 }

@@ -12,18 +12,17 @@ namespace ConsoleApp3
             warrior.HealthChangedEvent += ShowMessage;
             Peasant peasant = new Peasant();
             peasant.HealthChangedEvent += ShowMessage;
+            Bishop bishop = new Bishop();
             Console.WriteLine($"Peasant has {peasant.Health}");
             //each damage takes 10 hp
             warrior.DamageUnit(peasant);
             warrior.DamageUnit(peasant);
             warrior.DamageUnit(peasant);
             warrior.DamageUnit(peasant);
-            warrior.DamageUnit(peasant);
-            warrior.DamageUnit(peasant);
-            warrior.DamageUnit(peasant);
-            warrior.DamageUnit(peasant);
-            warrior.DamageUnit(peasant);
-            warrior.DamageUnit(peasant);
+            //each healing gives 10 hp
+            bishop.HealUnit(peasant);
+            peasant.HealthChangedEvent += ShowMessage;
+
             Console.WriteLine($"Peasant has {peasant.Health}");
 
         }

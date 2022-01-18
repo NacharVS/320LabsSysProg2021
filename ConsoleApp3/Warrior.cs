@@ -17,11 +17,5 @@ namespace ConsoleApp3
             get { return _damage; }
             set { _damage = value; }
         }
-        
-        public void DamageUnit(Unit unit)
-        {
-            unit.Health -= 10;
-            
-        }
     }
 }
