@@ -27,7 +27,8 @@ namespace ConsoleApp3
             unit.Health -= this.Damage;
             if (unit.Health < 0)
                 unit.Health = 0;
-            HealthChandgedEvent?.Invoke("Damage: -" + this.Damage + "\n" + "Health: " + unit.Health);
+            HealthChandgedEvent?.Invoke("Before health : " + (unit.Health + this.Damage) + "\n"  + "Damage: -" + this.Damage + "\n" + "Health: " + unit.Health);
+
         }
     }
 }
