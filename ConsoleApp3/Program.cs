@@ -7,17 +7,52 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Student std = new Student();
-            std.Name = "Ivan";
-            std.Group = 333;
-            Console.WriteLine(std.Group);
-            std.GroupChandgedEvent += ShowMessage;
-            std.GroupChandgedEvent += ShowMessage1;
-            std.Group = 331;
-            Console.WriteLine(std.Group);
+            Warrior warrior = new Warrior();
+            Peasant peasant = new Peasant();
+
+            Console.WriteLine($"Peasant's HP: {peasant.Health}");
+
+            peasant.GetDamageEvent += ShowMessage;
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+
+
+            //-----------------------------------------------------------------------------------
+            static double ToDamageHero(double health, double damage)
+            {
+               return health -= damage;
+            }
         }
 
-         static void ShowMessage(string mes)
+        static void ShowMessage(string mes)
         {
             Console.WriteLine(mes);
         }
