@@ -6,16 +6,14 @@ namespace ConsoleApp3
 {
     abstract class Unit
     {
+        public delegate void HealthChangedDelegate(string message);
         private double _health;
         public double Health
         {
             get { return _health; }
-            set 
-            {
-                if(value >= 0)
-                    _health = value;
-            }
+            set { _health = value; }
         }
+        public event HealthChangedDelegate HealthChandgedEvent;
 
         private double _damage;
         public double Damage
@@ -24,9 +22,12 @@ namespace ConsoleApp3
             set { _damage = value; }
         }
 
-        public double Hitting()
-        { 
-            
+        public void Hit(Unit unit)
+        {
+            unit.Health -= this.Damage;
+            if (unit.Health < 0)
+                unit.Health = 0;
+            HealthChandgedEvent?.Invoke("Damage: -" + this.Damage + "\n" + "Health: " + unit.Health);
         }
     }
 }

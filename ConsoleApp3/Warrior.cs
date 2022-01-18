@@ -6,11 +6,10 @@ namespace ConsoleApp3
 {
     class Warrior : Unit
     {
-        Random rnd = new Random();
         public Warrior()
         {
-            this.Health = 20;
-            this.Damage = rnd.Next(1, 14);
+            Health = 100;
+            Damage = 3;
         }
     }
 }
