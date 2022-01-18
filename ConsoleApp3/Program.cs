@@ -8,19 +8,28 @@ namespace ConsoleApp3
         static void Main(string[] args)
         {
             Warrior warrior = new Warrior();
-            warrior.InflictDamageEvent += ShowHealth;
-
+            warrior.HealthChangedEvent += ShowMessage;
             Peasant peasant = new Peasant();
             peasant.Health = 100;
-
-            warrior.InflictDamageToPeasant(peasant, 1000);
-        }
-        private static void ShowHealth(Peasant peasant, int damage)
-        {
+            peasant.HealthChangedEvent += ShowMessage;
             Console.WriteLine(peasant.Health);
+
+            warrior.Attack(peasant, 60);
+            Console.WriteLine(peasant.Health);
+
+            var bishop = new Bishop();
+            bishop.HealAmount = 10;
+            bishop.HealUnit(peasant);
+
+            Console.WriteLine(peasant.Health);
+
         }
         // 1. create methods for inflict damage
         // 2. health value can not be less than 0
 
+        static void ShowMessage(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 }
