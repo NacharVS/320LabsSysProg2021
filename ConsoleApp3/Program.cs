@@ -7,16 +7,17 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Warrior war = new Warrior();
+            Warrior war = new Warrior(110,100);
+            war.HealtChangedEvent += ShowMessage;
             Peasant peas = new Peasant();
             peas.HealtChangedEvent += ShowMessage;
-            war.HealtChangedEvent += ShowMessage;
-
-            Console.WriteLine(peas.Health);
+            Console.WriteLine(war.Health);
+            peas.Attack(war);
         }
+
         static void ShowMessage(string mes)
         {
-            Console.Write(mes);
+            Console.WriteLine(mes);
         }
         //static double 
         // 1. create methods for inflict damage

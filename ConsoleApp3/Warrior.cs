@@ -11,6 +11,12 @@ namespace ConsoleApp3
             Health = 90;
             Damage = 20;
         }
+
+        public Warrior(double heal, double dam)
+        {
+            Health = heal;
+            Damage = dam;
+        }
         
     }
 }

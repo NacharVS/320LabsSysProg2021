@@ -19,6 +19,11 @@ namespace ConsoleApp3
 				{
 					_health = value;
 					HealtChangedEvent?.Invoke($"{_health}");
+				}
+				else
+				{
+					_health = 0;
+					HealtChangedEvent?.Invoke($"Died");
 				};
 			}
 		}
@@ -29,6 +34,11 @@ namespace ConsoleApp3
 			get { return _damage; }
 			set { _damage = value;
 			}
+		}
+
+		public void Attack(Unit unit)
+		{
+			unit.Health -= Damage;
 		}
 
 	}
