@@ -11,11 +11,13 @@ namespace ConsoleApp3
             warrior.HealthChangedEvent += ShowMessage;
             Peasant peasant = new Peasant();
             peasant.HealthChangedEvent += ShowMessage;
-            Bishop bishop = new Bishop();
+            Bishop bishop = new Bishop(150, 10);
+            bishop.HealthChangedEvent += ShowMessage;
 
             Console.WriteLine(warrior.Health);
             bishop.Heal(warrior);
             Console.WriteLine(warrior.Health);
+            warrior.Attack(bishop);
 
 
         }

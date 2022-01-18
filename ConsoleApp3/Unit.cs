@@ -16,8 +16,8 @@ namespace ConsoleApp3
 			{
 				if (value > 0)
 				{
+					HealthChangedEvent?.Invoke($"Health: {value}, Changed to: {value - Health}");
 					_health = value;
-					HealthChangedEvent?.Invoke("Health has changed");
 				}
 				else
 				{

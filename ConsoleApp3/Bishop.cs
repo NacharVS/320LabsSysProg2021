@@ -20,7 +20,7 @@ namespace ConsoleApp3
             HealAmount = 10;
         }
 
-        public Bishop(double hp, double ha) : base()
+        public Bishop(double hp, double ha)
         {
             Health = hp;
             HealAmount = ha;
@@ -29,6 +29,11 @@ namespace ConsoleApp3
         public void Heal(Unit unit)
         {
             unit.Health += HealAmount;
+        }
+
+        public override string ToString()
+        {
+            return $"{Health} {Damage} {HealAmount}";
         }
     }
 }
