@@ -8,7 +8,7 @@ namespace ConsoleApp3
     {
 		private double _health;
 		private double _damage;
-		public delegate void HealthChangedDelegate(double health);
+		public delegate void HealthChangedDelegate(double health, double valueChanged);
 
 		
 		public double Health
@@ -18,13 +18,14 @@ namespace ConsoleApp3
 			{
 				if (value >= 0)
 				{
+					HealthChandgedEvent?.Invoke(value, value - _health);
 					_health = value;
-					HealthChandgedEvent?.Invoke(_health);
+					
 				}
 				else
 				{
 					_health = 0;
-					HealthChandgedEvent?.Invoke(_health);
+					HealthChandgedEvent?.Invoke(_health, value);
 				}
 			}
 		}
