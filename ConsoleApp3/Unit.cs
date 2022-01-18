@@ -15,6 +15,11 @@
                     _health = value;
                     HealthChangeEvent?.Invoke($"Current health {_health}");
                 }
+                else
+                {
+                    _health = 0;
+                    HealthChangeEvent?.Invoke($"Unit died, health {_health}");
+                }
             }
         }
 

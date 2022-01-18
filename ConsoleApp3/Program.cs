@@ -8,7 +8,7 @@ namespace ConsoleApp3
         {
             Warrior warrior = new Warrior();
             Peasant peasant = new Peasant();
-            peasant.UnitHealthEvent += Show;
+            peasant.HealthChangeEvent += Show;
             Attack(warrior.Attack, peasant);
             Attack(warrior.Attack, peasant);
             Attack(warrior.Attack, peasant);
