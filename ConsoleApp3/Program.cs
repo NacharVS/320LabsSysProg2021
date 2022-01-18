@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 
 namespace ConsoleApp3
 {
@@ -24,12 +23,12 @@ namespace ConsoleApp3
             Attack(warrior.Attack, peasant);
         }
 
-        public static  void Attack(int damage, Unit attackedUnit)
+        public static void Attack(int damage, Unit attackedUnit)
         {
             attackedUnit.Health -= damage;
         }
 
-        public static  void Show(string mes)
+        public static void Show(string mes)
         {
             Console.WriteLine(mes);
         }
