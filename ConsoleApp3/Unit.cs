@@ -14,10 +14,11 @@ namespace ConsoleApp3
 			get { return _health; }
 			set
 			{
+				var previousHealth = Health;
 				if (value > 0)
 				{
-					HealthChangedEvent?.Invoke($"Health: {value}, Changed to: {value - Health}");
 					_health = value;
+					HealthChangedEvent?.Invoke($"Health: {value}, Changed to: {Health - previousHealth}");
 				}
 				else
 				{
