@@ -6,7 +6,6 @@ namespace ConsoleApp3
 {
     abstract class Unit
     {
-
 		public delegate void HealthChangedDelegate(string message);
 
 		private double _health;
@@ -29,5 +28,11 @@ namespace ConsoleApp3
 		}
 
 		public event HealthChangedDelegate HealthChangedEvent;
+
+		public void Attack(Unit unit, double damage)
+		{
+			if (damage >= 0)
+				unit.Health -= damage;
+		}
 	}
 }
