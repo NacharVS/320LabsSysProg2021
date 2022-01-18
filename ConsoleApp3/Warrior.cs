@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Warrior
+    class Warrior : Unit
     {
     }
 }

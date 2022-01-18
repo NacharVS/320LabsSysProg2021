@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Peasant
+    class Peasant : Unit
     {
     }
 }
