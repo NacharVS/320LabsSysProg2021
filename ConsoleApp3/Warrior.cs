@@ -13,8 +13,7 @@ namespace ConsoleApp3
             set { _damage = value; }
         }
 
-        public delegate void HealthChangedDelegate(string message);
-        public event HealthChangedDelegate HealthChandgedEvent;
+        
 
 
         public Warrior()
@@ -25,10 +24,10 @@ namespace ConsoleApp3
 
         public void Hit(Unit unit)
         {
-            unit.Health -= _damage;
-            if (unit.Health < 0)
+            if (unit.Health - _damage < 0)
                 unit.Health = 0;
-            HealthChandgedEvent?.Invoke("Peasant has been damaged: -" + _damage + "\n" + "Peasants health: " + unit.Health);
+            else
+                unit.Health -= _damage;
         }
     }
 }

@@ -8,9 +8,11 @@ namespace ConsoleApp3
         {
             Warrior war = new Warrior();
             Peasant peas = new Peasant();
+            Bishop bish = new Bishop();
 
-            war.HealthChandgedEvent += ShowMessage;
+            peas.HealthChandgedEvent += ShowMessage;
             war.Hit(peas);
+            bish.Heal(peas);
         }
         static void ShowMessage(string mes)
         {
