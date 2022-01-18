@@ -4,16 +4,17 @@
     {
         public delegate void HealhtChangeDelegate(string health);
         private double _health;
+        public virtual double MaxHealth { get; }
         public event HealhtChangeDelegate HealthChangeEvent;
         public double Health
         {
             get { return _health; }
             set
             {
-                if (value > 0)
+                if (value > 0 && value <= MaxHealth)
                 {
+                    HealthChangeEvent?.Invoke($"Current health {_health}, changed {-(_health - value)}");
                     _health = value;
-                    HealthChangeEvent?.Invoke($"Current health {_health}");
                 }
                 else
                 {

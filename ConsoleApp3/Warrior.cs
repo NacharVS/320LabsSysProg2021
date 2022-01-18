@@ -2,6 +2,7 @@
 {
     class Warrior : Unit
     {
+        public override double MaxHealth => 100;
         public Warrior()
         {
             Health = 100;

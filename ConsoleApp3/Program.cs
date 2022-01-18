@@ -8,11 +8,13 @@ namespace ConsoleApp3
         {
             Warrior warrior = new Warrior();
             Peasant peasant = new Peasant();
+            Bishop bishop = new Bishop();
             peasant.HealthChangeEvent += Show;
             Attack(warrior.Attack, peasant);
             Attack(warrior.Attack, peasant);
             Attack(warrior.Attack, peasant);
             Attack(warrior.Attack, peasant);
+            Health(bishop.Heal(), peasant);
             Attack(warrior.Attack, peasant);
             Attack(warrior.Attack, peasant);
             Attack(warrior.Attack, peasant);
@@ -23,7 +25,12 @@ namespace ConsoleApp3
             Attack(warrior.Attack, peasant);
         }
 
-        public static void Attack(int damage, Unit attackedUnit)
+        public static void Health(double health, Unit healedUnit)
+        {
+            healedUnit.Health += health;
+        }
+
+        public static void Attack(double damage, Unit attackedUnit)
         {
             attackedUnit.Health -= damage;
         }
