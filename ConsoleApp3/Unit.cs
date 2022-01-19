@@ -7,6 +7,7 @@ namespace ConsoleApp3
     abstract class Unit
     {
 		private double _health;
+		public virtual double MaxHealth { get; set; }
 		private double _damage;
 		public delegate void HealthChangedDelegate(double health, double valueChanged);
 

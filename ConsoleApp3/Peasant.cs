@@ -9,7 +9,7 @@ namespace ConsoleApp3
         public Peasant()
         {
             this.Health = 1000;
-            
+            this.MaxHealth = this.Health;
         }
     }
 }

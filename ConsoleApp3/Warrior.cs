@@ -10,6 +10,7 @@ namespace ConsoleApp3
         {
             this.Damage = 300;
             this.Health = 5000;
+            this.MaxHealth = this.Health;
         }
     }
 }
