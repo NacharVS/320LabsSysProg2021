@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp3
+namespace ConsoleApp3.Models
 {
     internal class Peasant : Unit
     {
         internal Peasant()
         {
             MaxHealth = 1500;
-            Health = 1000;
-            
+            Health = 1000;     
         }
     }
 }
