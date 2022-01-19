@@ -14,11 +14,16 @@ namespace ConsoleApp3
 		public double Health
 		{
 			get { return _health; }
-			set { if (value > 0)
+			set {	if (value > 0)
 					{
 						_health = value;
-						HealthChangedEvent?.Invoke($"{_health}");
-					};
+						HealthChangedEvent?.Invoke($"Health: {value}, Changed to: {value - Health}");
+					}
+					else
+					{
+						_health = 0;
+						HealthChangedEvent?.Invoke("Unit died");
+					}
 			}
 		}
 
