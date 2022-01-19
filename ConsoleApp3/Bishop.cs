@@ -8,15 +8,29 @@ namespace ConsoleApp3
     {
         public double HealAmount { get; set; }
 
-        public Bishop()
+        public Bishop(string name) : base(name, 600, 2.3, 1, 3)
         {
             HealAmount = 100;
-            this.Health = 500;
-            this.MaxHealth = this.Health;
+            
         }
         public void Heal(Unit pers)
         {
-            pers.Health += HealAmount;
+            if (pers.Health != 0)
+            {
+                if (pers.Health + HealAmount < pers.MaxHealth)
+                {
+                    pers.Health += HealAmount;
+                }
+                else
+                {
+                    pers.Health = pers.MaxHealth;
+                }
+            }
+            else
+            {
+                Console.WriteLine("It is impossible to heal a dead hero");
+            }
+            
         }
     }
 }

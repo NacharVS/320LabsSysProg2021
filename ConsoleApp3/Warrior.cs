@@ -6,11 +6,9 @@ namespace ConsoleApp3
 {
     class Warrior : Unit
     {
-        public Warrior()
+        public Warrior(string name) : base(name, 1000, 200, 2,4)
         {
-            this.Damage = 300;
-            this.Health = 5000;
-            this.MaxHealth = this.Health;
+            
         }
     }
 }

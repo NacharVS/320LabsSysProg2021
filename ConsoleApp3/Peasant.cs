@@ -6,10 +6,9 @@ namespace ConsoleApp3
 {
     class Peasant : Unit
     {
-        public Peasant()
+        public Peasant(string name) : base(name, 300, 0, 1.5, 0)
         {
-            this.Health = 1000;
-            this.MaxHealth = this.Health;
+            
         }
     }
 }
