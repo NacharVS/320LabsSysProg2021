@@ -6,9 +6,9 @@ namespace ConsoleApp3
 {
     class Bishop : Unit
     {
-        public Bishop(string name):base(name,100,10,1,2)
+        public Bishop(string name, double healCount):base(name,100,10,1,2)
         {
-            HealCount = 20;
+            HealCount = healCount;
         }
 
         public double _healCount;

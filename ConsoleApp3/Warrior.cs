@@ -6,18 +6,8 @@ namespace ConsoleApp3
 {
     class Warrior : Unit
     {
-        public Warrior()
+        public Warrior(string name) : base(name,100,10,5,2)
         {
-            MaxHealth = 90;
-            Health = 90;
-            Damage = 20;
-        }
-
-        public Warrior(double heal, double dam)
-        {
-            Health = heal;
-            Damage = dam;
-            MaxHealth = 90;
         }
         
     }

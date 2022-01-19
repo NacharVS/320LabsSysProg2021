@@ -20,8 +20,13 @@ namespace ConsoleApp3
 			Damage = damage;
 			this.attackSpeed = attackSpeed;
 			this.walkingSpeed = walkingSpeed;
-        }
+			Create();
+		}
 
+		public void Create()
+		{
+			Console.WriteLine($"{Name} is created");
+		}
 		private double _maxHealth;
 
 		public double MaxHealth
@@ -37,12 +42,16 @@ namespace ConsoleApp3
 			get { return _health; }
 			set 
 			{
-				if (value > 0 && value <= MaxHealth)
+				if (value > 0)
 				{
 					double present = Health;
 					_health = value;
 					HealtChangedEvent?.Invoke($"Health: {_health}, difference: {Health-present}");
 				}
+				else if (value > MaxHealth)
+                {
+					_health = MaxHealth;
+                }
 				else
 				{
 					_health = 0;
