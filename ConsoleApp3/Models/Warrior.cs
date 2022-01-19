@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ConsoleApp3.Interfaces;
 
 namespace ConsoleApp3.Models
 {
-    internal class Warrior : Unit
+    internal class Warrior : Character
     {
-        private double _damage;
-        public double Damage { get => _damage; set => _damage = value; }
-
         internal Warrior()
         {
             Health = 1000;
             Damage = 57;
+            WalkSpeed = 100;
+            AttackRange = 1;
         }
     }
 }

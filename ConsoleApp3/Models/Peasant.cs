@@ -4,12 +4,15 @@ using System.Text;
 
 namespace ConsoleApp3.Models
 {
-    internal class Peasant : Unit
+    internal class Peasant : Character
     {
         internal Peasant()
         {
             MaxHealth = 1500;
-            Health = 1000;     
+            Health = 1000;
+            WalkSpeed = 50;
+            AttackRange = 1;
+            Damage = 1;
         }
     }
 }

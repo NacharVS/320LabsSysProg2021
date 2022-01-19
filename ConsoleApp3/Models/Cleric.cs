@@ -8,13 +8,27 @@ namespace ConsoleApp3.Models
     {
         private double _heal;
 
-        public double Heal { get => _heal; set => _heal = value; }
+        public double Heal
+        {
+            get => _heal; 
+            set
+            {
+                _heal = value;
+            }
+        }
 
         internal Cleric()
         {
             Heal = 125;
+
         }
-        
-        public double ToHeal() => Heal;
+
+        public void ToHeal(Character character)
+        {
+            character.Health += Heal;
+            GetDamageEvent?.Invoke($"The {character.GetType()} has been healed for {Heal} points");
+        }
+
+        internal override event GetDamageDelegate GetDamageEvent;
     }
 }

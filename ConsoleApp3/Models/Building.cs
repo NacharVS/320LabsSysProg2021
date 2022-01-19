@@ -9,7 +9,23 @@ namespace ConsoleApp3.Models
     {
         private double _wall;
 
-        public double Wall { get => _wall; set => _wall = value; }
+        public double Wall
+        {
+            get => _wall;
+            set
+            {
+                if(value > 0)
+                {
+                    _wall = value;
+                    GetDamageEvent?.Invoke($"The Building's wall has {Wall} points");
+                }
+                else
+                {
+                    _wall = 0;
+                    GetDamageEvent?.Invoke("The Building's wall has fallen");
+                }
+            }
+        }
 
         internal Building()
         {
@@ -17,5 +33,7 @@ namespace ConsoleApp3.Models
             Health = 1000;
             MaxHealth = Health;
         }
+
+        internal override event GetDamageDelegate GetDamageEvent;
     }
 }

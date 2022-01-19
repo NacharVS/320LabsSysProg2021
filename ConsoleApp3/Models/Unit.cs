@@ -41,6 +41,6 @@ namespace ConsoleApp3.Models
             }
         }
 
-        internal event GetDamageDelegate GetDamageEvent;
+        internal virtual event GetDamageDelegate GetDamageEvent;
     }
 }

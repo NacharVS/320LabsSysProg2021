@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ConsoleApp3.Models;
 
 namespace ConsoleApp3.Interfaces
 {
-    internal interface IBuildingAttack
+    internal interface IAction
     {
-        void AttackBuilding();
+        void Attack(Character character);
+        void Move();
     }
 }
