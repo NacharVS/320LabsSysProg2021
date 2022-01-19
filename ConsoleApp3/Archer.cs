@@ -11,5 +11,10 @@ namespace ConsoleApp3
         {
             Arrows = 5;
         }
+
+        public double RangeAttack()
+        {
+            return 5;
+        }
     }
 }
