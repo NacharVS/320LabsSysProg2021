@@ -7,17 +7,15 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Student std = new Student();
-            std.Name = "Ivan";
-            std.Group = 333;
-            Console.WriteLine(std.Group);
-            std.GroupChandgedEvent += ShowMessage;
-            std.GroupChandgedEvent += ShowMessage1;
-            std.Group = 331;
-            Console.WriteLine(std.Group);
+            Warrior warrior = new Warrior(100, 50);
+            warrior.HealthChangedEvent += ShowMessage;
+            Peasant peasant = new Peasant();
+            peasant.HealthChangedEvent += ShowMessage;
+
+            Console.WriteLine(warrior.Health);
         }
 
-         static void ShowMessage(string mes)
+        static void ShowMessage(string mes)
         {
             Console.WriteLine(mes);
         }
@@ -25,5 +23,9 @@ namespace ConsoleApp3
         {
             Console.WriteLine(mes+mes);
         }
+
+
+        // 1. create methods for inflict damage
+        // 2. health value can not be less than 0
     }
 }
