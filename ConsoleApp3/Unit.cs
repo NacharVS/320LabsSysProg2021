@@ -5,10 +5,22 @@ using System.Text;
 namespace ConsoleApp3
 {
     abstract class Unit
-    {
-		
+    {		
 		public delegate void HealthChangedDelegate(string mes);
 		public event HealthChangedDelegate HealtChangedEvent;
+		public string Name { get; private set; }
+		private double attackSpeed;
+		private double walkingSpeed;
+
+		public Unit(string name,double health, double damage,double attackSpeed, double walkingSpeed)
+        {
+			Name = name;
+			Health = health;
+			MaxHealth = health;
+			Damage = damage;
+			this.attackSpeed = attackSpeed;
+			this.walkingSpeed = walkingSpeed;
+        }
 
 		private double _maxHealth;
 

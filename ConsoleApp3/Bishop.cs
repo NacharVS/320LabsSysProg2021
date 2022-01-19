@@ -6,20 +6,12 @@ namespace ConsoleApp3
 {
     class Bishop : Unit
     {
-        public Bishop()
+        public Bishop(string name):base(name,100,10,1,2)
         {
-            Health = 20;
-            Damage = 2;
-            HealCount = 10;
+            HealCount = 20;
         }
 
-        public Bishop(double heal, double healCount)
-        {
-            Health = heal;
-            HealCount = healCount;
-        }
-
-        public double _healCount { get; set; }
+        public double _healCount;
 
         public double HealCount
         {
@@ -29,7 +21,15 @@ namespace ConsoleApp3
         }
         public void Heal(Unit unit)
         {
-            unit.Health += HealCount;
+            if (unit.Health + HealCount >= unit.MaxHealth)
+            {
+                unit.Health = unit.MaxHealth;
+            }
+            else
+            {
+                unit.Health += HealCount;
+            }
+            
         }
     }
 }

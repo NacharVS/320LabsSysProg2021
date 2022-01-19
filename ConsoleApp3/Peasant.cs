@@ -6,17 +6,9 @@ namespace ConsoleApp3
 {
     class Peasant : Unit
     {
-        public Peasant()
+        public Peasant(string name): base(name,90,100,2,0)
         {
-            Health = 90;
-            Damage = 100;
-            MaxHealth = 90;
-        }
-        public Peasant(double heal, double dam)
-        {
-            Health = heal;
-            Damage = dam;
-            MaxHealth = 90;
+
         }
     }
 }
