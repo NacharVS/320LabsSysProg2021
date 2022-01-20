@@ -8,11 +8,11 @@ namespace ConsoleApp3
     {
         public double HealAmount { get; set; }
 
-        public Bishop()
+        public Bishop():base(50)
         {
             Health = 20;
         }
-        public Bishop(double hp)
+        public Bishop(double hp):base(50)
         {
             Health = hp;
         }

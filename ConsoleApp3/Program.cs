@@ -16,8 +16,14 @@ namespace ConsoleApp3
             bishop.HealthChangedEvent += ShowMessage;
             Console.WriteLine(bishop.Health);
 
-            warrior.Attack(peasant, 60);
-            Console.WriteLine(peasant.Health);
+            Soldier soldier = new Soldier();
+            soldier.HealthChangedEvent += ShowMessage;
+            Archery archery = new Archery();
+            archery.HealthChangedEvent += ShowMessage;
+
+            //warrior.Attack(peasant, 60);
+            soldier.Attack(soldier, 50);
+            Console.WriteLine(soldier.Health);
 
         }
         // 1. create methods for inflict damage

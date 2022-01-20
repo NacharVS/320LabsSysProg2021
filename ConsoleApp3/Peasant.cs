@@ -6,12 +6,12 @@ namespace ConsoleApp3
 {
     class Peasant : Unit
     {
-        public Peasant()
+        public Peasant():base(100)
         {
             Health = 50;
         }
 
-        public Peasant(double hp)
+        public Peasant(double hp):base(100)
         {
             Health = hp;
         }
