@@ -7,17 +7,26 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Warrior warrior = new Warrior();
+            Warrior warrior = new Warrior("Karen");
             warrior.HealthChangedEvent += ShowMessage;
-            Peasant peasant = new Peasant();
+
+            Peasant peasant = new Peasant("Abdul");
             peasant.HealthChangedEvent += ShowMessage;
-            Bishop bishop = new Bishop();
+
+            Bishop bishop = new Bishop("Jora", 15);
             bishop.HealthChangedEvent += ShowMessage;
 
-            Console.WriteLine(warrior.Health);
-            bishop.Attack(warrior);
-            Console.WriteLine(warrior.Health);
+            Archer archer = new Archer("Kolya");
+            archer.HealthChangedEvent += ShowMessage;
+            archer.Attack(warrior);
+
         }
+
+        private static void Archer_HealthChangedEvent(string message)
+        {
+            throw new NotImplementedException();
+        }
+
         // 1. create methods for inflict damage
         // 2. health value can not be less than 0
         //3*. Implement method heal of bishop class. 

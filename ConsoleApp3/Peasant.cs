@@ -4,18 +4,11 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Peasant : Unit
+    class Peasant : Battle
     {
-        public Peasant()
+        public Peasant(string name) : base(name, 90, 100, 2, 0)
         {
-            Health = 50;
-            Damage = 5;
-        }
 
-        public Peasant(double hp, double dmg)
-        {
-            Health = hp;
-            Damage = dmg;
         }
     }
 }

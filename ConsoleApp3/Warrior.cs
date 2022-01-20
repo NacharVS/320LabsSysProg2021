@@ -4,18 +4,16 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Warrior : Unit
+    class Warrior : Battle
     {
-        public Warrior()
+        public Warrior(string name) : base(name, 100, 10, 5, 2)
         {
-            Health = 200;
-            Damage = 20;
+
         }
 
-        public Warrior(double hp, double dmg)
+        public override double Infighting()
         {
-            Health = hp;
-            Damage = dmg;
+            return 2;
         }
     }
 }

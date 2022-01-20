@@ -7,12 +7,14 @@ namespace ConsoleApp3
     abstract class Unit
     {
 		public delegate void HealthChangedDelegate(string message);
+		public event HealthChangedDelegate HealthChangedEvent;
 		public string Name { get; private set; }
-
+		internal virtual bool IsCatapult { get => false; }
 		public Unit(string name, double health, double damage)
 		{
 			Name = name;
 			Health = health;
+			MaxHealth = health;
 			Damage = damage;
 			CreateUnit();
 		}
@@ -22,6 +24,13 @@ namespace ConsoleApp3
 			Console.WriteLine($"{Name} is created");
 		}
 
+		private double _maxHealth;
+
+		public double MaxHealth
+		{
+			get { return _maxHealth; }
+			set { _maxHealth = value;  }
+		}
 
 		private double _health;
 		public double Health
@@ -31,8 +40,13 @@ namespace ConsoleApp3
 			{
 				if (value > 0)
 				{
+					var presentHealth = Health;
 					_health = value;
-					HealthChangedEvent?.Invoke("Health has changed");
+					HealthChangedEvent?.Invoke($"Health: {value}, changed to: {Health - presentHealth}");
+				}
+				else if (value > MaxHealth)
+				{
+					_health = MaxHealth;
 				}
 				else
 				{
@@ -50,12 +64,9 @@ namespace ConsoleApp3
 			set { _damage = value; }
 		}
 
-
-		public event HealthChangedDelegate HealthChangedEvent;
-
-		public void Attack(Unit unit)
+		public virtual void Message()
 		{
-			unit.Health -= Damage;
+			Console.WriteLine($"Name: {Name} - Health: {Health}");
 		}
 
 	}
