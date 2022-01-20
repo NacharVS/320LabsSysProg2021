@@ -5,26 +5,51 @@ namespace ConsoleApp3
 {
     class Program
     {
-        static void Main(string[] args)
+          public static void Fight(BattleUnit unit1, BattleUnit unit2)
         {
-            Warrior warrior = new Warrior(50, 30);
-            warrior.HealthChangedEvent += ShowMessage;
-            Peasant peasant = new Peasant();
-            peasant.HealthChangedEvent += ShowMessage;
-            Console.WriteLine(warrior.Health);
-            peasant.Attack(warrior);
-
+            while (unit1.Health > 0 && unit2.Health > 0)
+            {
+                unit1.Health -= unit2.MleeAttack(new Random());
+                unit2.Health -= unit1.MleeAttack(new Random());
+                unit1.Info();
+                unit2.Info();
+            }
         }
-
-        static void ShowMessage(string mes)
+        public static void Fight(Building building, BattleUnit unit)
         {
-            Console.WriteLine(mes);
+            if (unit.IsCatapult)
+            {
+                while (building.Health > 0)
+                {
+                    if (building.Wall > 0)
+                    {
+                        building.Wall = building.Wall - unit.MleeAttack(new Random());
+                        building.Info();
+                        unit.Info();
+                    }
+                    else
+                    {
+                        building.Health = building.Health - unit.MleeAttack(new Random());
+                        building.Info();
+                        unit.Info();
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine($"unit {unit.Name} can't attack this building ");
+            }
         }
+        public static void Fight(Archer archer, BattleUnit unit)
+        {
+            while (archer.Health > 0 && unit.Health > 0)
+            {
+                archer.Health = archer.Health - unit.MleeAttack(new Random()); 
+                unit.Health -= archer.RangeAttack(new Random());
+                archer.Info();
+                unit.Info();
 
-        // 1. create methods for imitation of battle between 2 units. All nonBuildingsunits can attack each other
-        // 2. only catapult can attack building
-        // 3. Units: Soldier(Only mlee attack), Archer(RangeAttack (has 5 arrows)),
-        // All units Has AttackSpeed/WalkingSpeed. 
-
+            }
+        }
     }
 }
