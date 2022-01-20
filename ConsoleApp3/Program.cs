@@ -14,12 +14,16 @@ namespace ConsoleApp3
             Console.WriteLine(peas.Health);
             Bishop bish = new Bishop();
             bish.HealthChangedEvent += ShowMessage;
+            Archer arch = new Archer();
+            arch.HealthChangedEvent += ShowMessage;
 
             war.Attack(peas, 5);
             Console.WriteLine(peas.Health);
             bish.Heal(peas, 200);
             Console.WriteLine(peas.Health);
             war.Attack(peas, 46);
+            Console.WriteLine(peas.Health);
+            arch.Attack(peas, 10);
             Console.WriteLine(peas.Health);
         }
         static void ShowMessage(string mes)
