@@ -12,6 +12,8 @@ namespace ConsoleApp3
 		private double _damage;
 		public double WalkingSpeed;
 		public double AttackSpeed;
+		public bool CanRangeAttack;
+		public double MaxRangeAttack;
 
 		public delegate void HealthChangedDelegate(double health, double valueChanged, string nameUnit);
 		public delegate void UnitCreatedDelegate(string nameUnit);
@@ -21,7 +23,7 @@ namespace ConsoleApp3
 		public event HealthChangedDelegate HealthChandgedEvent;
 		public event UnitDiedDelegate DieUnitEvent;
 
-		public Unit(string name, double health, double damage, double walkingSpeed, double attackSpeed)
+		public Unit(string name, double health, double damage, double walkingSpeed, double attackSpeed, bool canRangeAttack, double rangeAttack)
         {
 			Name = name;
 			_damage = damage;
@@ -29,6 +31,8 @@ namespace ConsoleApp3
 			AttackSpeed = attackSpeed;
 			_health = health;
 			MaxHealth = _health;
+			CanRangeAttack = canRangeAttack;
+			MaxRangeAttack = rangeAttack;
 
 			DieUnitEvent += Termination;
 			HealthChandgedEvent += showHealth;
@@ -64,15 +68,10 @@ namespace ConsoleApp3
 			}
 		}
 
-		public void damageUnit(double damage)
+		public virtual void AttackUnit(Unit defender, double distance)
         {
-			_health -= damage;
-			if (_health > 0)
-			{
-				_health = 0;
-			}
-		}
-
+			defender.Health -= (new Random()).Next((int)(Damage * 0.8), (int)(Damage * 1.2));
+        }
 		public double Damage
         {
 			get { return _damage; }
