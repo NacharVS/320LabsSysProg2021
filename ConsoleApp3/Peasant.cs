@@ -6,5 +6,13 @@ namespace ConsoleApp3
 {
     class Peasant : Unit
     {
+        public Peasant() 
+        {
+            Hp = 20;
+        }
+        public Peasant(double health) 
+        {
+            Hp = health;
+        }
     }
 }

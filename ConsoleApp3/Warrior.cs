@@ -6,15 +6,17 @@ namespace ConsoleApp3
 {
     class Warrior : Unit
     {
-        public void Attack(Unit unit, double damage)
+        private double _damage;
+        public void Attack(Unit unit)
         {
-            if (damage >= 0)
-                unit.Hp -= damage;
+            if (_damage >= 0)
+                unit.Hp -= _damage;
 
         }
         public Warrior()
         {
             Hp = 90;
+            _damage = 20;
         }
         public Warrior(double health)
         {

@@ -7,7 +7,28 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
+            Peasant peasant = new Peasant();
+            peasant.HpChangedEvent += ShowMessage;
+            Warrior warrior = new Warrior();
+            warrior.HpChangedEvent += ShowMessage;
+            Bishop bishop = new Bishop();
+            bishop.HpChangedEvent += ShowMessage;
 
+            warrior.Attack(peasant);
+            Console.WriteLine(peasant.Hp);
+            bishop.Heal(peasant);
+            Console.WriteLine(peasant.Hp);
+            warrior.Attack(bishop);
+            Console.WriteLine(bishop.Hp);
+            warrior.Attack(peasant);
+            Console.WriteLine(peasant.Hp);
+
+
+
+        }
+        static void ShowMessage(string message)
+        {
+            Console.WriteLine(message);
         }
         // 1. create methods for imitation of battle between 2 units. All nonBuildingsunits can attack each other
         // 2. only catapult can attack building
