@@ -14,9 +14,9 @@ namespace ConsoleApp3
             Bishop bishop = new Bishop();
             bishop.HealthChangedEvent += ShowMessage;
 
-            Console.WriteLine(peasant.Health);
-            warrior.Attack(peasant);
-            Console.WriteLine(peasant.Health);
+            Console.WriteLine(warrior.Health);
+            bishop.Attack(warrior);
+            Console.WriteLine(warrior.Health);
         }
         // 1. create methods for inflict damage
         // 2. health value can not be less than 0

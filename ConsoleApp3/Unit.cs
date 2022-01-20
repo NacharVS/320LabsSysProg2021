@@ -7,6 +7,21 @@ namespace ConsoleApp3
     abstract class Unit
     {
 		public delegate void HealthChangedDelegate(string message);
+		public string Name { get; private set; }
+
+		public Unit(string name, double health, double damage)
+		{
+			Name = name;
+			Health = health;
+			Damage = damage;
+			CreateUnit();
+		}
+
+		public void CreateUnit()
+		{
+			Console.WriteLine($"{Name} is created");
+		}
+
 
 		private double _health;
 		public double Health

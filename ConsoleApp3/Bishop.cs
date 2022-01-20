@@ -16,7 +16,7 @@ namespace ConsoleApp3
         public Bishop()
         {
             Health = 100;
-            Damage = 1;
+            Damage = 100;
             HealAmount = 10;
         }
 
