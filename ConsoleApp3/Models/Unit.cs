@@ -31,12 +31,12 @@ namespace ConsoleApp3.Models
                     {
                         _health = value;
                     }
-                    GetDamageEvent?.Invoke($"Your HP: {_health}");
+                    GetDamageEvent?.Invoke($"Unit HP: {_health}");
                 }
                 else
                 {
                     _health = 0;
-                    GetDamageEvent?.Invoke("Your're dead");
+                    GetDamageEvent?.Invoke("Unit is dead");
                 }
             }
         }

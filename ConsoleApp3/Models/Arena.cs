@@ -8,7 +8,9 @@ namespace ConsoleApp3.Models
     internal class Arena
     {
         internal void StartFighting(Catapult catapult, Building building)
-        {
+        { 
+            catapult.GetDamageEvent += ShowMessage;
+            building.GetDamageEvent += ShowMessage;
             while (building.Wall > 0 && building.Health > 0)
             {
                 catapult.AttackBuilding(building);
@@ -18,8 +20,11 @@ namespace ConsoleApp3.Models
 
         internal void StartFighting(Character character1, Character character2)
         {
+            character1.GetDamageEvent += ShowMessage;
+            character2.GetDamageEvent += ShowMessage;
             while(character1.Health > 0 && character2.Health > 0)
             {
+                
                 character1.Attack(character2);
                 character2.Attack(character1);
                 Console.WriteLine($" First unit has {character1.Health} HP, Second unit has {character2.Health} HP");

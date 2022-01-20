@@ -29,8 +29,8 @@ namespace ConsoleApp3
             //Catapult catapult = new Catapult();
             //Building building = new Building();
             Arena arena = new Arena();
-             
-           //arena.StartFighting(catapult, building);
+
+            //arena.StartFighting(catapult, building);
 
             Archer archer = new Archer();
             Warrior warrior = new Warrior();
