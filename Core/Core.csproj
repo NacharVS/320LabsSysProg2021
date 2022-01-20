@@ -46,6 +46,7 @@
     <Compile Include="BattleUnit.cs" />
     <Compile Include="Bishop.cs" />
     <Compile Include="Building.cs" />
+    <Compile Include="Catapult.cs" />
     <Compile Include="MovableUnit.cs" />
     <Compile Include="Peasant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

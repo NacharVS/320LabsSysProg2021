@@ -8,6 +8,7 @@ namespace Core
 {
     public class BattleUnit : MovableUnit
     {
+		public virtual bool isCatapult { get => false; }
 		public bool rage = false;
 		public BattleUnit(string name, double health, double walkingSpeed, double damage, double attackSpeed) : base(name, health, walkingSpeed)
 		{

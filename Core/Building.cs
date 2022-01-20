@@ -13,7 +13,17 @@ namespace Core
 		public double Wall
 		{
 			get { return _wall; }
-			set { _wall = value; }
+			set
+			{
+				if (value < 0)
+                {
+					_wall = 0;
+                }
+                else
+                {
+					_wall = value;
+                }
+			}
 		}
 
 		public Building(string name, double health) : base(name, health)
@@ -27,7 +37,7 @@ namespace Core
 		}
 		public override string ToString()
 		{
-			return base.ToString() + $" {_wall}";
+			return base.ToString() + $";Wall:{_wall}";
 		}
 	}
 }

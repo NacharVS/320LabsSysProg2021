@@ -55,5 +55,31 @@ namespace Core
             }
             return battleLog;
         }
+
+        public string Fight(Building building, BattleUnit battleUnit)
+        {
+            string battleLog = "";
+            if (battleUnit.isCatapult)
+            {
+                while (building.Health > 0 && (battleUnit as Catapult).Projectiles > 0)
+                {
+                    if (building.Wall > 0)
+                    {
+                        building.Wall -= (battleUnit as Catapult).RangeAttack();
+                        battleLog += $"{building}{Environment.NewLine}{battleUnit}{Environment.NewLine}";
+                    }
+                    else
+                    {
+                        building.Health -= (battleUnit as Catapult).RangeAttack();
+                        battleLog += $"{building}{Environment.NewLine}{battleUnit}{Environment.NewLine}";
+                    }
+                }
+            }
+            else
+            {
+                battleLog = "This unit can't attack buildings";
+            }
+            return battleLog;
+        }
     }
 }
