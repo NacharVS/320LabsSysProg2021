@@ -23,7 +23,7 @@ namespace ConsoleApp3
 					}
 					else if (value > MaxHealth)
 					{
-						
+						_health = MaxHealth;
 					}
 					else
 					{
