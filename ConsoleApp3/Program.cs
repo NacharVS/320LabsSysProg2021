@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 
 namespace ConsoleApp3
 {
@@ -7,11 +6,18 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
+            Warrior war = new Warrior();
+            Peasant peas = new Peasant();
+            Bishop bish = new Bishop();
 
+            peas.HealthChandgedEvent += ShowMessage;
+            war.Hit(peas);
+            bish.Heal(peas);
         }
-
-        // 1. create methods for inflict damage
-        // 2. health value can not be less than 0
+        static void ShowMessage(string mes)
+        {
+            Console.WriteLine(mes);
+        }
 
     }
 }
