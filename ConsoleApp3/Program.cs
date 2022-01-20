@@ -6,39 +6,34 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Warrior warrior = new Warrior();
-            Peasant peasant = new Peasant();
-            Bishop bishop = new Bishop();
-            peasant.HealthChangeEvent += Show;
-            Attack(warrior.Attack, peasant);
-            Attack(warrior.Attack, peasant);
-            Attack(warrior.Attack, peasant);
-            Attack(warrior.Attack, peasant);
-            Health(bishop.Heal(), peasant);
-            Attack(warrior.Attack, peasant);
-            Attack(warrior.Attack, peasant);
-            Attack(warrior.Attack, peasant);
-            Attack(warrior.Attack, peasant);
-            Attack(warrior.Attack, peasant);
-            Attack(warrior.Attack, peasant);
-            Attack(warrior.Attack, peasant);
-            Attack(warrior.Attack, peasant);
+            Warrior warrior = new Warrior("Rumiya");
+            Peasant peasant = new Peasant("Salavat");
+            Archer archer = new Archer("Ainur");
+            warrior.HealthChangeEvent += ShowFirst;
+            archer.HealthChangeEvent += ShowSecond;
+            archer.ShotsCountChangeEvent += ShowInfo;
+            Battle battle = new Battle(warrior, archer, 100);
+            battle.DistanceChangeEvent += ShowInfo;
+            battle.Fight();
         }
 
-        public static void Health(double health, Unit healedUnit)
-        {
-            healedUnit.Health += health;
-        }
 
-        public static void Attack(double damage, Unit attackedUnit)
+        public static void ShowFirst(string mes)
         {
-            attackedUnit.Health -= damage;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(mes);
         }
-
-        public static void Show(string mes)
+        
+        public static void ShowSecond(string mes)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(mes);
         }
 
+        public static void ShowInfo(string mes)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(mes);
+        }
     }
 }
