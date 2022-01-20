@@ -7,16 +7,28 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Warrior warrior = new Warrior(50);
-            Peasant peasant = new Peasant(100);
-            Bishop bishop = new Bishop(100, 20);
+            Archer archer = new Archer(50,10, 4, 10);
+            Peasant peasant = new Peasant(500);
+            Bishop bishop = new Bishop(100, 20, 2, 3);
             
-            warrior.HealthChangedEvent += ShowMessage;
+            archer.HealthChangedEvent += ShowMessage;
             peasant.HealthChangedEvent += ShowMessage;
             bishop.HealthChangedEvent += ShowMessage;
 
             Console.WriteLine(peasant.Health);
-            warrior.Attack(peasant, 70);
+            archer.Attack(peasant, 10);
+            Console.WriteLine(peasant.Health);
+            archer.Attack(peasant, 10);
+            Console.WriteLine(peasant.Health);
+            archer.Attack(peasant, 10);
+            Console.WriteLine(peasant.Health);
+            archer.Attack(peasant, 10);
+            Console.WriteLine(peasant.Health);
+            archer.Attack(peasant, 10);
+            Console.WriteLine(peasant.Health);
+            archer.Attack(peasant, 10);
+            Console.WriteLine(peasant.Health);
+            archer.Attack(peasant, 10);
             Console.WriteLine(peasant.Health);
             bishop.Heal(peasant);
             Console.WriteLine(peasant.Health);
