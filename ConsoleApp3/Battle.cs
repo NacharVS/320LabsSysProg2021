@@ -12,8 +12,8 @@ namespace ConsoleApp3
             {
                 unit1.Attack(unit2);              
                 unit2.Attack(unit1);
-                Console.WriteLine(unit1.Health);
-                Console.WriteLine(unit2.Health);
+                unit1.Message();
+                unit2.Message();
             }
         }
     }
