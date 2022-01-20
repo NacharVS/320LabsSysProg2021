@@ -33,9 +33,5 @@ namespace ConsoleApp3
         }
         // 1. create methods for imitation of battle between 2 units. All nonBuildingsunits can attack each other
         // 2. only catapult can attack building
-        // 3. Units: Soldier(Only mlee attack)
-        // All units Has AttackSpeed/WalkingSpeed. 
-         
-
     }
 }

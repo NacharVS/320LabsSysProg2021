@@ -7,6 +7,8 @@ namespace ConsoleApp3
     abstract class Unit
     {
 		private double _health;
+		private double _AttackSpeed;
+		private double _WalkSpeed;
 		public delegate void HpChangedDelegate(string message);
 
 		public double Hp
@@ -29,5 +31,15 @@ namespace ConsoleApp3
 		}
 		public event HpChangedDelegate HpChangedEvent;
 
+		public double ASpeed
+		{
+			get { return _AttackSpeed; }
+			set { }
+		}
+		public double WSpeed
+		{
+			get { return _WalkSpeed; }
+			set { }
+		}
 	}
 }
