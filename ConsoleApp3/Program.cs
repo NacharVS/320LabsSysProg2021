@@ -26,13 +26,11 @@ namespace ConsoleApp3
 
         public static void MleeAttack(Unit attackingCharacter, Unit attackedCharacter)
         {
-            attackedCharacter.Damage(attackingCharacter.MleeDamage);
-            attackingCharacter.MleeAttack();
+            attackingCharacter.MleeAttack(attackingCharacter, attackedCharacter);
         }
         public static void RangeAttack(RangeUnit attackingCharacter, Unit attackedCharacter)
         {
-            attackedCharacter.Damage(attackingCharacter.RangeDamage);
-            attackingCharacter.RangeAttack();
+            attackingCharacter.RangeAttack(attackingCharacter, attackedCharacter);
         }
 
         public static void Heal(Unit healingCharacter, Unit healedCharacter)

@@ -49,8 +49,9 @@ namespace ConsoleApp3
                                        $"Текущее HP: {Health}");
         }
 
-        public void MleeAttack()
+        public void MleeAttack(Unit attackingCharacter, Unit attackedCharacter)
         {
+            attackedCharacter.Damage(attackingCharacter.MleeDamage);
             Task.Delay(MleeAttackSpeed);
         }
     }
