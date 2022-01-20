@@ -6,15 +6,9 @@ namespace ConsoleApp3
 {
     class Warrior : BattleUnit
     {
-        public Warrior(string name, double health, double attackPoint, double maxHealth, int min, int max) : base(name, health,  10, maxHealth, min, max )
+        public Warrior(string name, double health, int attackPoint, double maxHealth, int min, int max) : base(name, health,  attackPoint, maxHealth, min, max )
         {
-            Name = name;
-            Health = health;
             DamagePoint = attackPoint;
-            minDamage = min;
-            maxDamage = max;
-            MaxHealth = maxHealth;
-
         }
         private double _damage;
 
