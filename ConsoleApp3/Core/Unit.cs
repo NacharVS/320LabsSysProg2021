@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp3.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -70,8 +71,16 @@ namespace ConsoleApp3
 
 		public virtual void AttackUnit(Unit defender, double distance)
         {
-			defender.Health -= (new Random()).Next((int)(Damage * 0.8), (int)(Damage * 1.2));
+			if(distance <= MaxRangeAttack)
+            {
+				defender.Health -= (new Random()).Next((int)(Damage * 0.8), (int)(Damage * 1.2));
+			}
+			
         }
+		public virtual void AttackUnit(Building defender, double distance)
+		{
+			defender.Health -= (new Random()).Next((int)(Damage * 0.8), (int)(Damage * 1.2));
+		}
 		public double Damage
         {
 			get { return _damage; }

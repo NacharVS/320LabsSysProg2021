@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp3.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,6 +12,7 @@ namespace ConsoleApp3
         {
             valuePatron = 10;
         }
+
     }
 
     

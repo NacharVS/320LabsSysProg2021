@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp3.Core;
+using System;
 using System.Threading;
 
 namespace ConsoleApp3
@@ -8,13 +9,16 @@ namespace ConsoleApp3
         static void Main(string[] args)
         {
             Warrior war = new Warrior("Bob");
-            Warrior war2 = new Warrior("Kirill");
-            Peasant peas = new Peasant("Jimmy");
-            Archer arch = new Archer("Salavat");
+            //Warrior war2 = new Warrior("Kirill");
+            //Peasant peas = new Peasant("Jimmy");
+            //Archer arch = new Archer("Salavat");
+            //Archer arch2 = new Archer("Salavat2");
             Bishop bish = new Bishop("Diyar");
-            Console.WriteLine("Вы воин убейте крестьянина!(attack)");
+            Catapult catapult = new Catapult("Cat");
+            Tower tower = new Tower("Tower");
+            
             //war.AttackUnit(peas);
-            Battle bat = new Battle(war, arch, 60);
+            Battle bat = new Battle(war, bish, 6);
 
 
         }

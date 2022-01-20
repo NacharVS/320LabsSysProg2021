@@ -8,7 +8,7 @@ namespace ConsoleApp3
     {
         public double HealAmount { get; set; }
 
-        public Bishop(string name) : base(name, 600, 2.3, 1, 3, false , 0)
+        public Bishop(string name) : base(name, 150, 2.3, 7, 3, false , 1)
         {
             HealAmount = 100;
             

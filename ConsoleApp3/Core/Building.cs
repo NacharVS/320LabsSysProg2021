@@ -6,13 +6,14 @@ namespace ConsoleApp3.Core
 {
 	class Building
 	{
-		private double _health;
+		private double _wall;
 		public string Name { get; private set; }
 		public virtual double MaxHealth { get; set; }
 		private double _damage;
 
 		public double AttackSpeed;
 		public bool CanRangeAttack;
+		public double MaxRangeAttack;
 
 		public delegate void HealthChangedDelegate(double health, double valueChanged, string nameUnit);
 		public delegate void UnitCreatedDelegate(string nameUnit);
@@ -21,13 +22,14 @@ namespace ConsoleApp3.Core
 		public event UnitCreatedDelegate CreateBuildingEvent;
 		public event HealthChangedDelegate HealthChandgedEvent;
 		public event UnitDiedDelegate DieBuildingEvent;
-		public Building(string name, double hp, bool rangeAttack, double damage, double attackSpeed)
+		public Building(string name, double hp, bool rangeAttack, double damage, double attackSpeed, double maxRangeAttack)
 		{
 			Name = name;
 			Health = hp;
 			CanRangeAttack = rangeAttack;
 			_damage = damage;
 			AttackSpeed = attackSpeed;
+			MaxRangeAttack = maxRangeAttack;
 
 			DieBuildingEvent += Termination;
 			HealthChandgedEvent += showHealth;
@@ -38,25 +40,25 @@ namespace ConsoleApp3.Core
 
 		public double Health
 		{
-			get { return _health; }
+			get { return _wall; }
 			set
 			{
 				if (value > 0)
 				{
-					HealthChandgedEvent?.Invoke(value, value - _health, Name);
-					_health = value;
+					HealthChandgedEvent?.Invoke(value, value - _wall, Name);
+					_wall = value;
 
 				}
 				else
 				{
-					if (_health == 0)
+					if (_wall == 0)
 					{
 						//Console.WriteLine("Cant do this, unit just died");
 					}
 					else
 					{
-						_health = 0;
-						HealthChandgedEvent?.Invoke(_health, value, Name);
+						_wall = 0;
+						HealthChandgedEvent?.Invoke(_wall, value, Name);
 						DieBuildingEvent?.Invoke(Name);
 					}
 
@@ -70,7 +72,7 @@ namespace ConsoleApp3.Core
 			set { _damage = value; }
 		}
 
-		public virtual void AttackUnit(Unit defender)
+		public virtual void AttackUnit(Unit defender, double distance)
 		{
             if (CanRangeAttack)
             {

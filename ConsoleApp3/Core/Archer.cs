@@ -19,7 +19,7 @@ namespace ConsoleApp3
         {
             if(ArrowValue > 0)
             {
-                if(distance < MaxRangeAttack)
+                if(distance <= MaxRangeAttack)
                 {
                     rangeAttack(defender);
                 }
