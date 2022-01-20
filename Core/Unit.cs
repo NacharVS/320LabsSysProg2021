@@ -54,7 +54,7 @@ namespace Core
 				else
 				{
 					_health = 0;
-					HealtChangedEvent?.Invoke($"Unit died");
+					HealtChangedEvent?.Invoke($"Unit {Name} died");
 				};
 			}
 		}

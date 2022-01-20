@@ -7,7 +7,20 @@ namespace Core
     public class Building : Unit
     {
         private double wall;
-        public double Wall { get { return wall; } set { wall = value; } }
+        public double Wall
+        {
+            get
+            { 
+                return wall; 
+            }
+            set
+            {
+                if (value < 0)
+                    wall = 0;
+                else
+                    wall = value;
+            }
+        }
 
         public Building(string name, double health) : base(name,health)
         {
@@ -16,7 +29,7 @@ namespace Core
 
         public override void Message()
         {
-            Console.WriteLine($"Wall: {Wall}");
+            Console.WriteLine($"Wall: {Wall}, health: {Health}");
         }
     }
 }

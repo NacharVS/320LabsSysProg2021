@@ -10,9 +10,17 @@ namespace Core
         {
 
         }
-        public override double MeleeAttack(Random random)
+        public override double MeleeAttack()
         {
-            return 1.5;
+            if ( Health > 0.4 * MaxHealth)
+            {
+                return base.MeleeAttack();
+
+            }
+            else
+            {
+                return base.MeleeAttack() * 2;
+            }
         }
     }
 }

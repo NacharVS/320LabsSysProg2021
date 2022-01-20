@@ -26,15 +26,15 @@ namespace Core
             this.attackSpeed = attackSpeed;
         }
 
-        public virtual double MeleeAttack(Random random)
+        public virtual double MeleeAttack()
         {
-            return 2;
-            //double presentDamage = random.Next()
+            double presentDamage = Convert.ToDouble(new Random().Next(1, 40));
+            return presentDamage;
         }
 
-        public void Attack(BattleUnit unit)
+        public void Attack(BattleUnit unit, double damage)
         {
-            unit.Health -= Damage;
+            unit.Health -= damage;
         }
 
         public override void Message()

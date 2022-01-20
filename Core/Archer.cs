@@ -8,14 +8,23 @@ namespace Core
     {
         private int Arrows { get; set; }
 
-        public Archer(string name): base(name, 45,1,10,2)
+        public Archer(string name): base(name, 45,1,10,3)
         {
             Arrows = 5;
         }
 
         public double RangeAttack()
         {
-            return 5;
+            if (Arrows > 0)
+            {
+                double presentDamage = (new Random()).Next(10,80);
+                Arrows--;
+                return presentDamage;
+            }
+            else
+            {
+                return MeleeAttack();
+            }
         }
     }
 }
