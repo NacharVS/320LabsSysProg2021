@@ -7,7 +7,7 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Warrior war = new Warrior("Semen");
+            Soldier war = new Soldier("Semen");
             war.HealtChangedEvent += ShowMessage;
 
             Peasant peas = new Peasant("Sasha");

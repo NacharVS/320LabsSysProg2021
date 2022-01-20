@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Bishop : Unit
+    class Bishop : BattleUnit
     {
         public Bishop(string name, double healCount):base(name,100,10,1,2)
         {

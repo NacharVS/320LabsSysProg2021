@@ -4,14 +4,13 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Soldier : Unit
+    class Soldier : BattleUnit
     {
-        public Soldier(string name) : base(name, 80,10,2,3)
+        public Soldier(string name) : base(name,100,10,5,2)
         {
 
         }
-
-        public double MeleeAttack()
+        public override double MeleeAttack()
         {
             return 1.5;
         }

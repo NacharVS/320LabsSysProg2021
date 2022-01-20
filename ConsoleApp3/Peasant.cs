@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Peasant : Unit
+    class Peasant : BattleUnit
     {
         public Peasant(string name): base(name,90,100,2,0)
         {

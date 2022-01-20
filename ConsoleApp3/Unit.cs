@@ -9,17 +9,15 @@ namespace ConsoleApp3
 		public delegate void HealthChangedDelegate(string mes);
 		public event HealthChangedDelegate HealtChangedEvent;
 		public string Name { get; private set; }
-		private double attackSpeed;
-		private double walkingSpeed;
+	
 
-		public Unit(string name,double health, double damage,double attackSpeed, double walkingSpeed)
+		public Unit(string name,double health, double damage)
         {
 			Name = name;
 			Health = health;
 			MaxHealth = health;
 			Damage = damage;
-			this.attackSpeed = attackSpeed;
-			this.walkingSpeed = walkingSpeed;
+			
 			Create();
 		}
 
@@ -27,6 +25,7 @@ namespace ConsoleApp3
 		{
 			Console.WriteLine($"{Name} is created");
 		}
+
 		private double _maxHealth;
 
 		public double MaxHealth
