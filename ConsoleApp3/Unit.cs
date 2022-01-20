@@ -12,6 +12,24 @@ namespace ConsoleApp3
 		private double _health;
 		private double _maxHealth;
 		private double _damage;
+		private string _name;
+
+		protected Unit(string name, double health)
+		{
+			Name = name;
+			Health = health;
+			MaxHealth = health;
+			Creation();
+		}
+		public void Creation()
+		{
+			Console.WriteLine($"Unit {Name} is created and has {Health}hp");
+		}
+		public string Name
+		{
+			get { return _name; }
+			set { _name = value; }
+		}
 
 		public double Health
 		{
@@ -51,5 +69,9 @@ namespace ConsoleApp3
 			unit.Damage -= Damage;
 		}
 
+		public virtual void Info()
+		{
+			Console.WriteLine($" Unit {Name} has {Health}hp");
+		}
 	}
 }
