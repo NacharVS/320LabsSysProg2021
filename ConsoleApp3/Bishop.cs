@@ -4,8 +4,9 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Bishop : Unit
+    class Bishop : MovingUnits
     {
+
         private double _healAmount;
         public double HealAmount
         {
@@ -13,14 +14,23 @@ namespace ConsoleApp3
             set { _healAmount = value; }
         }
 
-        public Bishop()
+        public Bishop(string name, double health, double ha) : base(name, health,20,30)
         {
-            Health = 100;
-            HealAmount = 10;
+            Name = name;
+            Health = health;
+            HealAmount = ha;
         }
         public void HealUnit(Unit unit)
         {
-            unit.Health += HealAmount;
+            if(unit.Health+ HealAmount <unit.MaxHealth)
+            {
+                unit.Health += HealAmount;
+            }
+            else
+            {
+                Console.WriteLine("health is max");
+            }
+            
         }
 
         

@@ -7,23 +7,24 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            
-            Warrior warrior = new Warrior();
-            warrior.HealthChangedEvent += ShowMessage;
-            Peasant peasant = new Peasant();
-            peasant.HealthChangedEvent += ShowMessage;
-            Bishop bishop = new Bishop();
-            Console.WriteLine($"Peasant has {peasant.Health}");
-            //each damage takes 10 hp
-            warrior.DamageUnit(peasant);
-            warrior.DamageUnit(peasant);
-            warrior.DamageUnit(peasant);
-            warrior.DamageUnit(peasant);
-            //each healing gives 10 hp
-            bishop.HealUnit(peasant);
-            peasant.HealthChangedEvent += ShowMessage;
 
-            Console.WriteLine($"Peasant has {peasant.Health}");
+            Warrior warrior = new Warrior("warrior1", 100, 20, 120, 10, 20);
+            Peasant peasant = new Peasant("peasant1", 70, 20, 100);
+            Warrior warrior2 = new Warrior("warrior2", 100, 15, 110, 5, 15);
+            Catapult catapult = new Catapult("Шверер Густав", 1000, 100);
+            Building building = new Building("Замок короля Артура", 10000);
+            Archer archer = new Archer("archer", 120, 20, 130, 20, 30);
+            peasant.HealthChangedEvent += ShowMessage;
+            warrior.HealthChangedEvent += ShowMessage;
+            warrior2.HealthChangedEvent += ShowMessage;
+            building.HealthChangedEvent +=ShowMessage;
+            Battle.Fight(warrior, warrior2);
+            warrior.DamageUnit(peasant);
+            Battle.Fight(building, catapult);
+            Battle.Fight(archer, catapult);
+            
+
+
 
         }
         static void ShowMessage(string message)

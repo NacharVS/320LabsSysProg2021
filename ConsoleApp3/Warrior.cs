@@ -4,11 +4,17 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Warrior : Unit
+    class Warrior : BattleUnit
     {
-        public Warrior()
+        public Warrior(string name, double health, double attackPoint, double maxHealth, int min, int max) : base(name, health,  10, maxHealth, min, max )
         {
-            Health = 150;
+            Name = name;
+            Health = health;
+            DamagePoint = attackPoint;
+            minDamage = min;
+            maxDamage = max;
+            MaxHealth = maxHealth;
+
         }
         private double _damage;
 

@@ -4,11 +4,14 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Peasant : Unit
+    class Peasant : MovingUnits
     {
-        public Peasant()
+        public Peasant(string name, double health, int Speed, double max):  base(name, health, Speed, max)
         {
-            Health = 100;
+            Name = name;
+            Health = health;
+            speed = Speed;
+            MaxHealth = max;
         }
     }
 }
