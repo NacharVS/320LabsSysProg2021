@@ -4,14 +4,16 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    internal class Bishop : Unit
+    class Bishop : Unit
     {
         public double HealAmount { get; set; }
 
-        public Bishop(double hitPoints, double healthPower)
+        public Bishop(double hitPoints, double healPower, double attackSpeed, double walkSpeed)
         {
-            HealAmount = healthPower;
+            HealAmount = healPower;
             this.Health = hitPoints;
+            this.AttackSpeed = attackSpeed;
+            this.WalkingSpeed = walkSpeed;
         }
         public void Heal(Unit u)
         {
