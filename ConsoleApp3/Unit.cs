@@ -14,5 +14,7 @@ namespace ConsoleApp3
 			set { _health = value; }
 		}
 
+		public abstract void Attack();
+
 	}
 }

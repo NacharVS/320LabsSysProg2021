@@ -12,5 +12,6 @@ namespace ConsoleApp3
         {
             return HealAmount;
         }
+
     }
 }
