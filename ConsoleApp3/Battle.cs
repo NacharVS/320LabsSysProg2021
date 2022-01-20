@@ -43,7 +43,7 @@ namespace ConsoleApp3
             secondUnitAttackTimer.Elapsed += new ElapsedEventHandler(SecondUnitAttack);
             secondUnitAttackTimer.Interval = _secondUnit.AttackSpeed * 2500;
 
-            System.Timers.Timer firstUnitAttackTimer = new System.Timers.Timer();
+            System.Timers.Timer firstUnitAttackTimer = new System.Timers.Timer(); 
             firstUnitAttackTimer.Elapsed += new ElapsedEventHandler(FirstUnitAttack);
             firstUnitAttackTimer.Interval = _firstUnit.AttackSpeed * 2500; // магическое число возникшее во время отладки
             while (_firstUnit.Health > 0 && _secondUnit.Health > 0)
@@ -79,11 +79,11 @@ namespace ConsoleApp3
             attackedUnit.Health -= damage; 
         }
 
-        void SecondUnitAttack(Object source, System.Timers.ElapsedEventArgs e)
+        void SecondUnitAttack(Object source, ElapsedEventArgs e)
         {
             Attack(_secondUnit.GetDamage(), _firstUnit);
         }
-        void FirstUnitAttack(Object source, System.Timers.ElapsedEventArgs e)
+        void FirstUnitAttack(Object source, ElapsedEventArgs e)
         {
             Attack(_firstUnit.GetDamage(), _secondUnit);
         }
