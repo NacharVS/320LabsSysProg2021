@@ -18,7 +18,7 @@ namespace ConsoleApp3
 
         public Warrior()
         {
-            Atack = 20;
+            Atack = 100;
         }
 
         public void Damage (Unit unit)

@@ -8,7 +8,7 @@ namespace ConsoleApp3
     {
         public Peasant()
         {
-            Health = 10;
+            Health = 300;
         }
 
     }
