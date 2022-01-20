@@ -10,6 +10,8 @@ namespace ConsoleApp3
 		public event HealthChangedDelegate HealthChangedEvent;
 
 		private double _health;
+		private double _maxHealth;
+		private double _damage;
 
 		public double Health
 		{
@@ -19,6 +21,10 @@ namespace ConsoleApp3
 						_health = value;
 						HealthChangedEvent?.Invoke($"Health: {value}, Changed to: {value - Health}");
 					}
+					else if (value > MaxHealth)
+					{
+						
+					}
 					else
 					{
 						_health = 0;
@@ -27,7 +33,13 @@ namespace ConsoleApp3
 			}
 		}
 
-		private double _damage;
+		public double MaxHealth
+		{
+			get { return _maxHealth; }
+			set { _maxHealth = value; }
+
+		}
+
 		public double Damage
 		{
 			get { return _damage; }
