@@ -13,6 +13,8 @@ namespace ConsoleApp3
             warrior.HpChangedEvent += ShowMessage;
             Bishop bishop = new Bishop();
             bishop.HpChangedEvent += ShowMessage;
+            Archer archer = new Archer();
+            archer.HpChangedEvent += ShowMessage;
 
             warrior.Attack(peasant);
             Console.WriteLine(peasant.Hp);
@@ -22,9 +24,8 @@ namespace ConsoleApp3
             Console.WriteLine(bishop.Hp);
             warrior.Attack(peasant);
             Console.WriteLine(peasant.Hp);
-
-
-
+            archer.Shot(warrior);
+            Console.WriteLine(warrior.Hp);
         }
         static void ShowMessage(string message)
         {
@@ -32,7 +33,7 @@ namespace ConsoleApp3
         }
         // 1. create methods for imitation of battle between 2 units. All nonBuildingsunits can attack each other
         // 2. only catapult can attack building
-        // 3. Units: Soldier(Only mlee attack), Archer(RangeAttack (has 5 arrows)),
+        // 3. Units: Soldier(Only mlee attack)
         // All units Has AttackSpeed/WalkingSpeed. 
          
 
