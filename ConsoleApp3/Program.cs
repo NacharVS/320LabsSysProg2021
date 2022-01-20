@@ -15,17 +15,9 @@ namespace ConsoleApp3
             Console.WriteLine(warrior.Health);
         }
 
-        static void ShowMessage(string mes)
+        static void ShowMessage(string message)
         {
-            Console.WriteLine(mes);
+            Console.WriteLine(message);
         }
-        static void ShowMessage1(string mes)
-        {
-            Console.WriteLine(mes+mes);
-        }
-
-
-        // 1. create methods for inflict damage
-        // 2. health value can not be less than 0
     }
 }
