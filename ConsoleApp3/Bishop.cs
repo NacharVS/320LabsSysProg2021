@@ -4,30 +4,29 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Bishop : Unit
+    class Bishop : MovingUnits
     {
-        private double _heal;
-
-        public Bishop()
+        private double _healAmount;
+        public double HealAmount
         {
-            Health = 50;
-            _heal = 35;
+            get { return _healAmount; }
+            set { _healAmount = value; }
         }
-        public double HealCount
-        {
-            get { return _heal; }
-            set { _heal = value; }
 
+        public Bishop(string name, double health, double heal) : base(name, health, 20, 30)
+        {
+
+            HealAmount = heal;
         }
         public void Heal(Unit unit)
         {
-            if (unit.Health + HealCount >= unit.MaxHealth)
+            if (unit.Health + HealAmount < unit.MaxHealth)
             {
-                unit.Health = unit.MaxHealth;
+                unit.Health += unit.MaxHealth;
             }
             else
             {
-                unit.Health += HealCount;
+                Console.WriteLine("Health is max");
             }
 
         }

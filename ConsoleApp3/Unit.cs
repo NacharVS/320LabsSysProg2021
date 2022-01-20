@@ -13,6 +13,7 @@ namespace ConsoleApp3
 		private double _maxHealth;
 		private double _damage;
 		private string _name;
+		internal virtual bool IsCatapult { get => false; }
 
 		protected Unit(string name, double health)
 		{

@@ -4,18 +4,19 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Warrior : Unit
+    class Warrior : BattleUnit
     {
-        public Warrior()
+        public Warrior(string name, double health, int attackPoint, double maxHealth, int min, int max) : base(name, health, attackPoint, maxHealth, min, max)
         {
-            Health = 40;
-            Damage = 10;
+            Damage = attackPoint;
         }
 
-        public Warrior(double heal, double damage)
+        private double _damage;
+
+        public double Damage
         {
-            Health = heal;
-            Damage = damage;
+            get { return _damage; }
+            set { _damage = value; }
         }
     }
 }

@@ -4,18 +4,17 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Сatapult : Unit
+    class Catapult : BattleUnit
     {
-        public Сatapult()
+        internal override bool IsCatapult => true;
+        public Catapult(string name, double health, double attackPoint) : base("Catapult", health, 5, 300, 100, 200)
         {
-            Health = 70;
-            Damage = 30;
+            Health = health;
+            Damage = attackPoint;
         }
-
-        public Сatapult(double heal, double damage)
+        public override void Info()
         {
-            Health = heal;
-            Damage = damage;
+            Console.WriteLine($"Catapult {Name} has {Health}hp");
         }
     }
 }

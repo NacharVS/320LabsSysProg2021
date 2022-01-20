@@ -7,9 +7,9 @@ namespace ConsoleApp3
     class MovingUnits : Unit
     {
         public int speed;
-        public MovingUnits(string name, double health, int speedParam, double max) : base(name, health)
+        public MovingUnits(string name, double health, int speedParametr, double max) : base(name, health)
         {
-            speed = speedParam;
+            speed = speedParametr;
             MaxHealth = max;
         }
         public void Move()

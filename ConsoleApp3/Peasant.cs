@@ -4,18 +4,11 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Peasant : Unit
+    class Peasant : MovingUnits
     {
-        public Peasant()
+        public Peasant(string name, double health, int speed, double max) : base(name, health, speed, max)
         {
-            Health = 50;
-            Damage = 20;
-        }
 
-        public Peasant(double heal, double damage)
-        {
-            Health = heal;
-            Damage = damage;
         }
     }
 }
