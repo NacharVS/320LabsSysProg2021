@@ -7,19 +7,17 @@ namespace ConsoleApp3
     class Bishop : Unit
     {
         public double HealAmount { get; set; }
+        private double _heal;
 
         public Bishop()
         {
             Health = 50;
+            _heal = 35;
         }
 
-        public Bishop(double hp)
+        public double Heal(Unit unit)
         {
-            Health = hp;
-        }
-        public double Heal(Unit unit, double heal)
-        {
-            unit.Health += heal;
+            unit.Health += _heal;
             return HealAmount;
         }
     }

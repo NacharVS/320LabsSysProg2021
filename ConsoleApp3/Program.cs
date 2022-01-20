@@ -17,13 +17,13 @@ namespace ConsoleApp3
             Archer arch = new Archer();
             arch.HealthChangedEvent += ShowMessage;
 
-            war.Attack(peas, 5);
+            war.Attack(peas);
             Console.WriteLine(peas.Health);
-            bish.Heal(peas, 200);
+            bish.Heal(peas);
             Console.WriteLine(peas.Health);
-            war.Attack(peas, 46);
+            war.Attack(peas);
             Console.WriteLine(peas.Health);
-            arch.Attack(peas, 10);
+            arch.Attack(peas);
             Console.WriteLine(peas.Health);
         }
         static void ShowMessage(string mes)

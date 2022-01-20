@@ -10,9 +10,5 @@ namespace ConsoleApp3
         {
             Health = 50;
         }
-        public Peasant(double hp)
-        {
-            Health = hp;
-        }
     }
 }

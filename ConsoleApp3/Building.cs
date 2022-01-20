@@ -10,10 +10,5 @@ namespace ConsoleApp3
         {
             Health = 150;
         }
-
-        public Building(double hp)
-        {
-            Health = hp;
-        }
     }
 }

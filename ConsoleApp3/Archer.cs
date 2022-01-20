@@ -7,23 +7,19 @@ namespace ConsoleApp3
     class Archer : Unit
     {
         private int _arrows;
+        private double _dmg;
         public Archer()
         {
             Health = 75;
             _arrows = 5;
+            _dmg = 30;
         }
 
-        public Archer(double hp)
+        public void Attack(Unit unit)
         {
-            Health = hp;
-            _arrows = 5;
-        }
-
-        public void Attack(Unit unit, double dmg)
-        {
-            if (dmg >= 0 && _arrows > 0)
+            if (_dmg >= 0 && _arrows > 0)
             {
-                unit.Health -= dmg;
+                unit.Health -= _dmg;
                 _arrows--;
             }
             else
