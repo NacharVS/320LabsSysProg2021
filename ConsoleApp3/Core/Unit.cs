@@ -9,21 +9,13 @@ namespace ConsoleApp3
 		public delegate void HealthChangedDelegate(string message);
 		public event HealthChangedDelegate HealthChangedEvent;
 		public string Name { get; private set; }
-		internal virtual bool IsCatapult { get => false; }
-		public Unit(string name, double health, double damage)
+		public Unit(string name, double health)
 		{
 			Name = name;
 			Health = health;
-			MaxHealth = health;
-			Damage = damage;
+			_maxHealth = health;
 			CreateUnit();
 		}
-
-        protected Unit(string name, double health)
-        {
-            Name = name;
-            Health = health;
-        }
 
         public void CreateUnit()
 		{

@@ -7,9 +7,9 @@ namespace ConsoleApp3
     class Bishop : MovingUnit
     {
 
-        public Bishop(string name, double health, double _healAmount) : base(name, health, 20, 30)
+        public Bishop(string name, double health, double damage, double heal) : base(name, health, damage)
         {
-            HealAmount = _healAmount;
+            HealAmount = heal;
         }
 
         public double _healAmount;
