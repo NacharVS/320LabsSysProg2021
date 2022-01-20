@@ -19,7 +19,13 @@ namespace ConsoleApp3
 			CreateUnit();
 		}
 
-		public void CreateUnit()
+        protected Unit(string name, double health)
+        {
+            Name = name;
+            Health = health;
+        }
+
+        public void CreateUnit()
 		{
 			Console.WriteLine($"{Name} is created");
 		}

@@ -3,12 +3,15 @@ using System.Threading;
 
 namespace ConsoleApp3
 {
-    class Program
+    class Program : UnitBattle
     {
         static void Main(string[] args)
         {
             Warrior warrior = new Warrior("Karen");
             warrior.HealthChangedEvent += ShowMessage;
+
+            Warrior warrior2 = new Warrior("warrior2");
+            warrior2.HealthChangedEvent += ShowMessage;
 
             Peasant peasant = new Peasant("Abdul");
             peasant.HealthChangedEvent += ShowMessage;
@@ -18,13 +21,9 @@ namespace ConsoleApp3
 
             Archer archer = new Archer("Kolya");
             archer.HealthChangedEvent += ShowMessage;
-            archer.Attack(warrior);
 
-        }
+            UnitBattle.Fight(warrior, bishop);
 
-        private static void Archer_HealthChangedEvent(string message)
-        {
-            throw new NotImplementedException();
         }
 
         // 1. create methods for inflict damage
