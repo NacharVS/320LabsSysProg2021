@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-	abstract class Unit
+	public abstract class Unit
 	{
 
 		public delegate void HealthChangedDelegate(string message);

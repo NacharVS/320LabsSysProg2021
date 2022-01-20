@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Warrior : Unit
+    public class Warrior : Unit
     {
         private double _dmg;
         public void Attack(Unit unit)
