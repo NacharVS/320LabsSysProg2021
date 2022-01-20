@@ -21,10 +21,16 @@ namespace ConsoleApp3.Models
 
         public override void Attack(Character character)
         {
-            if(CountOfArows > 0)
+            if (CountOfArows > 0)
             {
+                AttackRange = 100;
                 character.Health -= Damage;
                 CountOfArows--;
+            }
+            else
+            {
+                AttackRange = 1;
+                character.Health -= Damage;
             }
         }
     }
