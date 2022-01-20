@@ -10,15 +10,17 @@ namespace ConsoleApp3
         static void Main(string[] args)
         {
             var catapult = new Catapult();
-            var archer = new Archer("Archer");
-            var building = new Building("Tower", 100, 100);
-            var soldier = new Soldier("Soldier");
+            var archer = new Archer("Archer", 30, 100, 10);
+            var building = new Building("Tower", 100);
+            var soldier = new Soldier("Soldier", 100, 500, 200);
+            var soldier2 = new Soldier("Soldier2", 100, 100, 100);
 
             catapult.HealthChangedEvent += ShowMessage;
             archer.HealthChangedEvent += ShowMessage;
             building.HealthChangedEvent += ShowMessage;
             soldier.HealthChangedEvent += ShowMessage;
 
+            //Battle.Fight(soldier2, soldier);
             Battle.Fight(archer, soldier);
             //Battle.Fight(building, catapult);
             //Battle.Fight(building, archer);

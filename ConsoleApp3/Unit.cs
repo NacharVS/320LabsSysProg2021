@@ -11,16 +11,16 @@ namespace ConsoleApp3
         private double _walkingSpeed;
         internal virtual bool IsCatapult { get => false; }
         internal double _maxHealth;
-        public int Armor { get; set; }
         public string Name;
         public delegate void HealthChangedDelegate(string message);
 
-        protected Unit(string name, int health, int armor)
+        protected Unit(string name, int health, int attackSpeed, int walkingSpeed)
         {
             Name = name;
             _health = health;
-            Armor = armor;
             _maxHealth = _health;
+            _attackSpeed = attackSpeed;
+            _walkingSpeed = walkingSpeed;
         }
         public double Health
         {
@@ -39,6 +39,9 @@ namespace ConsoleApp3
                 }
             }
         }
+        public double AttackSpeed { get { return _attackSpeed; } set { _attackSpeed = value; } }
+        public double WalkingSpeed { get { return _walkingSpeed; } set { _walkingSpeed = value; } }
+
 
         public event HealthChangedDelegate HealthChangedEvent;
 

@@ -8,7 +8,7 @@ namespace ConsoleApp3
     {
         private bool _rage = false;
 
-        public Soldier(string name) : base(name, 90, 10, 5, 2, 8)
+        public Soldier(string name, int health, int attackSpeed, int walkingSpeed) : base(name, health, attackSpeed, walkingSpeed, 2, 8)
         {
         }
 

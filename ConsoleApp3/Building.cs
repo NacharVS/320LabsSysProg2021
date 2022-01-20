@@ -8,7 +8,7 @@ namespace ConsoleApp3
     {
         private double _wall;
 
-        public Building(string name, int health, int armor) : base(name, health, armor)
+        public Building(string name, int health) : base(name, health, 0, 0)
         {
             Wall = health;
         }
@@ -16,11 +16,6 @@ namespace ConsoleApp3
         public double Wall { 
             get => _wall; 
             set => _wall = value > 0? value: 0; 
-        }
-
-        private void WallIsDestroyed()
-        {
-            Console.WriteLine("Wall is destroyed");
         }
 
         public override void Info()

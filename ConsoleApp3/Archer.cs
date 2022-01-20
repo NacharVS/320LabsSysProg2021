@@ -10,7 +10,7 @@ namespace ConsoleApp3
         private int _minRangeDamage;
         private int _maxRangeDamage;
 
-        public Archer(string name) : base(name, 45, 0, 7, 1, 2)
+        public Archer(string name, int health, int attackSpeed, int walkingSpeed) : base(name, health, attackSpeed, walkingSpeed, 1, 2)
         {
             _arrows = 5;
             _minRangeDamage = 4;
