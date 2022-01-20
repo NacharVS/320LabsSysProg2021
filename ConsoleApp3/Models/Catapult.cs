@@ -21,6 +21,7 @@ namespace ConsoleApp3.Models
             Damage = 71;
             WalkSpeed = 25;
             AttackRange = 150;
+            AttackSpeed = 110;
         }
     }
 }

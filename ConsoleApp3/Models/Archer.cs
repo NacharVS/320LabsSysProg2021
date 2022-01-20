@@ -45,6 +45,7 @@ namespace ConsoleApp3.Models
             AttackRange = 100;
             Damage = 50;
             WalkSpeed = 100;
+            AttackSpeed = 200;
         }
 
         public override void Attack(Character character)

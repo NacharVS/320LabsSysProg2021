@@ -23,6 +23,7 @@ namespace ConsoleApp3.Models
             Damage = 57;
             WalkSpeed = 100;
             AttackRange = 1;
+            AttackSpeed = 150;
         }
 
         internal override event GetDamageDelegate GetDamageEvent;
