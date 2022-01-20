@@ -7,15 +7,15 @@ namespace ConsoleApp3
 {
     class Battle
     {
-        private static Unit firstUnit;
-        private static Unit secondUnit;
-        private static Timer firstUnitAttackTimer;
-        private static Timer secondUnitAttackTimer;
+        private static Unit _firstUnit;
+        private static Unit _secondUnit;
+        private static Timer _firstUnitAttackTimer;
+        private static Timer _secondUnitAttackTimer;
 
         public static void Fight(BattleUnit unit1, BattleUnit unit2)
         {
-            firstUnit = unit1;
-            secondUnit = unit2;
+            _firstUnit = unit1;
+            _secondUnit = unit2;
 
             SetTimers();
 
@@ -26,8 +26,8 @@ namespace ConsoleApp3
         }
         public static void Fight(Archer archer, BattleUnit unit2)
         {
-            firstUnit = archer;
-            secondUnit = unit2;
+            _firstUnit = archer;
+            _secondUnit = unit2;
             SetTimers();
 
             while (archer.Health > 0 && unit2.Health > 0)
@@ -38,8 +38,8 @@ namespace ConsoleApp3
 
         public static void Fight(Building building, BattleUnit unit2)
         {
-            firstUnit = building;
-            secondUnit = unit2;
+            _firstUnit = building;
+            _secondUnit = unit2;
             SetTimers();
 
             if (unit2.IsCatapult)
@@ -56,51 +56,51 @@ namespace ConsoleApp3
         }
         private static void FirstUnitAttack(Object source, ElapsedEventArgs e)
         {
-            if (firstUnit.GetType() == typeof(Archer))
-                secondUnit.Health -= (firstUnit as Archer).RangeAttack(new Random());
-            else if (firstUnit.GetType() == typeof(Soldier))
-                secondUnit.Health -= (firstUnit as Soldier).MleeAttack(new Random());
-            secondUnit.Info();
+            if (_firstUnit.GetType() == typeof(Archer))
+                _secondUnit.Health -= (_firstUnit as Archer).RangeAttack(new Random());
+            else if (_firstUnit.GetType() == typeof(Soldier))
+                _secondUnit.Health -= (_firstUnit as Soldier).MleeAttack(new Random());
+            _secondUnit.Info();
         }
         private static void SecondUnitAttack(Object source, ElapsedEventArgs e)
         {
-            if (secondUnit.GetType() == typeof(Archer))
-                firstUnit.Health -= (secondUnit as Archer).RangeAttack(new Random());
-            else if (secondUnit.IsCatapult || (secondUnit.GetType() == typeof(Soldier)))
+            if (_secondUnit.GetType() == typeof(Archer))
+                _firstUnit.Health -= (_secondUnit as Archer).RangeAttack(new Random());
+            else if (_secondUnit.IsCatapult || (_secondUnit.GetType() == typeof(Soldier)))
             {
-                if (firstUnit.GetType() == typeof(Building))
+                if (_firstUnit.GetType() == typeof(Building))
                 {
-                    if ((firstUnit as Building).Wall > 0)
+                    if ((_firstUnit as Building).Wall > 0)
                     {
-                        (firstUnit as Building).Wall -= (secondUnit as BattleUnit).MleeAttack(new Random());
+                        (_firstUnit as Building).Wall -= (_secondUnit as BattleUnit).MleeAttack(new Random());
                     }
                     else
                     {
-                        firstUnit.Health -= (secondUnit as BattleUnit).MleeAttack(new Random());
+                        _firstUnit.Health -= (_secondUnit as BattleUnit).MleeAttack(new Random());
                     }
                 }
                 else 
                 {
-                    firstUnit.Health -= (secondUnit as BattleUnit).MleeAttack(new Random());
+                    _firstUnit.Health -= (_secondUnit as BattleUnit).MleeAttack(new Random());
                 }   
             }
                 
-            firstUnit.Info();
+            _firstUnit.Info();
         }
         private static void SetTimers()
         {
-            firstUnitAttackTimer = new Timer();
-            firstUnitAttackTimer.Interval = firstUnit.AttackSpeed > 0? firstUnit.AttackSpeed: 1;
-            firstUnitAttackTimer.Elapsed += FirstUnitAttack;
+            _firstUnitAttackTimer = new Timer();
+            _firstUnitAttackTimer.Interval = _firstUnit.AttackSpeed > 0? _firstUnit.AttackSpeed: 1;
+            _firstUnitAttackTimer.Elapsed += FirstUnitAttack;
 
-            secondUnitAttackTimer = new Timer();
-            secondUnitAttackTimer.Interval = secondUnit.AttackSpeed > 0? secondUnit.AttackSpeed: 1;
-            secondUnitAttackTimer.Elapsed += SecondUnitAttack;
+            _secondUnitAttackTimer = new Timer();
+            _secondUnitAttackTimer.Interval = _secondUnit.AttackSpeed > 0? _secondUnit.AttackSpeed: 1;
+            _secondUnitAttackTimer.Elapsed += SecondUnitAttack;
         }
         private static void EnableTimers()
         {
-            firstUnitAttackTimer.Enabled = true;
-            secondUnitAttackTimer.Enabled = true;
+            _firstUnitAttackTimer.Enabled = true;
+            _secondUnitAttackTimer.Enabled = true;
         }
     }    
 }
