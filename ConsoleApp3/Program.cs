@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp3.Buildings;
+using System;
 
 namespace ConsoleApp3
 {
@@ -6,21 +7,14 @@ namespace ConsoleApp3
     {
         static void Main()
         {
-            Warrior warrior = new Warrior("Gleb");
-            Peasant peasant = new Peasant("Ivam");
-            Bishop bishop = new Bishop("Hristos", 5);
-
+            Warrior warrior = new Warrior("Bob");
+            Archer archer = new Archer("Dod");
             warrior.HealthChandgedEvent += ShowMessage;
-            warrior.Hit(peasant);
-            Console.WriteLine();
-            warrior.Hit(peasant);
+            archer.HealthChandgedEvent += ShowMessage;
 
-
-            bishop.HealingChandgedEvent += ShowMessage;
-            Console.WriteLine();
-            bishop.Heal(peasant);
-            Console.WriteLine();
-
+            Battle battle = new Battle(warrior, archer, 6);
+            battle.DistanceChangeEvent += ShowMessage;
+            battle.Fight();
         }
         static void ShowMessage(string mes)
         {

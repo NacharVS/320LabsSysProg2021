@@ -10,12 +10,16 @@ namespace ConsoleApp3
         public double HealAmount { get; set; }
 
         public event HealingChangedDelegate HealingChandgedEvent;
-        public Bishop(string name, double healCount):base(name,100,10,1,2)
+        public Bishop(string name, double healCount): base(name, 150, 2.3, 7, 3, false, 1)
         {
             HealAmount = healCount;
         }
+        public Bishop(string name) : base(name, 150, 2.3, 7, 3, false, 1)
+        {
+            HealAmount = 100;
+        }
 
-    public void Heal(Unit unit)
+        public void Heal(Unit unit)
         {
             if (unit.Health == 0)
             {

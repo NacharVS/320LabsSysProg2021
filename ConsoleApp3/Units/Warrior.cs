@@ -6,8 +6,28 @@ namespace ConsoleApp3
 {
     class Warrior : Unit
     {
-        public Warrior(string Name) : base(name, 100, 10, 5, 2)
+        private bool _rage = false;
+        public Warrior(string name) : base(name, 200, 15, 1, 4, false, 1)
         {
+
+        }
+
+        public override void Hit(Unit defender, double distance)
+        {
+            if (Health > MaxHealth / 2)
+            {
+                defender.Health -= Damage;
+            }
+            else
+            {
+                if (!_rage)
+                {
+                    Console.WriteLine($"{Name} RAGE");
+                    AttackSpeed /= 2;
+                }
+                _rage = true;
+                defender.Health -= Damage;
+            }
 
         }
     }

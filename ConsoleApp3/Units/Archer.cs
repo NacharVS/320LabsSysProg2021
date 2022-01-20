@@ -6,15 +6,38 @@ namespace ConsoleApp3
 {
     class Archer : Unit
     {
-        private int Arrows { get; set; }
-        public Archer(string name, int arrow) : base(name, 45, 10, 0, 2)
+        public int ArrowValue;
+        public Archer(string name) : base(name, 300, 13, 1, 5, true, 50)
         {
-            Arrows = arrow;
+            ArrowValue = 5;
         }
 
-        //public double RangeAttack()
-        //{
-        //    ///
-        //}
+        public override void Hit(Unit defender, double distance)
+        {
+            if (ArrowValue > 0)
+            {
+                if (distance <= MaxRangeAttack)
+                {
+                    RangeAttack(defender);
+                }
+            }
+            else
+            {
+                if (distance <= 1)
+                {
+                    defender.Health -= Damage;
+                }
+            }
+        }
+
+        void RangeAttack(Unit defender)
+        {
+            ArrowValue -= 1;
+            defender.Health -= Damage;
+            if (ArrowValue == 0)
+            {
+                CanRangeAttack = false;
+            }
+        }
     }
 }
