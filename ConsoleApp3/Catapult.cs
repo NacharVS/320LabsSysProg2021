@@ -7,7 +7,6 @@ namespace ConsoleApp3
 	class Catapult:Unit
 	{
         private double _damage;
-        private double _bildingdamage;
         private double _projectile;
         public void Shot(Unit unit)
         {
