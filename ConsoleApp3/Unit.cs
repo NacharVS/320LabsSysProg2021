@@ -66,10 +66,10 @@ namespace ConsoleApp3
 			set { _damage = value; }
 		}
 
-		public void Attack(Unit unit)
-		{
-			unit.Health -= Damage;
-		}
+		public virtual void Message()
+        {
+			Console.WriteLine($"Name: {Name}, health: {Health}");
+        }
 
 	}
 }

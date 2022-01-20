@@ -13,5 +13,10 @@ namespace ConsoleApp3
         {
             Wall = health;
         }
+
+        public override void Message()
+        {
+            Console.WriteLine($"Wall: {Wall}");
+        }
     }
 }

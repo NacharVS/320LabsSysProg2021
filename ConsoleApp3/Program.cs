@@ -7,8 +7,8 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Soldier war = new Soldier("Semen");
-            war.HealtChangedEvent += ShowMessage;
+            Soldier sold = new Soldier("Semen");
+            sold.HealtChangedEvent += ShowMessage;
 
             Peasant peas = new Peasant("Sasha");
             peas.HealtChangedEvent += ShowMessage;
@@ -16,8 +16,13 @@ namespace ConsoleApp3
             Bishop bishop = new Bishop("Anna", 20);
             bishop.HealtChangedEvent += ShowMessage;
 
-            bishop.Heal(war);
-            war.Attack(peas);
+            Battle bat = new Battle();
+            bat.Fighting(sold, peas);
+
+            Catapult cat = new Catapult();
+            cat.Message();
+            //bishop.Heal(sold);
+            //sold.Attack(peas);
         }
 
         static void ShowMessage(string mes)

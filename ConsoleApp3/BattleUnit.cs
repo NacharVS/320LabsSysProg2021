@@ -19,5 +19,10 @@ namespace ConsoleApp3
         {
             return 5;
         }
+
+        public void Attack(BattleUnit unit)
+        {
+            unit.Health -= Damage;
+        }
     }
 }
