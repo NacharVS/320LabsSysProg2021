@@ -38,7 +38,7 @@ namespace ConsoleApp3
             }
             else
             {
-                Console.WriteLine($"unit {unit.Name}can't attack this building ");
+                Console.WriteLine($"unit {unit.Name} can't attack this building ");
             }
         }
         public static void Fight(Archer archer, BattleUnit unit)
