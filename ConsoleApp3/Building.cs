@@ -9,8 +9,6 @@ namespace ConsoleApp3
         private double _wall;
         public Building(string name, double health) : base(name, health)
         {
-            Name = name;
-            Health = health;
             Wall = health;
         }
         public double Wall { get => _wall; set => _wall = value; }

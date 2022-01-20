@@ -8,9 +8,8 @@ namespace ConsoleApp3
     {
         internal override bool IsCatapult => true;
         public Catapult(string name, double health, double attackPoint): base ("Catapult", health, 5,300,100, 200)
-        
         {
-            Name = name;
+            
             Health = health;
             DamagePoint = attackPoint;
         }

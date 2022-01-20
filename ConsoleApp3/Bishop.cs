@@ -16,8 +16,7 @@ namespace ConsoleApp3
 
         public Bishop(string name, double health, double ha) : base(name, health,20,30)
         {
-            Name = name;
-            Health = health;
+            
             HealAmount = ha;
         }
         public void HealUnit(Unit unit)

@@ -10,10 +10,6 @@ namespace ConsoleApp3
         public int maxDamage;
         public BattleUnit(string name, double health,  int Attackspeed, double maxH, int min, int max) : base(name, health, Attackspeed, maxH)
         {
-            Name = name;
-            Health = health;
-            speed = Attackspeed;
-            MaxHealth = maxH;
             minDamage = min;
             maxDamage = max;
         }

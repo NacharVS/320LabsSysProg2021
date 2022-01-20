@@ -8,10 +8,7 @@ namespace ConsoleApp3
     {
         public Peasant(string name, double health, int Speed, double max):  base(name, health, Speed, max)
         {
-            Name = name;
-            Health = health;
-            speed = Speed;
-            MaxHealth = max;
+            
         }
     }
 }
