@@ -11,11 +11,14 @@ namespace ConsoleApp3
         public int RangeAttackSpeed { get; protected set; } //in milliseconds
         public RangeUnit(string type, string name, double health) : base(type, name, health) { }
         
-        public void RangeAttack(RangeUnit attackingCharacter, Unit attackedCharacter)
+        public void RangeAttack(RangeUnit attackingCharacter, Unit attackedCharacter, double distance)
         {
-            RangeProjectileCount--;
-            attackedCharacter.Damage(attackingCharacter.RangeDamage);
-            Task.Delay(RangeAttackSpeed);
+            if (distance <= MleeAttackDistance)
+            {
+                RangeProjectileCount--;
+                attackedCharacter.Damage(attackingCharacter.RangeDamage);
+                Task.Delay(RangeAttackSpeed);
+            }
         }
     }
 }

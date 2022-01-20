@@ -49,10 +49,13 @@ namespace ConsoleApp3
                                        $"Текущее HP: {Health}");
         }
 
-        public void MleeAttack(Unit attackingCharacter, Unit attackedCharacter)
+        public void MleeAttack(Unit attackingCharacter, Unit attackedCharacter, double distance)
         {
-            attackedCharacter.Damage(attackingCharacter.MleeDamage);
-            Task.Delay(MleeAttackSpeed);
+            if (distance <= MleeAttackDistance)
+            {
+                attackedCharacter.Damage(attackingCharacter.MleeDamage);
+                Task.Delay(MleeAttackSpeed);
+            }
         }
     }
 }
