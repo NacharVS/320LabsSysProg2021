@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using Core;
 
 namespace ConsoleApp3
 {
@@ -10,6 +11,9 @@ namespace ConsoleApp3
             Soldier sold = new Soldier("Semen");
             sold.HealtChangedEvent += ShowMessage;
 
+            Archer arc = new Archer("Anton");
+            arc.HealtChangedEvent += ShowMessage;
+
             Peasant peas = new Peasant("Sasha");
             peas.HealtChangedEvent += ShowMessage;
 
@@ -17,7 +21,7 @@ namespace ConsoleApp3
             bishop.HealtChangedEvent += ShowMessage;
 
             Battle bat = new Battle();
-            bat.Fighting(sold, peas);
+            bat.Fighting(sold, arc);
 
             Catapult cat = new Catapult();
             cat.Message();

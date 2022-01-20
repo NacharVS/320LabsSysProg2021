@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp3
+namespace Core
 {
-    class Catapult : BattleUnit
+    public class Catapult : BattleUnit
     {
+        public override bool isCatapult => true;
         public Catapult() : base("Catapult", 210, 30, 4, 5)
         {
 

@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp3
+namespace Core
 {
-    class Soldier : BattleUnit
+    public class Soldier : BattleUnit
     {
         public Soldier(string name) : base(name,100,10,5,2)
         {
 
         }
-        public override double MeleeAttack()
+        public override double MeleeAttack(Random random)
         {
             return 1.5;
         }

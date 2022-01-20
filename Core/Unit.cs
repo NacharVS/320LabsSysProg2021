@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp3
+namespace Core
 {
-    abstract class Unit
+	public abstract class Unit
     {		
 		public delegate void HealthChangedDelegate(string mes);
 		public event HealthChangedDelegate HealtChangedEvent;
 		public string Name { get; private set; }
-	
+		public virtual bool isCatapult => false;
 
-		public Unit(string name,double health, double damage)
+		public Unit(string name,double health)
         {
 			Name = name;
 			Health = health;
 			MaxHealth = health;
-			Damage = damage;
 			
 			Create();
 		}
@@ -41,29 +40,23 @@ namespace ConsoleApp3
 			get { return _health; }
 			set 
 			{
+				double present = Health;
 				if (value > 0)
 				{
-					double present = Health;
 					_health = value;
 					HealtChangedEvent?.Invoke($"Health: {_health}, difference: {Health-present}");
 				}
 				else if (value > MaxHealth)
                 {
 					_health = MaxHealth;
-                }
+					HealtChangedEvent?.Invoke($"Health: {_health}, difference: {Health - present}");
+				}
 				else
 				{
 					_health = 0;
 					HealtChangedEvent?.Invoke($"Unit died");
 				};
 			}
-		}
-
-		private double _damage;
-		public double Damage
-		{
-			get { return _damage; }
-			set { _damage = value; }
 		}
 
 		public virtual void Message()

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp3
+namespace Core
 {
-    class Archer : BattleUnit
+    public class Archer : BattleUnit
     {
         private int Arrows { get; set; }
 
-        public Archer(string name): base(name, 45,10,0,2)
+        public Archer(string name): base(name, 45,1,10,2)
         {
             Arrows = 5;
         }

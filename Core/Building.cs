@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp3
+namespace Core
 {
-    class Building : Unit
+    public class Building : Unit
     {
         private double wall;
         public double Wall { get { return wall; } set { wall = value; } }
 
-        public Building(string name, double health,double damage) : base(name,health,damage)
+        public Building(string name, double health) : base(name,health)
         {
             Wall = health;
         }

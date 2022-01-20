@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp3
+namespace Core
 {
-    class Bishop : BattleUnit
+    public class Bishop : MovingUnits
     {
-        public Bishop(string name, double healCount):base(name,100,10,1,2)
+        public Bishop(string name, double healCount):base(name,100,2)
         {
             HealCount = healCount;
         }

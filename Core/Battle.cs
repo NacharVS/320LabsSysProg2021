@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp3
+namespace Core
 {
-    class Battle
+    public class Battle
     {
         public void Fighting(BattleUnit unit1, BattleUnit unit2)
         {
