@@ -21,7 +21,7 @@ namespace ConsoleApp3
         public void DoHeal(Unit unit)
         {
             unit.Health += HealAmount;
-            Console.WriteLine("Востановленное клириком здоровье: " + unit.Health);
+            
         }
     }
 }
