@@ -26,18 +26,21 @@ namespace ConsoleApp3
 
         public void Damage(Unit unit)
         {
-
-            if (unit.Health - _atack > 0)
+            if (unit.name != "Build")
             {
-                unit.Health -= _atack;
-                arrows--;
+                if (unit.Health - _atack > 0)
+                {
+                    unit.Health -= _atack;
+                    arrows--;
+                }
+                else
+                {
+                    unit.Health = 0;
+                    arrows--;
+                }
             }
             else
-            {
-                unit.Health = 0;
-                arrows--;
-            }
-           
+                Console.WriteLine("only catapult can attack building");
         }
     }
 }

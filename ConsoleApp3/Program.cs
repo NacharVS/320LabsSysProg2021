@@ -12,13 +12,18 @@ namespace ConsoleApp3
             Bishop bishop = new Bishop();
             Soldier soldier = new Soldier();
             Archer archer = new Archer();
+            Build build = new Build();
+            Catapult catapult = new Catapult();
 
             warrior.HealthChanerEvent += ShowMessage;
             soldier.HealthChanerEvent += ShowMessage;
             archer.HealthChanerEvent += ShowMessage;
-            soldier.Damage(warrior);
-            archer.Damage(soldier);
-            warrior.Damage(archer);
+            build.HealthChanerEvent += ShowMessage;
+            catapult.HealthChanerEvent += ShowMessage;
+
+            archer.Damage(build);
+            catapult.Damage(build);
+
             
         }
         static void ShowMessage(string mes)
