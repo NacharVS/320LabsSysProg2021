@@ -8,10 +8,28 @@ namespace ConsoleApp3.Models
     {
         private int _countOfArows;
 
-        public int CountOfArows { get => _countOfArows; set => _countOfArows = value; }
+        public int CountOfArows 
+        { 
+            get => _countOfArows; 
+            set
+            {
+                if (value > 0)
+                {
+                    _countOfArows = value;
+                    GetDamageEvent?.Invoke($"Count of arrows: {_countOfArows}");
+                }
+                else
+                {
+                    _countOfArows = 0;
+
+                    GetDamageEvent?.Invoke("Archer has no arrows");
+                }  
+            }  
+        }
 
         internal Archer()
         {
+            MaxHealth = 750;
             CountOfArows = 5;
             Health = 750;
             AttackRange = 100;
@@ -33,5 +51,7 @@ namespace ConsoleApp3.Models
                 character.Health -= Damage;
             }
         }
+
+        internal override event GetDamageDelegate GetDamageEvent;
     }
 }

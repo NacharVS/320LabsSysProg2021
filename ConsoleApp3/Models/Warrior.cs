@@ -9,6 +9,7 @@ namespace ConsoleApp3.Models
     {
         internal Warrior()
         {
+            MaxHealth = 1000;
             Health = 1000;
             Damage = 57;
             WalkSpeed = 100;
