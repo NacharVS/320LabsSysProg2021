@@ -8,7 +8,7 @@ namespace ConsoleApp3
         public delegate void HealthChangedDelegate(string message);
         public event HealthChangedDelegate HealthChangedEvent; 
         public string Name { get; protected set; }
-        public string TypeOfClass { get; protected set; }
+        public string UnitType { get; protected set; }
         public double MaxHealth { get; private set; }
         public double Health { get; private set; }
         public double MleeDamage { get; protected set; }
@@ -19,7 +19,7 @@ namespace ConsoleApp3
         public Unit() { }
         public Unit(string type, string name, double health)
         {
-            TypeOfClass = type;
+            UnitType = type;
             MaxHealth = health;
             Health = MaxHealth;
         }
@@ -33,7 +33,7 @@ namespace ConsoleApp3
                 healing -= Health - MaxHealth;
                 Health = MaxHealth;
             }
-            HealthChangedEvent?.Invoke($"Получено лечение: {healing}\t" +
+            HealthChangedEvent?.Invoke($"{UnitType} {Name} получил лечение: {healing}\t" +
                                        $"Текущее HP: { Health}");
         }
         public void Damage(double health)
@@ -45,13 +45,13 @@ namespace ConsoleApp3
                 damage += Health;
                 Health = 0;
             }
-            HealthChangedEvent?.Invoke($"Получен урон: {damage}\t" +
+            HealthChangedEvent?.Invoke($"{UnitType} {Name} получил урон: {damage}\t" +
                                        $"Текущее HP: {Health}");
         }
 
         public void MleeAttack(Unit attackingCharacter, Unit attackedCharacter, double distance)
         {
-            if (distance <= MleeAttackDistance)
+            if (distance <= MleeAttackDistance && attackingCharacter.Health > 0 && attackedCharacter.Health > 0)
             {
                 attackedCharacter.Damage(attackingCharacter.MleeDamage);
                 Task.Delay(MleeAttackSpeed);

@@ -8,7 +8,7 @@ namespace ConsoleApp3
         {
             MleeDamage = 10;
             MleeAttackDistance = 1;
-            MleeAttackSpeed = 1500;
+            MleeAttackSpeed = 3000;
 
             WalkingSpeed = 1;
         }

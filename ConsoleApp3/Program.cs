@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace ConsoleApp3
 {
@@ -10,7 +11,7 @@ namespace ConsoleApp3
             var archer = new Archer("Li");
             var cleric = new Cleric("Abdul");
 
-            Battle(archer, soldier, 10);
+            Battle(archer, soldier, 1);
         }
 
         public static void Battle(Unit leftUnit, Unit rightUnit, double distance)
@@ -18,29 +19,38 @@ namespace ConsoleApp3
             leftUnit.HealthChangedEvent += ShowMessage;
             rightUnit.HealthChangedEvent += ShowMessage;
 
-            if (leftUnit is RangeUnit)
-                Console.WriteLine("OK");
-            Console.WriteLine(leftUnit.GetType());
+            Thread rightUnitThread;
 
             while (leftUnit.Health > 0 && rightUnit.Health > 0)
             {
-                if (leftUnit is RangeUnit && (leftUnit as RangeUnit).RangeProjectileCount > 0)
-                {
-                    RangeUnitAttack(leftUnit as RangeUnit, rightUnit, distance);
-                }
+                UnitAttackParameters unitAttackParameters = new UnitAttackParameters(rightUnit, leftUnit, distance);
+                rightUnitThread = new Thread(new ParameterizedThreadStart(UnitAttack));
+                rightUnitThread.Start(unitAttackParameters);
+                UnitAttack(leftUnit, rightUnit, distance);
             }
         }
-
-        public static void MleeUnitAttack(Unit attackingCharacter, Unit attackedCharacter, double distance)
+        public static void UnitAttack(object obj)
         {
-            attackingCharacter.MleeAttack(attackingCharacter, attackedCharacter, distance);
+            UnitAttackParameters unitAttackParameters = (UnitAttackParameters)obj;
+            UnitAttack(unitAttackParameters.AttackingUnit, unitAttackParameters.AttackedUnit, unitAttackParameters.Distance);
         }
-        public static void RangeUnitAttack(RangeUnit attackingCharacter, Unit attackedCharacter, double distance)
+        public static void UnitAttack(Unit attackingUnit, Unit attackedUnit, double distance)
         {
-            if (attackingCharacter.RangeProjectileCount > 0)
-                attackingCharacter.RangeAttack(attackingCharacter, attackedCharacter, distance);
+            if (attackingUnit is RangeUnit && (attackingUnit as RangeUnit).RangeProjectileCount > 0)
+                RangeUnitAttack(attackingUnit as RangeUnit, attackedUnit, distance);
             else
-                attackingCharacter.MleeAttack(attackingCharacter, attackedCharacter, distance);
+                MleeUnitAttack(attackingUnit, attackedUnit, distance);
+        }
+        public static void MleeUnitAttack(Unit attackingUnit, Unit attackedUnit, double distance)
+        {
+            attackingUnit.MleeAttack(attackingUnit, attackedUnit, distance);
+        }
+        public static void RangeUnitAttack(RangeUnit attackingUnit, Unit attackedUnit, double distance)
+        {
+            if (attackingUnit.RangeProjectileCount > 0)
+                attackingUnit.RangeAttack(attackingUnit, attackedUnit, distance);
+            else
+                attackingUnit.MleeAttack(attackingUnit, attackedUnit, distance);
         }
 
         public static void Heal(Unit healingCharacter, Unit healedCharacter)

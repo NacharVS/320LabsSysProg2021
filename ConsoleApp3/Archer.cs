@@ -8,14 +8,14 @@ namespace ConsoleApp3
         {
             MleeDamage = 4;
             MleeAttackDistance = 1;
-            MleeAttackSpeed = 1000;
+            MleeAttackSpeed = 1500;
 
             WalkingSpeed = 1.5;
 
             RangeProjectileCount = 5;
             RangeDamage = 15;
             RangeAttackDistance = 8;
-            RangeAttackSpeed = 2000;
+            RangeAttackSpeed = 6000;
         }
     }
 }
