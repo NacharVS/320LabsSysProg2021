@@ -12,8 +12,9 @@ namespace ConsoleApp3
         public double MaxHealth { get; private set; }
         public double Health { get; private set; }
         public double MleeDamage { get; protected set; }
+        public double MleeAttackDistance { get; protected set; } //in meters
         public int MleeAttackSpeed { get; protected set; } //in milliseconds
-        public int WalkingSpeed { get; protected set; } //cells per second
+        public double WalkingSpeed { get; protected set; } //in meters per second
 
         public Unit() { }
         public Unit(string type, string name, double health)

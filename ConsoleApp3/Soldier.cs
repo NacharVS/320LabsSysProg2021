@@ -7,7 +7,10 @@ namespace ConsoleApp3
         public Soldier(string name) : base("Soldier", name, 100) 
         {
             MleeDamage = 10;
+            MleeAttackDistance = 1;
             MleeAttackSpeed = 1500;
+
+            WalkingSpeed = 1;
         }
     }
 }
