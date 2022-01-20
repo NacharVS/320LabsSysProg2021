@@ -2,13 +2,30 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp3
+namespace Core
 {
-    abstract class Unit
+    public abstract class Unit
     {
+		public Unit(string name, double health)
+		{
+			Name = name;
+			Health = health;
+			_maxHealth = health;
+		}
+
+		private string _name;
+
+		public string Name
+		{
+			get { return _name; }
+			set { _name = value; }
+		}
+
+
 		public delegate void HealthChangedDelegate(string message);
 
 		private double _health;
+		public double _maxHealth;
 		public double Health
 		{
 			get { return _health; }
@@ -20,6 +37,11 @@ namespace ConsoleApp3
 					_health = value;
 					HealthChangedEvent?.Invoke($"Health: {value}, Changed to: {Health - previousHealth}");
 				}
+				else if (value > _maxHealth)
+				{
+					_health = _maxHealth;
+					HealthChangedEvent?.Invoke($"Health: {value}, Changed to: {Health - previousHealth}");
+				}
 				else
 				{
 					_health = 0;
@@ -28,20 +50,11 @@ namespace ConsoleApp3
 			}
 		}
 
-		private double _damage;
-
-		public double Damage
-		{
-			get { return _damage; }
-			set { _damage = value; }
-		}
-
-
 		public event HealthChangedDelegate HealthChangedEvent;
 
-		public void Attack(Unit unit)
+		public override string ToString()
 		{
-			unit.Health -= Damage;
+			return $"Name:{Name};Health:{Health}";
 		}
 	}
 }
