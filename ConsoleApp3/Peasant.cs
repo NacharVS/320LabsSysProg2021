@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Peasant : Battle
+    class Peasant : MovingUnit
     {
-        public Peasant(string name) : base(name, 90, 100, 2, 0)
+        public Peasant(string name, double health, double damage, int speed) : base(name, health, damage, speed)
         {
 
         }

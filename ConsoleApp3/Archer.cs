@@ -7,14 +7,21 @@ namespace ConsoleApp3
     class Archer : Battle
     {
         private int _arrows { get; set; }
-        public Archer(string name) : base(name, 40, 10, 0, 4)
+        public Archer(string name, double health, double damage, int attackSpeed) : base(name, health, damage, attackSpeed)
         {
             _arrows = 3;
         }
 
         public double RangeAttack()
         {
-            return 3;
+            if (_arrows > 0)
+            {
+                return 3;
+            }
+            else
+            {
+                return Infighting();
+            }
         }
     }
 }

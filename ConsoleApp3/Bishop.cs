@@ -4,10 +4,10 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Bishop : Battle
+    class Bishop : MovingUnit
     {
 
-        public Bishop(string name, double healCount) : base(name, 100, 10, 1, 2)
+        public Bishop(string name, double health, double _healAmount) : base(name, health, 20, 30)
         {
             HealAmount = _healAmount;
         }
@@ -21,9 +21,9 @@ namespace ConsoleApp3
 
         public void Heal(Unit unit)
         {
-            if (unit.Health + HealAmount >= unit.MaxHealth)
+            if (unit.Health + HealAmount >= unit._maxHealth)
             {
-                unit.Health = unit.MaxHealth;
+                unit.Health = unit._maxHealth;
             }
             else
             {

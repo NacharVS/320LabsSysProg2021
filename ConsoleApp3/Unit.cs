@@ -30,15 +30,9 @@ namespace ConsoleApp3
 			Console.WriteLine($"{Name} is created");
 		}
 
-		private double _maxHealth;
-
-		public double MaxHealth
-		{
-			get { return _maxHealth; }
-			set { _maxHealth = value;  }
-		}
-
 		private double _health;
+
+		public double _maxHealth;
 		public double Health
 		{
 			get { return _health; }
@@ -46,13 +40,13 @@ namespace ConsoleApp3
 			{
 				if (value > 0)
 				{
-					var presentHealth = Health;
+					var pastHealth = Health;
 					_health = value;
-					HealthChangedEvent?.Invoke($"Health: {value}, changed to: {Health - presentHealth}");
+					HealthChangedEvent?.Invoke($"Health: {value}, changed to: {Health - pastHealth}");
 				}
-				else if (value > MaxHealth)
+				else if (value > _maxHealth)
 				{
-					_health = MaxHealth;
+					_health = _maxHealth;
 				}
 				else
 				{

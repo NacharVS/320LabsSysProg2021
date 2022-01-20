@@ -6,14 +6,14 @@ namespace ConsoleApp3
 {
     class Warrior : Battle
     {
-        public Warrior(string name) : base(name, 100, 10, 5, 2)
+        public Warrior(string name, double health, double damage, int attackSpeed) : base(name, health, damage, attackSpeed)
         {
 
         }
 
         public override double Infighting()
         {
-            return 2;
+            return 5;
         }
     }
 }
