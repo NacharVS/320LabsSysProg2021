@@ -6,19 +6,19 @@ namespace Core
 {
     public class Warrior : BattleUnit
     {
-        public Warrior(string name) : base(name, 200, 3, 10, 5) { }
+        public Warrior(string name) : base(name, 100, 3, 8, 5) { }
 
-        public override double MleeAttack()
+        public override double MeleeAttack()
         {
             if (!rage && Health > 0.4 * _maxHealth)
             {
-                return base.MleeAttack();
+                return base.MeleeAttack();
 
             }
             else
             {
                 rage = true;
-                return base.MleeAttack() * 2;
+                return base.MeleeAttack() * 2;
             }
         }
     }

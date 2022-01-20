@@ -10,7 +10,10 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            
+            Battle battle = new Battle();
+            Archer archer = new Archer("Igor");
+            Warrior warrior = new Warrior("Iking");
+            Console.WriteLine(battle.Fight(archer, warrior));
         }
         // 1. create methods for inflict damage
         // 2. health value can not be less than 0

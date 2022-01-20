@@ -16,7 +16,7 @@ namespace Core
 			set { _wall = value; }
 		}
 
-		public Building(string name, double health, double damage) : base(name, health, damage)
+		public Building(string name, double health) : base(name, health)
 		{
 			Wall = health;
 		}

@@ -8,9 +8,52 @@ namespace Core
 {
     public class Battle
     {
-        public string Fight(Unit unit, Unit unit1)
+        public string Fight(BattleUnit battleUnit1, BattleUnit battleUnit2)
         {
-            return unit.ToString();
+            string battleLog = "";
+            while (battleUnit1.Health > 0 && battleUnit2.Health > 0)
+            {
+                battleUnit1.Health -= battleUnit2.MeleeAttack();
+                battleUnit2.Health -= battleUnit1.MeleeAttack();
+                battleLog += $"{battleUnit1}{Environment.NewLine}{battleUnit2}{Environment.NewLine}";
+            }
+            return battleLog;
+        }
+
+        public string Fight(Archer archer, BattleUnit battleUnit)
+        {
+            string battleLog = "";
+            while (archer.Health > 0 && battleUnit.Health > 0)
+            {
+                archer.Health -= battleUnit.MeleeAttack();
+                battleUnit.Health -= archer.RangeAttack();
+                battleLog += $"{archer}{Environment.NewLine}{battleUnit}{Environment.NewLine}";
+            }
+            return battleLog;
+        }
+
+        public string Fight(BattleUnit battleUnit, Archer archer)
+        {
+            string battleLog = "";
+            while (archer.Health > 0 && battleUnit.Health > 0)
+            {
+                archer.Health -= battleUnit.MeleeAttack();
+                battleUnit.Health -= archer.RangeAttack();
+                battleLog += $"{archer}{Environment.NewLine}{battleUnit}{Environment.NewLine}";
+            }
+            return battleLog;
+        }
+
+        public string Fight(Archer archer1, Archer archer2)
+        {
+            string battleLog = "";
+            while (archer1.Health > 0 && archer2.Health > 0)
+            {
+                archer1.Health -= archer2.RangeAttack();
+                archer2.Health -= archer1.RangeAttack();
+                battleLog += $"{archer1}{Environment.NewLine}{archer2}{Environment.NewLine}";
+            }
+            return battleLog;
         }
     }
 }

@@ -31,9 +31,9 @@ namespace Core
 			set { _attackSpeed = value; }
 		}
 
-		public virtual double MleeAttack()
+		public virtual double MeleeAttack()
 		{
-			double damage = (new Random()).Next((int)(Damage * 0.8), (int)(Damage * 1.2));
+			double damage = (new Random()).Next((int)(Damage * 0.8), (int)(Damage * 1.2) + 1);
 			return damage;
 		}
 	}
