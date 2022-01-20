@@ -26,8 +26,8 @@ namespace ConsoleApp3
             //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
             //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
 
-            //Catapult catapult = new Catapult();
-            //Building building = new Building();
+            Catapult catapult = new Catapult();
+            Building building = new Building();
             Arena arena = new Arena();
 
             //arena.StartFighting(catapult, building);

@@ -7,6 +7,15 @@ namespace ConsoleApp3.Models
 {
     internal class Warrior : Character
     {
+        public override double Health
+        {
+            get => base.Health;
+            set 
+            { 
+                base.Health = value;
+                GetDamageEvent?.Invoke($"The Warrior has {base.Health} health points");
+            }
+        }
         internal Warrior()
         {
             MaxHealth = 1000;
@@ -15,5 +24,7 @@ namespace ConsoleApp3.Models
             WalkSpeed = 100;
             AttackRange = 1;
         }
+
+        internal override event GetDamageDelegate GetDamageEvent;
     }
 }

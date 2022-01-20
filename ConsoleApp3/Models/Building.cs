@@ -27,6 +27,16 @@ namespace ConsoleApp3.Models
             }
         }
 
+        public override double Health
+        {
+            get => base.Health;
+            set 
+            { 
+                base.Health = value;
+                GetDamageEvent?.Invoke($"The Building has {base.Health} health points");
+            }
+        }
+
         internal Building()
         {
             MaxHealth = 1000;

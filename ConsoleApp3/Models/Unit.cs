@@ -18,7 +18,7 @@ namespace ConsoleApp3.Models
 
         private double _health;
 
-        public double Health
+        public virtual double Health
         {
             get => _health;
             set

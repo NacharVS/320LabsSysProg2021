@@ -27,6 +27,16 @@ namespace ConsoleApp3.Models
             }  
         }
 
+        public override double Health
+        {
+            get => base.Health;
+            set
+            {
+                base.Health = value;
+                GetDamageEvent?.Invoke($"The Archer has {base.Health} health points");
+            }
+        }
+
         internal Archer()
         {
             MaxHealth = 750;
