@@ -6,9 +6,9 @@ namespace ConsoleApp3
     {
         static void Main()
         {
-            Warrior warrior = new Warrior();
-            Peasant peasant = new Peasant();
-            Bishop bishop = new Bishop();
+            Warrior warrior = new Warrior("Gleb");
+            Peasant peasant = new Peasant("Ivam");
+            Bishop bishop = new Bishop("Hristos", 5);
 
             warrior.HealthChandgedEvent += ShowMessage;
             warrior.Hit(peasant);
@@ -20,6 +20,7 @@ namespace ConsoleApp3
             Console.WriteLine();
             bishop.Heal(peasant);
             Console.WriteLine();
+
         }
         static void ShowMessage(string mes)
         {
