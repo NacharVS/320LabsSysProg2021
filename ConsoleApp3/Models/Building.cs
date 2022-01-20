@@ -29,9 +29,9 @@ namespace ConsoleApp3.Models
 
         internal Building()
         {
+            MaxHealth = 1000;
             Wall = 1500;
             Health = 1000;
-            MaxHealth = Health;
         }
 
         internal override event GetDamageDelegate GetDamageEvent;

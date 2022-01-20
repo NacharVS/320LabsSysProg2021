@@ -11,7 +11,7 @@ namespace ConsoleApp3.Models
         {
             if (building.Wall > 0)
                 building.Wall -= Damage;
-            else
+            else if(building.Wall <= 0)
                 building.Health -= Damage;
         }
 

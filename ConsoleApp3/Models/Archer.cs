@@ -18,5 +18,14 @@ namespace ConsoleApp3.Models
             Damage = 50;
             WalkSpeed = 100;
         }
+
+        public override void Attack(Character character)
+        {
+            if(CountOfArows > 0)
+            {
+                character.Health -= Damage;
+                CountOfArows--;
+            }
+        }
     }
 }

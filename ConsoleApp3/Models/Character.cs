@@ -16,7 +16,7 @@ namespace ConsoleApp3.Models
         private double _walkSpeed;
         public double WalkSpeed { get => _walkSpeed; set => _walkSpeed = value; }
 
-        public void Attack(Character character)
+        public virtual void Attack(Character character)
         {
             character.Health -= Damage;
         }

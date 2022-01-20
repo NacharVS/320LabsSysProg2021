@@ -8,25 +8,31 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Warrior warrior = new Warrior();
-            Peasant peasant = new Peasant();
-            Cleric cleric = new Cleric(); 
+            //Warrior warrior = new Warrior();
+            //Peasant peasant = new Peasant();
+            //Cleric cleric = new Cleric(); 
 
-            Console.WriteLine($"Peasant's HP: {peasant.Health}");
+            //Console.WriteLine($"Peasant's HP: {peasant.Health}");
 
-            peasant.GetDamageEvent += ShowMessage;
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
-            peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            //peasant.GetDamageEvent += ShowMessage;
+            //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+            //peasant.Health = ToDamageHero(peasant.Health, warrior.Damage);
+
+            Catapult catapult = new Catapult();
+            Building building = new Building();
+            Arena arena = new Arena();
 
 
+             
+            arena.StartFighting(catapult, building);
 
 
             //-----------------------------------------------------------------------
