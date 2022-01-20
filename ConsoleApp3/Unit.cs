@@ -1,23 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
-    class Character
+    class Unit
     {
         public delegate void HealthChangedDelegate(string message);
         public event HealthChangedDelegate HealthChangedEvent; 
-        public double MaxHealth { get; set; }
-        public double Health { get; set; }
-        public double Attack { get; set; }
+        public string Name { get; protected set; }
+        public string TypeOfClass { get; protected set; }
+        public double MaxHealth { get; private set; }
+        public double Health { get; private set; }
+        public double MleeDamage { get; protected set; }
+        public int MleeAttackSpeed { get; protected set; } //in milliseconds
+        public int WalkingSpeed { get; protected set; } //cells per second
 
-        public Character() { }
-        public Character(double health, double attack)
+        public Unit() { }
+        public Unit(string type, string name, double health)
         {
+            TypeOfClass = type;
             MaxHealth = health;
             Health = MaxHealth;
-            Attack = attack;
         }
 
         public void Heal(double health)
@@ -43,6 +46,11 @@ namespace ConsoleApp3
             }
             HealthChangedEvent?.Invoke($"Получен урон: {damage}\t" +
                                        $"Текущее HP: {Health}");
+        }
+
+        public void MleeAttack()
+        {
+            Task.Delay(MleeAttackSpeed);
         }
     }
 }

@@ -1,11 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleApp3
 {
-    class Archer : Character
+    class Archer : RangeUnit
     {
-        public Archer() : base(100, 5) { }
+        public Archer(string name) : base("Archer", name, 100) 
+        {
+            MleeDamage = 4;
+            MleeAttackSpeed = 1000;
+
+            RangeProjectileCount = 5;
+            RangeDamage = 15;
+            RangeAttackSpeed = 2000;
+        }
     }
 }

@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleApp3
 {
-    class Cleric : Character
+    class Cleric : Unit
     {
-        public double Healing { get; set; }
-        public Cleric() : base(80, 3)
+        public double Healing { get; private set; }
+        public Cleric(string name) : base("Cleric", name, 80)
         {
+            MleeDamage = 3;
             Healing = 10;
         }
     }

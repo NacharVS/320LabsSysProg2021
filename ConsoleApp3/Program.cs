@@ -1,5 +1,4 @@
-﻿    using System;
-using System.Threading;
+﻿using System;
 
 namespace ConsoleApp3
 {
@@ -7,49 +6,29 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            var warrior = new Warrior();
-            var archer = new Archer();
-            var cleric = new Cleric();
-            Console.WriteLine($"HP: {warrior.Health}");
-            warrior.HealthChangedEvent += ShowMessage;
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
-            Attack(archer, warrior);
+            var soldier = new Soldier("Petya");
+            var archer = new Archer("li");
+            var cleric = new Cleric("Abdul");
 
-            Heal(cleric, warrior);
         }
 
-        public static void Attack(Character attackingCharacter, Character attackedCharacter)
+        public void Battle(Unit leftUnit, Unit rightUnit, int distance)
         {
-            if (attackingCharacter.Health <= 0)
-                Console.WriteLine("Вы мертвы, действие невозможно.");
-            else if (attackedCharacter.Health <= 0)
-                Console.WriteLine("Враг уже мертв!");
-            else
-                attackedCharacter.Damage(attackingCharacter.Attack);
+            leftUnit.HealthChangedEvent += ShowMessage;
+            rightUnit.HealthChangedEvent += ShowMessage;
         }
 
-        public static void Heal(Character healingCharacter, Character healedCharacter)
+        public static void MleeAttack(Unit attackingCharacter, Unit attackedCharacter)
+        {
+            attackedCharacter.Damage(attackingCharacter.MleeDamage);
+        }
+        public static void RangeAttack(RangeUnit attackingCharacter, Unit attackedCharacter)
+        {
+            attackedCharacter.Damage(attackingCharacter.RangeDamage);
+            attackingCharacter.RangeAttack();
+        }
+
+        public static void Heal(Unit healingCharacter, Unit healedCharacter)
         {
             if (healingCharacter.Health <= 0)
                 Console.WriteLine("Вы мертвы, действие невозможно.");
@@ -58,6 +37,7 @@ namespace ConsoleApp3
             else
                 healedCharacter.Heal((healingCharacter as Cleric).Healing);
         }
+
         public static void ShowMessage(string mes)
         {
             Console.WriteLine(mes);
