@@ -6,17 +6,16 @@ namespace ConsoleApp3
 {
     class Bishop : Unit
     {
-        private double _healPower;
+        public Bishop()
+        {
+            HealPower = 5;
+        }
 
+        private double _healPower;
         public double HealPower
         {
             get { return _healPower; }
             set { _healPower = value; }
-        }
-
-        public Bishop()
-        {
-            _healPower = 10;
         }
 
         public void Heal(Unit unit)
