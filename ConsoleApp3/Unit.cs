@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApp3
@@ -54,7 +55,7 @@ namespace ConsoleApp3
             if (distance <= MleeAttackDistance && attackingCharacter.Health > 0 && attackedCharacter.Health > 0)
             {
                 attackedCharacter.Damage(attackingCharacter.MleeDamage);
-                Task.Delay(MleeAttackSpeed);
+                Thread.Sleep(MleeAttackSpeed);
             }
         }
     }

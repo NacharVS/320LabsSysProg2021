@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApp3
@@ -17,7 +18,7 @@ namespace ConsoleApp3
             {
                 RangeProjectileCount--;
                 attackedCharacter.Damage(attackingCharacter.RangeDamage);
-                Task.Delay(RangeAttackSpeed);
+                Thread.Sleep(RangeAttackSpeed);
             }
         }
     }

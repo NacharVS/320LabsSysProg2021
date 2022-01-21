@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
@@ -19,20 +20,15 @@ namespace ConsoleApp3
             leftUnit.HealthChangedEvent += ShowMessage;
             rightUnit.HealthChangedEvent += ShowMessage;
 
-            Thread rightUnitThread;
-
             while (leftUnit.Health > 0 && rightUnit.Health > 0)
             {
-                UnitAttackParameters unitAttackParameters = new UnitAttackParameters(rightUnit, leftUnit, distance);
-                rightUnitThread = new Thread(new ParameterizedThreadStart(UnitAttack));
-                rightUnitThread.Start(unitAttackParameters);
-                UnitAttack(leftUnit, rightUnit, distance);
+                UnitAttackAsync(leftUnit, rightUnit, distance);
+                UnitAttackAsync(rightUnit, leftUnit, distance);
             }
         }
-        public static void UnitAttack(object obj)
+        public static async void UnitAttackAsync(Unit attackingUnit, Unit attackedUnit, double distance)
         {
-            UnitAttackParameters unitAttackParameters = (UnitAttackParameters)obj;
-            UnitAttack(unitAttackParameters.AttackingUnit, unitAttackParameters.AttackedUnit, unitAttackParameters.Distance);
+            await Task.Run(() => UnitAttack(attackingUnit, attackedUnit, distance));
         }
         public static void UnitAttack(Unit attackingUnit, Unit attackedUnit, double distance)
         {
