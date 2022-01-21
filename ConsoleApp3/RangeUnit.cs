@@ -14,11 +14,10 @@ namespace ConsoleApp3
         
         public void RangeAttack(RangeUnit attackingCharacter, Unit attackedCharacter, double distance)
         {
-            if (distance <= MleeAttackDistance && attackingCharacter.Health > 0)
+            if (distance <= RangeAttackDistance && attackingCharacter.Health > 0)
             {
                 RangeProjectileCount--;
                 attackedCharacter.Damage(attackingCharacter.RangeDamage);
-                Thread.Sleep(RangeAttackSpeed);
             }
         }
     }

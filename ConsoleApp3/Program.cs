@@ -40,23 +40,25 @@ namespace ConsoleApp3
         public static void MleeUnitAttack(Unit attackingUnit, Unit attackedUnit, double distance)
         {
             attackingUnit.MleeAttack(attackingUnit, attackedUnit, distance);
+            Thread.Sleep(attackingUnit.MleeAttackSpeed);
         }
         public static void RangeUnitAttack(RangeUnit attackingUnit, Unit attackedUnit, double distance)
         {
             if (attackingUnit.RangeProjectileCount > 0)
+            {
                 attackingUnit.RangeAttack(attackingUnit, attackedUnit, distance);
+                Thread.Sleep(attackingUnit.RangeAttackSpeed);
+            }
             else
+            {
                 attackingUnit.MleeAttack(attackingUnit, attackedUnit, distance);
+                Thread.Sleep(attackingUnit.MleeAttackSpeed);
+            }
         }
 
         public static void Heal(Unit healingCharacter, Unit healedCharacter)
         {
-            if (healingCharacter.Health <= 0)
-                Console.WriteLine("Вы мертвы, действие невозможно.");
-            else if (healedCharacter.Health <= 0)
-                Console.WriteLine("Тело мертво... Может помочь черная магия.");
-            else
-                healedCharacter.Heal((healingCharacter as Cleric).Healing);
+            healedCharacter.Heal((healingCharacter as Cleric).Healing);
         }
 
         public static void ShowMessage(string mes)

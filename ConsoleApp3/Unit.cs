@@ -21,6 +21,7 @@ namespace ConsoleApp3
         public Unit(string type, string name, double health)
         {
             UnitType = type;
+            Name = name;
             MaxHealth = health;
             Health = MaxHealth;
         }
@@ -55,7 +56,6 @@ namespace ConsoleApp3
             if (distance <= MleeAttackDistance && attackingCharacter.Health > 0 && attackedCharacter.Health > 0)
             {
                 attackedCharacter.Damage(attackingCharacter.MleeDamage);
-                Thread.Sleep(MleeAttackSpeed);
             }
         }
     }
