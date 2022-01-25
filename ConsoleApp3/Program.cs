@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
@@ -7,31 +8,52 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Warrior warrior = new Warrior("Karen");
-            warrior.HealthChangedEvent += ShowMessage;
 
-            Warrior warrior2 = new Warrior("warrior2");
-            warrior2.HealthChangedEvent += ShowMessage;
+            Task timer1 = new Task(() => TimerStart(1));
+            Task timer2 = new Task(() => TimerStart(2));
 
-            Peasant peasant = new Peasant("Abdul", 70, 10);
-            peasant.HealthChangedEvent += ShowMessage;
+            Task timer5 = new Task(() => TimerStart(5));
+            Task timer6 = new Task(() => TimerStart(6));
 
-            Bishop bishop = new Bishop("Jora", 100, 35, 15);
-            bishop.HealthChangedEvent += ShowMessage;
+            Task timer3 = timer2.ContinueWith(t => TimeWaitHalf(3, timer5));
+            Task timer4 = timer2.ContinueWith(t => TimeWaitHalf(4, timer6));
 
-            Archer archer = new Archer("Kolya");
-            archer.HealthChangedEvent += ShowMessage;
-
-            Battle.Fight(archer, warrior);
-
+            timer1.Start();
+            timer2.Start();
+            timer3.Wait();
+            timer4.Wait();
+            timer5.Wait();
+            timer6.Wait();
         }
 
-        // 1. create methods for inflict damage
-        // 2. health value can not be less than 0
-        //3*. Implement method heal of bishop class. 
-        static void ShowMessage(string message)
+        static void TimerStart(int timerNum)
         {
-            Console.WriteLine(message);
+            for (int i = 30; i > 0; i--)
+            {
+                Console.WriteLine($"timer {timerNum} {i}");
+                Thread.Sleep(500);
+            }
+            Thread.Sleep(500);
         }
+
+        static void TimeWaitHalf(int timerNum, Task timer)
+        {
+            for (int i = 30; i >= 15; i--)
+            {
+                Console.WriteLine($"timer {timerNum} {i}");
+                Thread.Sleep(500);
+            }
+            Thread.Sleep(500);
+            timer.Start();
+
+            for (int i = 14; i > 1; i--)
+            {
+                Console.WriteLine($"timer {timerNum} {i}");
+                Thread.Sleep(500);
+            }
+            Thread.Sleep(500);
+            Console.WriteLine($"timer {timerNum} seconds have passed");
+        }
+
     }
 }
