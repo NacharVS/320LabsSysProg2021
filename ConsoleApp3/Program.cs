@@ -4,7 +4,7 @@ using System.ComponentModel.Design;
 using System.Threading;
 using Core;
 
-namespace ConsoleApp3
+namespace StrategyConsole
 {
     class Program
     {
