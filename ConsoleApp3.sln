@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3", "ConsoleApp3\ConsoleApp3.csproj", "{998F4CBF-1D59-47BD-B587-DA4CF24614B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp3", "ConsoleApp3\ConsoleApp3.csproj", "{998F4CBF-1D59-47BD-B587-DA4CF24614B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerConsole", "TimerConsole\TimerConsole.csproj", "{56E601FC-6261-4FC5-AA85-D3B017C10743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerWPF", "TimerWPF\TimerWPF.csproj", "{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{998F4CBF-1D59-47BD-B587-DA4CF24614B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{998F4CBF-1D59-47BD-B587-DA4CF24614B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{998F4CBF-1D59-47BD-B587-DA4CF24614B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56E601FC-6261-4FC5-AA85-D3B017C10743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E601FC-6261-4FC5-AA85-D3B017C10743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E601FC-6261-4FC5-AA85-D3B017C10743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E601FC-6261-4FC5-AA85-D3B017C10743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
