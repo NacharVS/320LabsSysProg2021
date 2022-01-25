@@ -8,17 +8,22 @@ namespace ConsoleApp3
     {
         private double _heal;
 
-        public double Heal { get => _heal; set => _heal = value; }
+        public double Heal 
+        {
+            get
+            {
+                return _heal;
+            }
+            set => _heal = value; }
 
         internal Cleric()
         {
             Heal = 125;
         }
 
-        public void ToHeal(double health)
+        public double ToHeal()
         {
-            health += Heal;
-            GetEvent($"You're healed for {Heal} points");
+            return Heal;
         }
     }
 }
