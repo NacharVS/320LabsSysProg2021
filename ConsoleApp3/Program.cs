@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
@@ -7,36 +8,47 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Archer archer = new Archer(50,10, 4, 10);
-            Peasant peasant = new Peasant(500);
-            Bishop bishop = new Bishop(100, 20, 2, 3);
-            
-            archer.HealthChangedEvent += ShowMessage;
-            peasant.HealthChangedEvent += ShowMessage;
-            bishop.HealthChangedEvent += ShowMessage;
+            Task timer1 = new Task(() => Timer(1));
+            Task timer2 = new Task(() => Timer(2));
 
-            Console.WriteLine(peasant.Health);
-            archer.Attack(peasant, 10);
-            Console.WriteLine(peasant.Health);
-            archer.Attack(peasant, 10);
-            Console.WriteLine(peasant.Health);
-            archer.Attack(peasant, 10);
-            Console.WriteLine(peasant.Health);
-            archer.Attack(peasant, 10);
-            Console.WriteLine(peasant.Health);
-            archer.Attack(peasant, 10);
-            Console.WriteLine(peasant.Health);
-            archer.Attack(peasant, 10);
-            Console.WriteLine(peasant.Health);
-            archer.Attack(peasant, 10);
-            Console.WriteLine(peasant.Health);
-            bishop.Heal(peasant);
-            Console.WriteLine(peasant.Health);
+            Task timer5 = new Task(() => Timer(5));
+            Task timer6 = new Task(() => Timer(6));
+
+            Task timer3 = timer2.ContinueWith(x => ModifiedTimer(3, timer5));
+            Task timer4 = timer2.ContinueWith(x => ModifiedTimer(4, timer6));
+
+            timer1.Start(); 
+            timer2.Start();
+            timer3.Wait();
+            timer4.Wait();
+            timer5.Wait();
+            timer6.Wait();
         }
 
-        static void ShowMessage(string mes)
+        static void Timer(int timerNumber)
         {
-            Console.WriteLine(mes);
+            for (int i = 30; i > 0; i--)
+            {
+                Console.WriteLine($"таймер {timerNumber}: {i}");
+                Thread.Sleep(500);
+            }
+            Console.WriteLine($"таймер {timerNumber} всё");
+        }
+
+        static void ModifiedTimer(int timerNumber, Task timer)
+        {
+            for (int i = 30; i >= 15; i--)
+            {
+                Console.WriteLine($"таймер {timerNumber}: {i}");
+                Thread.Sleep(500);
+            }
+            timer.Start();
+            for (int i = 14; i > 1; i--)
+            {
+                Console.WriteLine($"таймер {timerNumber}: {i}");
+                Thread.Sleep(500);
+            }
+            Console.WriteLine($"таймер {timerNumber} всё");
         }
     }
 }
