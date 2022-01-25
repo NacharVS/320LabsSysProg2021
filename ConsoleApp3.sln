@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp3", "ConsoleApp3\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timer", "Timer\Timer.csproj", "{63549254-6235-4C42-9A1A-5E7878D8D7FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTimer", "WpfTimer\WpfTimer.csproj", "{4B65FC7B-7965-481A-9B09-5279E599FB69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{63549254-6235-4C42-9A1A-5E7878D8D7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63549254-6235-4C42-9A1A-5E7878D8D7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63549254-6235-4C42-9A1A-5E7878D8D7FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B65FC7B-7965-481A-9B09-5279E599FB69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B65FC7B-7965-481A-9B09-5279E599FB69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B65FC7B-7965-481A-9B09-5279E599FB69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B65FC7B-7965-481A-9B09-5279E599FB69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
