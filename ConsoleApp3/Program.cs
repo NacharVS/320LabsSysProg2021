@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
@@ -7,21 +8,54 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Unit war = new Warrior();
-            Unit peas = new Peasant();
+            int time = 30;
 
-            war.Health = 10;
-            peas.Health = 10;
+            Task<int> timer1 = new Task<int>(() => GenerationTimer(time));
+            Task<int> timer2 = new Task<int>(() => GenerationTimer(time));
 
-            war.Attack();
-            peas.Defense();
-            peas.Attack();
-            war.Defense();
+            Task<int> timer3 = timer1.ContinueWith(doub => GenerationTimer(doub.Result));
+            Task<int> timer4 = timer1.ContinueWith(doub => GenerationTimer(doub.Result));
+
+            Task<int> timer5 = timer1.ContinueWith(doub => HalfTimer(doub.Result / 2));
+            Task<int> timer6 = timer1.ContinueWith(doub => HalfTimer(doub.Result / 2));
+
+            timer1.Start();
+            timer2.Start();
+
+            timer3.Wait();
+            timer4.Wait();
+
+            timer5.Wait();
+            timer6.Wait();
         }
-        // 1. create methods for imitation of battle between 2 units. All nonBuildingsunits can attack each other
-        // 2. only catapult can attack building
-        // 3. Units: Soldier(Only mlee attack), Archer(RangeAttack (has 5 arrows)),
-        // All units Has AttackSpeed/WalkingSpeed. 
 
+        static int GenerationTimer(int time)
+        {
+            int[] array = new int[time];
+            Console.WriteLine("Started Timer");
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = i + 1;
+                Console.Write(array[i] + "  ");
+                Thread.Sleep(100);
+            }
+            //Console.WriteLine();
+            Console.WriteLine("Timer expired");
+            return time;
+        }
+
+        static int HalfTimer(int time)
+        {
+            int[] array = new int[time];
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = i + 1;
+                //Console.Write(array[i] + "  ");
+                Thread.Sleep(100);
+            }
+            GenerationTimer(time * 2);
+            return time;
+        }
     }
 }
+
