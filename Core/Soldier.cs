@@ -12,7 +12,7 @@ namespace Core
         }
         public override double MeleeAttack()
         {
-            if ( Health > 0.4 * MaxHealth)
+            if (Health > 0.4 * MaxHealth)
             {
                 return base.MeleeAttack();
 
