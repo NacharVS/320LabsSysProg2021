@@ -43,14 +43,13 @@ namespace ConsoleApp3
         {
             System.Timers.Timer secondUnitAttackTimer = new System.Timers.Timer();
             secondUnitAttackTimer.Elapsed += new ElapsedEventHandler(SecondUnitAttack);
-            secondUnitAttackTimer.Interval = _secondUnit.AttackSpeed * 2500;
+            secondUnitAttackTimer.Interval = _secondUnit.AttackSpeed;
 
             System.Timers.Timer firstUnitAttackTimer = new System.Timers.Timer();
             firstUnitAttackTimer.Elapsed += new ElapsedEventHandler(FirstUnitAttack);
-            firstUnitAttackTimer.Interval = _firstUnit.AttackSpeed * 2500; // магическое число возникшее во время отладки
+            firstUnitAttackTimer.Interval = _firstUnit.AttackSpeed;
             while (_firstUnit.Health > 0 && _secondUnit.Health > 0)
             {
-
                 if (CheckDistance(_secondUnit))
                 {
                     secondUnitAttackTimer.Enabled = true;

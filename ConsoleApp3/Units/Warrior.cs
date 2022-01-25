@@ -7,7 +7,7 @@ namespace ConsoleApp3
     class Warrior : Unit
     {
         private bool _rage = false;
-        public Warrior(string name) : base(name, 200, 15, 1, 4, false, 1)
+        public Warrior(string name) : base(name, 200, 15, 100, 400, false, 1)
         {
 
         }

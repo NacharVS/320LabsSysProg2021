@@ -6,8 +6,11 @@ namespace ConsoleApp3
 {
     class Archer : Unit
     {
+        public delegate void HealthChangedDelegate(string nameUnit);
+        public event HealthChangedDelegate HealthChandgedEvent;
+
         public int ArrowValue;
-        public Archer(string name) : base(name, 300, 13, 1, 5, true, 50)
+        public Archer(string name) : base(name, 300, 13, 100, 500, true, 50)
         {
             ArrowValue = 5;
         }
@@ -28,6 +31,9 @@ namespace ConsoleApp3
                     defender.Health -= Damage;
                 }
             }
+
+            HealthChandgedEvent?.Invoke("Before health : " + (defender.Health + this.Damage)
+                    + "\n" + "Damage: -" + this.Damage + "\n" + "Health: " + defender.Health);
         }
 
         void RangeAttack(Unit defender)
