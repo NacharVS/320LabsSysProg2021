@@ -32,8 +32,7 @@ namespace ConsoleApp3
             Console.WriteLine(message);
         }
         // 1. create methods for imitation of battle between 2 units. All nonBuildingsunits can attack each other
-        // 2. only catapult can attack building
-        // All units Has AttackSpeed/WalkingSpeed. 
+
          
 
     }
