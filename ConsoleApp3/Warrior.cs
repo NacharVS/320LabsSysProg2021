@@ -17,6 +17,8 @@ namespace ConsoleApp3
         {
             Hp = 90;
             _damage = 20;
+            ASpeed = 15;
+            WSpeed = 10;
         }
         public Warrior(double health)
         {

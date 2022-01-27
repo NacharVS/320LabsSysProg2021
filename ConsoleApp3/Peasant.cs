@@ -9,6 +9,8 @@ namespace ConsoleApp3
         public Peasant() 
         {
             Hp = 20;
+            ASpeed = 0;
+            WSpeed = 20;
         }
         public Peasant(double health) 
         {

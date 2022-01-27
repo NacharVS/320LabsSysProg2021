@@ -32,7 +32,5 @@ namespace ConsoleApp3
             Console.WriteLine(message);
         }
         // 1. create methods for imitation of battle between 2 units. All nonBuildingsunits can attack each other
-
-         
     }
 }
