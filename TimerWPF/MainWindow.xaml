@@ -32,17 +32,13 @@
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Timer 1 set:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Timer 2 set:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox x:Name="tbTimer1Set" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" />
-        <TextBox x:Name="tbTimer2Set" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" />
-        
-        <TextBlock Grid.Row="0" Grid.Column="2" Text="Timer 1 time:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock Grid.Row="1" Grid.Column="2" Text="Timer 2 time:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="tbTimer1Value" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="tbTimer2Value" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Timer 1 set:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="tbTimerSet" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" />
 
-        <Button x:Name="btnSuc" Content="Successively" Grid.Row="3" Grid.Column="1" Margin="10" Click="btnSuc_Click"/>
-        <Button x:Name="btnPar" Content="Parallel" Grid.Row="3" Grid.Column="2" Margin="10" Click="btnPar_Click"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Timer 1 time:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="tbTimerValue" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Button x:Name="btnSuc" Content="Successively" Grid.Row="2" Grid.Column="1" Margin="10" Click="btnSuc_Click"/>
+        <Button x:Name="btnPar" Content="Parallel" Grid.Row="2" Grid.Column="2" Margin="10" Click="btnPar_Click"/>
     </Grid>
 </Window>
