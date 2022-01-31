@@ -8,19 +8,22 @@ namespace ConsoleTask
     {
         static void Main(string[] args)
         {
-            Task tim1 = new Task(() => TimeBegin("Timer1",10));
-            Task tim2 = new Task(() => TimeBegin("Timer2",10));
+            Task tim1 = new Task(() => TimeBegin("Timer1",30));
+            Task tim2 = new Task(() => TimeBegin("Timer2",30));
 
-            Task tim5 = new Task(() => TimeBegin("Timer5", 10));
-            Task tim6 = new Task(() => TimeBegin("Timer6",10));
+            Task tim5 = new Task(() => TimeBegin("Timer5", 30));
+            Task tim6 = new Task(() => TimeBegin("Timer6",30));
 
-            Task tim3 = tim1.ContinueWith(t => TimeBegin("Timer3", 6, tim5));
-            Task tim4 = tim2.ContinueWith(t => TimeBegin("Timer4",6, tim6));
+            Task tim3 = tim1.ContinueWith(t => TimeBegin("Timer3", 16, tim5));
+            Task tim4 = tim2.ContinueWith(t => TimeBegin("Timer4",16, tim6));
 
             tim1.Start();
             tim2.Start();
 
-            Console.ReadLine();
+            tim3.Wait();
+            tim4.Wait();
+            tim5.Wait();
+            tim6.Wait();
         }
         public static void TimeBegin(string nameTim,int second)
         {
