@@ -7,14 +7,17 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Peasant peasant = new Peasant();
-            peasant.HpChangedEvent += ShowMessage;
-            Warrior warrior = new Warrior();
-            warrior.HpChangedEvent += ShowMessage;
-            Bishop bishop = new Bishop();
-            bishop.HpChangedEvent += ShowMessage;
-            Archer archer = new Archer();
-            archer.HpChangedEvent += ShowMessage;
+            Soldier Bob = new Soldier(new Sword());
+            Bob.weapon.InflictDamage();
+            Blacksmith Ivan = new Blacksmith();
+            var weaponX = Ivan.MakeBow();
+            Bob.weapon = weaponX;
+            Bob.weapon.InflictDamage();
+            var weaponY = Ivan.MakeJavelin();
+            Bob.weapon = weaponY;
+            Bob.weapon.InflictDamage();
+            Bob.Throw(weaponY);
+            B
 
             warrior.Attack(peasant);
             Console.WriteLine(peasant.Hp);
