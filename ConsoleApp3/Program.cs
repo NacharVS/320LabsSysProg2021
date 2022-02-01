@@ -20,8 +20,8 @@ namespace ConsoleApp3
             leftUnit.HealthChangedEvent += ShowMessage;
             rightUnit.HealthChangedEvent += ShowMessage;
 
-            Task LeftRightTask = new Task(() => UnitAttack(leftUnit, rightUnit, distance));
-            Task RightLeftTask = new Task(() => UnitAttack(rightUnit, leftUnit, distance));
+            Task LeftRightTask;
+            Task RightLeftTask;
 
             while (leftUnit.Health > 0 && rightUnit.Health > 0)
             {
