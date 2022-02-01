@@ -18,7 +18,7 @@ namespace ConsoleApp3
             Bob.weapon = weaponY;
             Bob.weapon.InflictDamage();
             Bob.Throw(weaponY);
-            B
+            //переделать стратегию через интерефейсы
 
 
 
