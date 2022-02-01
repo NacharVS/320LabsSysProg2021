@@ -20,16 +20,21 @@ namespace ConsoleApp3
             leftUnit.HealthChangedEvent += ShowMessage;
             rightUnit.HealthChangedEvent += ShowMessage;
 
+            Task LeftRightTask = new Task(() => UnitAttack(leftUnit, rightUnit, distance));
+            Task RightLeftTask = new Task(() => UnitAttack(rightUnit, leftUnit, distance));
+
             while (leftUnit.Health > 0 && rightUnit.Health > 0)
             {
-                UnitAttackAsync(leftUnit, rightUnit, distance);
-                UnitAttackAsync(rightUnit, leftUnit, distance);
+                LeftRightTask = new Task(() => UnitAttack(leftUnit, rightUnit, distance));
+                RightLeftTask = new Task(() => UnitAttack(rightUnit, leftUnit, distance));
+
+                LeftRightTask.Start();
+                RightLeftTask.Start();
+                LeftRightTask.Wait();
+                RightLeftTask.Wait();
             }
         }
-        public static async void UnitAttackAsync(Unit attackingUnit, Unit attackedUnit, double distance)
-        {
-            await Task.Run(() => UnitAttack(attackingUnit, attackedUnit, distance));
-        }
+
         public static void UnitAttack(Unit attackingUnit, Unit attackedUnit, double distance)
         {
             if (attackingUnit is RangeUnit && (attackingUnit as RangeUnit).RangeProjectileCount > 0)
