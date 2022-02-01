@@ -8,27 +8,19 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            int[] array = new int[10];
-            int[] array1 = new int[10];
+            Soldier Bob = new Soldier(new Sword());
+            Bob.weapon.InflictDamage();
+            Blacksmith Ivan = new Blacksmith();
+            var weaponX = Ivan.MakeBow();
+            Bob.weapon = weaponX;
+            Bob.weapon.InflictDamage();
+            var weaponY = Ivan.MakeJavelin();
+            Bob.weapon = weaponY;
+            Bob.weapon.InflictDamage();
+            Bob.Throw(weaponY);
+            B
 
-            Task<int[]> taskGen = new Task<int[]>(() => Generation(array));
 
-            //Task task2 = new Task(() => Summ(array));
-
-            Task<int[]> taskContinue = taskGen.ContinueWith(doublearr => BinaryArray(doublearr.Result));
-
-            taskGen.Start();
-            taskContinue.Wait();
-            array1 = taskContinue.Result;
-
-            Console.WriteLine();
-
-            foreach (var item in array1)
-            {
-                Console.Write(" " + item);
-            }
-
-            //taskContinue.Wait();
 
         }
         static int[] Generation(int[] array)
