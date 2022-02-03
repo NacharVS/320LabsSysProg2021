@@ -6,11 +6,13 @@ namespace ConsoleApp3
 {
     class Warrior : Unit
     {
-        public Warrior(double hitpoints, double attackSpeed, double walkingSpeed)
+        public Warrior(double hitPoints, double hitDamage, string name)
         {
-            this.Health = hitpoints;
-            this.AttackSpeed = attackSpeed;
-            this.WalkingSpeed = walkingSpeed;
+            Health = hitPoints;
+            AttackValue = hitDamage;
+            Name = name;
+            //this.AttackSpeed = attackSpeed;
+            //this.WalkingSpeed = walkingSpeed;
         }
     }
 }

@@ -8,12 +8,12 @@ namespace ConsoleApp3
     {
         public double HealAmount { get; set; }
 
-        public Bishop(double hitPoints, double healPower, double attackSpeed, double walkSpeed)
+        public Bishop(double hitPoints, double healPower)
         {
             HealAmount = healPower;
             this.Health = hitPoints;
-            this.AttackSpeed = attackSpeed;
-            this.WalkingSpeed = walkSpeed;
+            //this.AttackSpeed = attackSpeed;
+            //this.WalkingSpeed = walkSpeed;
         }
         public void Heal(Unit u)
         {

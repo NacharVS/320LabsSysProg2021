@@ -32,13 +32,15 @@ namespace ConsoleApp3
             }
 
         }
-        public Archer(double hitpoints, double attackRange, double attackSpeed, double walkspeed)
+        public Archer(double hitPoints, double hitDamage, string name)
         {
-            Health = hitpoints;
-            AttackSpeed = attackSpeed;
-            WalkingSpeed = walkspeed;
-            AttackRange = attackRange;
-            RangeAttackSpeed = AttackSpeed * 2;
+            Health = hitPoints;
+            AttackValue = hitDamage;
+            Name = name;
+            //AttackSpeed = attackSpeed;
+            //WalkingSpeed = walkspeed;
+            //AttackRange = attackRange;
+            //RangeAttackSpeed = AttackSpeed * 2;
         }
 
         public override void Attack(Unit u, double damage)

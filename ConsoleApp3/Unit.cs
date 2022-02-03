@@ -13,6 +13,8 @@ namespace ConsoleApp3
 
 		public double AttackSpeed;
 		public double WalkingSpeed;
+		public double AttackValue;
+		public string Name;
 		public double Health
 		{
 			get { return _health; }
@@ -21,12 +23,12 @@ namespace ConsoleApp3
 				if (value > 0)
 				{
 					_health = value;
-					HealthChangedEvent?.Invoke("Changed Hitpoints");
+					HealthChangedEvent?.Invoke($"Unit {this.Name} – Changed Hitpoints. Total: {this._health}");
 				}
 				else
 				{
 					_health = 0;
-					HealthChangedEvent?.Invoke("Unit is dead");
+					HealthChangedEvent?.Invoke($"Unit {this.Name} is dead");
 				}
 			}
 		}
@@ -38,6 +40,5 @@ namespace ConsoleApp3
 				u.Health -= damage;
             }
         }
-
 	}
 }
