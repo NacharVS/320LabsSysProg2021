@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Core
 {
-    public class Building : Unit
+    public class Building : IUnit
     {
         private double wall;
         public double Wall
@@ -22,12 +23,15 @@ namespace Core
             }
         }
 
-        public Building(string name, double health) : base(name,health)
+        public double Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double MaxHealth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public Building(string name, double health)
         {
             Wall = health;
         }
 
-        public override void Message()
+        public void Message()
         {
             Console.WriteLine($"Wall: {Wall}, health: {Health}");
         }

@@ -16,6 +16,10 @@ namespace Core
         {
 
         }
+        public void Attack()
+        {
+            Console.WriteLine("!!!!");
+        }
         public double MeleeAttack()
         {
             if (Health > 0.4 * MaxHealth)
@@ -28,6 +32,11 @@ namespace Core
                 //return base.MeleeAttack() * 2;
                 throw new NotImplementedException();
             }
+        }
+
+        public void Message()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,14 +1,20 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Core
 {
-    public class Archer : BattleUnit
+    public class Archer : IBattleUnit, IMovingUnit
     {
         private int Arrows { get; set; }
+        public double WalkingSpeed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double AttackSpeed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double Damage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double MaxHealth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public Archer(string name): base(name, 45,1,10,3)
+        public Archer(string name)
         {
             Arrows = 5;
         }
@@ -25,6 +31,21 @@ namespace Core
             {
                 return MeleeAttack();
             }
+        }
+
+        public double MeleeAttack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Message()
+        {
+            throw new NotImplementedException();
         }
     }
 }
