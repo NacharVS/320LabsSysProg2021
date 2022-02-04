@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using UnitsInterfaces;
 
-namespace ConsoleApp3
+namespace UnitsClasses
 {
-    class Building : Unit
+    public class Building : Unit
     {
         private double _wall;
 
@@ -18,9 +19,9 @@ namespace ConsoleApp3
             set => _wall = value > 0? value: 0; 
         }
 
-        public override void Info()
+        public override string ToString()
         {
-            Console.WriteLine($"{Name} Wall: {_wall} Health: {Health}");
+            return $"{Name} Wall: {_wall} Health: {Health}";
         }
     }
 }

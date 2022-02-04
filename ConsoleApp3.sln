@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp3", "ConsoleApp3\ConsoleApp3.csproj", "{998F4CBF-1D59-47BD-B587-DA4CF24614B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerConsole", "TimerConsole\TimerConsole.csproj", "{56E601FC-6261-4FC5-AA85-D3B017C10743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimerConsole", "TimerConsole\TimerConsole.csproj", "{56E601FC-6261-4FC5-AA85-D3B017C10743}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerWPF", "TimerWPF\TimerWPF.csproj", "{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimerWPF", "TimerWPF\TimerWPF.csproj", "{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitsClasses", "UnitsClasses\UnitsClasses.csproj", "{7FC733E0-6668-4680-853F-D074D9C75EC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitsInterfaces", "UnitsInterfaces\UnitsInterfaces.csproj", "{6511EC6C-0487-4790-9EB9-E093B24D7138}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FC733E0-6668-4680-853F-D074D9C75EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FC733E0-6668-4680-853F-D074D9C75EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FC733E0-6668-4680-853F-D074D9C75EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FC733E0-6668-4680-853F-D074D9C75EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6511EC6C-0487-4790-9EB9-E093B24D7138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6511EC6C-0487-4790-9EB9-E093B24D7138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6511EC6C-0487-4790-9EB9-E093B24D7138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6511EC6C-0487-4790-9EB9-E093B24D7138}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

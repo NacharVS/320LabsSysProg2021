@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using UnitsInterfaces;
 
-namespace ConsoleApp3
+namespace UnitsClasses
 {
-	abstract class Unit
+	public abstract class Unit : IUnit
 	{
 		private double _health;
+        internal double _maxHealth;
         private double _attackSpeed;
         private double _walkingSpeed;
         internal virtual bool IsCatapult { get => false; }
-        internal double _maxHealth;
+        
         public string Name;
         public delegate void HealthChangedDelegate(string message);
 
@@ -42,12 +44,11 @@ namespace ConsoleApp3
         public double AttackSpeed { get { return _attackSpeed; } set { _attackSpeed = value; } }
         public double WalkingSpeed { get { return _walkingSpeed; } set { _walkingSpeed = value; } }
 
-
         public event HealthChangedDelegate HealthChangedEvent;
 
-        public virtual void Info()
+        public override string ToString()
         {
-            Console.WriteLine($"{Name} Health: {Health}");
+            return $"{Name} Health: {Health}";
         }
     }
 }

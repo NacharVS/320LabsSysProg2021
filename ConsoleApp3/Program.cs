@@ -2,6 +2,8 @@
 using System.Threading;
 using System.Reflection;
 using System.ComponentModel.Design;
+using UnitsInterfaces;
+using UnitsClasses;
 
 namespace ConsoleApp3
 {
@@ -9,29 +11,13 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            var catapult = new Catapult();
-            var archer = new Archer("Archer", 30, 100, 10);
-            var building = new Building("Tower", 100);
-            var soldier = new Soldier("Soldier", 100, 500, 200);
-            var soldier2 = new Soldier("Soldier2", 100, 100, 100);
+            var warrior = new Warrior("warr", 100, 10, 10, 10, 50);
+            warrior.HealthChangedEvent += ShowMessage;
+            var warrior2 = new Warrior("warr 2", 200, 10, 10, 10, 50);
+            warrior2.HealthChangedEvent += ShowMessage;
 
-            catapult.HealthChangedEvent += ShowMessage;
-            archer.HealthChangedEvent += ShowMessage;
-            building.HealthChangedEvent += ShowMessage;
-            soldier.HealthChangedEvent += ShowMessage;
-
-            //Battle.Fight(soldier2, soldier);
-            Battle.Fight(archer, soldier);
-            //Battle.Fight(building, catapult);
-            //Battle.Fight(building, archer);
-            //Battle.Fight(catapult, archer);
-
-
+            Battle.Fight(warrior, warrior2);
         }
-        // 1. create methods for imitation of battle between 2 units. All nonBuildingsunits can attack each other
-        // 2. only catapult can attack building
-        // 3. Units: Soldier(Only mlee attack), Archer(RangeAttack (has 5 arrows)),
-        // All units Has AttackSpeed/WalkingSpeed. 
 
         static void ShowMessage(string message)
         {
