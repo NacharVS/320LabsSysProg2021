@@ -6,6 +6,7 @@ namespace ConsoleApp3.UnitInterface
 {
 	interface IMovebleUnit : IUnit
 	{
+		int WalkSpeed { get; set; }
 		void move();
 	}
 }
