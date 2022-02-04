@@ -4,16 +4,31 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Archer : Unit
+    class Archer : Unit, IBattleUnit
     {
         private int _arrowCount = 5;
-        public double AttackRange;
-        public double RangeAttackSpeed;
-        
+        //public double AttackRange;
+        //public double RangeAttackSpeed;
+
+        public double damage { get; set; }
+        public double health { get { return Health; } set { Health = value; } }
+        public string name { get; set; }
+
 
         public delegate void ArrowCountChangedDelegate(string message);
         public event ArrowCountChangedDelegate ArrowCountChangedEvent;
 
+        public Archer(double hitPoints, double hitDamage, string name)
+        {
+            Health = hitPoints;
+            damage = hitDamage;
+            this.name = name;
+            Name = name;
+            //AttackSpeed = attackSpeed;
+            //WalkingSpeed = walkspeed;
+            //AttackRange = attackRange;
+            //RangeAttackSpeed = AttackSpeed * 2;
+        }
         public int ArrowCount
         {
             get { return _arrowCount; }
@@ -32,35 +47,24 @@ namespace ConsoleApp3
             }
 
         }
-        public Archer(double hitPoints, double hitDamage, string name)
-        {
-            Health = hitPoints;
-            AttackValue = hitDamage;
-            Name = name;
-            //AttackSpeed = attackSpeed;
-            //WalkingSpeed = walkspeed;
-            //AttackRange = attackRange;
-            //RangeAttackSpeed = AttackSpeed * 2;
-        }
 
-        public override void Attack(Unit u, double damage)
+        public void Attack(IBattleUnit u, double damage)
         {
             if (ArrowCount > 0 && damage > 0)
             {
-                damage *= 1.5;
-                this.Shoot(u, damage);
+                this.Shoot(u, damage * 1.5);
             }
             else
             {
                 if (damage > 0)
                 {
-                    u.Health -= damage;
+                    u.health -= damage;
                 }
             }
         }
-        private void Shoot(Unit u, double damage)
+        private void Shoot(IBattleUnit u, double damage)
         {
-            u.Health -= damage;
+            u.health -= damage;
             this.ArrowCount--;
         }
     }

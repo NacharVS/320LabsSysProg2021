@@ -8,7 +8,7 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Archer w1 = new Archer(100, 20, "Thomas");
+            Warrior w1 = new Warrior(100, 20, "Thomas");
             Warrior w2 = new Warrior(120, 20, "Tim");
 
             w1.HealthChangedEvent += Message;
@@ -16,7 +16,7 @@ namespace ConsoleApp3
 
             Battle bat = new Battle();
 
-            bat.Fighting(w1, w2);
+            bat.Fight(w1, w2);
         }
 
         static void Message(string mes)

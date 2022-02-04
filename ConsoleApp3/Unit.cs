@@ -11,9 +11,8 @@ namespace ConsoleApp3
 		public delegate void HealthChangedDelegate(string message);
 		public event HealthChangedDelegate HealthChangedEvent;
 
-		public double AttackSpeed;
-		public double WalkingSpeed;
-		public double AttackValue;
+		//public double AttackSpeed;
+		//public double WalkingSpeed;
 		public string Name;
 		public double Health
 		{
@@ -32,13 +31,5 @@ namespace ConsoleApp3
 				}
 			}
 		}
-		
-		public virtual void Attack(Unit u, double damage)
-        {
-			if (damage > 0)
-            {
-				u.Health -= damage;
-            }
-        }
 	}
 }
