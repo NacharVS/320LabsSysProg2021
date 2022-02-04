@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    public class Unit
+    public class Unit : Interfaces.IUnit
     {
         public Unit()
         {
