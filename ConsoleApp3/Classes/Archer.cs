@@ -4,11 +4,17 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-	class Archer : Unit, UnitInterface.IDistant
+	class Archer : Unit, UnitInterface.IDistant, UnitInterface.IMovebleUnit 
 	{
         public int damage => 30;
         public int AttackSpeed => 20;
+        public int WalkSpeed => 15;
         private double _arrow;
+
+        public void move()
+        {
+
+        }
         public void attack(Unit unit)
         {
             if (damage >= 0 && _arrow != 0)

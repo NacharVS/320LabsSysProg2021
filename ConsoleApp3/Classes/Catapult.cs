@@ -4,15 +4,22 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-	class Catapult:Unit
-	{
-        private double _damage;
+	class Catapult:Unit, UnitInterface.IDistant, UnitInterface.IMovebleUnit
+
+    {
+        public int damage => 100;
+        public int AttackSpeed => 5;
+        public int WalkSpeed => 5;
         private int _projectile;
-        public void Shot(Unit unit)
+        public void move()
         {
-            if (_damage >= 0 && _projectile != 0)
+
+        }
+        public void attack(Unit unit)
+        {
+            if (damage >= 0 && _projectile != 0)
             {
-                unit.Hp -= _damage;
+                unit.Hp -= damage;
                 _projectile--;
             }
             else
@@ -23,7 +30,6 @@ namespace ConsoleApp3
         public Catapult()
         {
             Hp = 170;
-            _damage = 50;
             _projectile = 10;
         }
         public Catapult(double health)

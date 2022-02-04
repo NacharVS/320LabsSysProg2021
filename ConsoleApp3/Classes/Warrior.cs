@@ -4,19 +4,26 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Warrior : Unit
+    class Warrior : Unit, UnitInterface.IMovebleUnit, UnitInterface.IBattlebleUnit
     {
-        private double _damage;
-        public void Attack(Unit unit)
+        public int damage => 10;
+        public int AttackSpeed => 20;
+        public int WalkSpeed => 15;
+
+        public void move()
         {
-            if (_damage >= 0)
-                unit.Hp -= _damage;
+            
+        }
+        public void attack(Unit unit)
+        {
+            if (damage >= 0)
+                unit.Hp -= damage;
 
         }
         public Warrior()
         {
             Hp = 90;
-            _damage = 20;
+
         }
         public Warrior(double health)
         {

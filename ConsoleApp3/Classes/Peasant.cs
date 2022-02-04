@@ -4,8 +4,12 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Peasant : Unit
+    class Peasant : Unit, UnitInterface.IMovebleUnit
     {
+        public int WalkSpeed => 15;
+        public void move() 
+        {
+        }
         public Peasant() 
         {
             Hp = 20;
