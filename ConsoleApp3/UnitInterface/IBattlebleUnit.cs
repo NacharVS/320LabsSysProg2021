@@ -6,8 +6,8 @@ namespace ConsoleApp3.UnitInterface
 {
 	interface IBattlebleUnit : IUnit
 	{
-		int damage { get; set; }
-		int AttackSpeed { get; set; }
-		public void attack();
+		int damage { get; }
+		int AttackSpeed { get;}
+		 void attack(Unit unit);
     }
 }

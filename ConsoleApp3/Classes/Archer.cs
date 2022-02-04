@@ -4,15 +4,16 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-	class Archer : Unit
+	class Archer : Unit, UnitInterface.IDistant
 	{
-		private double _damage;
+        public int damage => 30;
+        public int AttackSpeed => 20;
         private double _arrow;
-        public void Shot(Unit unit)
+        public void attack(Unit unit)
         {
-            if (_damage >= 0 && _arrow != 0)
+            if (damage >= 0 && _arrow != 0)
             {
-                unit.Hp -= _damage;
+                unit.Hp -= damage;
                 _arrow--;
             }
             else 
@@ -23,7 +24,6 @@ namespace ConsoleApp3
         public Archer()
         {
             Hp = 70;
-            _damage = 10;
             _arrow = 5;
         }
         public Archer(double health)
