@@ -24,7 +24,7 @@ namespace ConsoleApp3
         public double WalkingSpeed => 3;
         public bool IsCatapult => false;
 
-        public void Attack(IUnit unit)
+        public void Attack(IBattleUnit unit)
         {
             RangeAttack(unit);
         }
@@ -34,12 +34,12 @@ namespace ConsoleApp3
             Console.WriteLine($"{Name} health: {Health}, max health: {MaxHealth}, damage: {Damage}, attack speed: {AttackSpeed}");
         }
 
-        public void MleeAttack(IUnit unit)
+        public void MleeAttack(IBattleUnit unit)
         {
              unit.Health -= 4;
         }
 
-        public void RangeAttack(IUnit unit)
+        public void RangeAttack(IBattleUnit unit)
         {
             if (Arrows > 0)
             {

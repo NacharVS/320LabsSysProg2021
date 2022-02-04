@@ -10,7 +10,7 @@ namespace ConsoleApp3.Interfaces
         double AttackSpeed { get; }
         bool IsCatapult { get; }
 
-        void MleeAttack(IUnit unit);
-        void Attack(IUnit unit);
+        void MleeAttack(IBattleUnit unit);
+        void Attack(IBattleUnit unit);
     }
 }

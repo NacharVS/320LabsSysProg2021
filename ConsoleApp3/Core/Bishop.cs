@@ -8,10 +8,12 @@ namespace ConsoleApp3
     class Bishop : Unit,IMovementUnit
     {
         private double _healCount;
-        public Bishop(string name, double healCount)
+        public Bishop(string name, double healCount, double health, double maxHealth)
         {
             Name = name;
             HealCount = healCount;
+            Health = health;
+            MaxHealth = maxHealth;
         }
         public double HealCount
         {
@@ -19,7 +21,7 @@ namespace ConsoleApp3
             set { _healCount = value; }
 
         }
-        public void Heal(IUnit unit)
+        public void Heal(IBattleUnit unit)
         {
             if (unit.Health + HealCount < unit.MaxHealth)
             {

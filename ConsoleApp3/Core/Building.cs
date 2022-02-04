@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Building : Unit, IUnit
+    class Building : Unit, IBattleUnit
     {
         private double _wall;
         public double Wall { get => _wall; set => _wall = value < 0 ? 0 : value; }
@@ -27,9 +27,11 @@ namespace ConsoleApp3
         }
         public double MaxHealth { get => maxHealth; set => maxHealth = value; }
 
-        public Building(string name, double health)
+        public Building(string name, double health, double maxHealth)
         {
+            Name = name;
             Wall = health;
+            MaxHealth = maxHealth;
         }
 
 
