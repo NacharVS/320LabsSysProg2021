@@ -38,7 +38,7 @@ namespace CoreLibrary
             HealthChangedEvent?.Invoke($"{UnitType} {Name} получил лечение: {healing}\t" +
                                        $"Текущее HP: { Health}");
         }
-        public void Damage(double health)
+        public void InflictDamage(double health)
         {
             Health -= health;
             double damage = health;
@@ -55,7 +55,7 @@ namespace CoreLibrary
         {
             if (distance <= MleeAttackDistance && attackingCharacter.Health > 0 && attackedCharacter.Health > 0)
             {
-                attackedCharacter.Damage(attackingCharacter.MleeDamage);
+                attackedCharacter.InflictDamage(attackingCharacter.MleeDamage);
             }
         }
     }

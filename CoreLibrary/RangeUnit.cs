@@ -17,7 +17,7 @@ namespace CoreLibrary
             if (distance <= RangeAttackDistance && attackingCharacter.Health > 0)
             {
                 RangeProjectileCount--;
-                attackedCharacter.Damage(attackingCharacter.RangeDamage);
+                attackedCharacter.InflictDamage(attackingCharacter.RangeDamage);
             }
         }
     }
