@@ -1,23 +1,40 @@
 ﻿using System;
+using ConsoleApp3.Interfaces;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleApp3
 {
-    abstract class Unit
+    public class Unit : IUnit
     {
-		public delegate void HealthChangedDelegate(string message);
-		public event HealthChangedDelegate HealthChangedEvent;
-		public string Name { get; private set; }
-		public Unit(string name, double health)
+		
+
+		public Unit(string name, double health, int attackSpeed, int walkingSpeed)
 		{
 			Name = name;
 			Health = health;
 			_maxHealth = health;
+			AttackSpeed = attackSpeed;
+			WalkingSpeed = walkingSpeed;
 			CreateUnit();
 		}
 
-        public void CreateUnit()
+		public delegate void HealthChangedDelegate(string message);
+		public event HealthChangedDelegate HealthChangedEvent;
+
+		private string _name;
+		private double _attackSpeed;
+		private double _walkingSpeed;
+
+		public double AttackSpeed { get { return _attackSpeed; } set { _attackSpeed = value; } }
+		public double WalkingSpeed { get { return _walkingSpeed; } set { _walkingSpeed = value; } }
+
+		public string Name
+		{
+			get { return _name; }
+			set { _name = value; }
+		}
+		public void CreateUnit()
 		{
 			Console.WriteLine($"{Name} is created");
 		}
@@ -54,6 +71,11 @@ namespace ConsoleApp3
 		{
 			get { return _damage; }
 			set { _damage = value; }
+		}
+
+        public void DamageUnit(Unit unit)
+		{
+			unit.Health -= Damage;
 		}
 
 		public virtual void Message()
