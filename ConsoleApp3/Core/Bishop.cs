@@ -10,7 +10,7 @@ namespace ConsoleApp3
         private double _healCount;
         public Bishop(string name, double healCount)
         {
-
+            Name = name;
             HealCount = healCount;
         }
         public double HealCount
@@ -37,7 +37,7 @@ namespace ConsoleApp3
             throw new NotImplementedException();
         }
 
-        public double WalkingSpeed => throw new NotImplementedException();
+        public double WalkingSpeed => 3;
 
         public string Name { get => name; set => name = value; }
         public double Health { get => health; set => health = value; }
