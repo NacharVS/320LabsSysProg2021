@@ -41,14 +41,14 @@ namespace ConsoleApp3
 
             //Warrior war2 = new Warrior("Kirill");
             //Peasant peas = new Peasant("Jimmy");
-            //Archer arch = new Archer("Salavat");
+            Archer arch = new Archer("Salavat");
             //Archer arch2 = new Archer("Salavat2");
             Bishop bish = new Bishop("Diyar");
             Catapult catapult = new Catapult("Cat");
             Tower tower = new Tower("Tower");
             
             //war.AttackUnit(peas);
-            Battle bat = new Battle(war, bish, 0);
+            Battle bat = new Battle(war, arch, 0);
 
 
         }
