@@ -11,8 +11,8 @@ namespace Core
         {
             while (unit1.Health > 0 && unit2.Health > 0)
             {
-                unit1.Attack(unit2, unit1.Damage);
-                unit2.Attack(unit1, unit2.Damage);
+                unit1.Attack(unit2);
+                unit2.Attack(unit1);
 
                 unit1.Message();
                 unit2.Message();
@@ -23,8 +23,8 @@ namespace Core
         {
             while (arc.Health > 0 && unit.Health > 0)
             {
-                arc.Health -= unit.MeleeAttack();
-                unit.Health -= arc.RangeAttack();
+                arc.Attack(unit);
+                unit.Attack(arc);
                 arc.Message();
                 unit.Message();
             }
@@ -34,8 +34,8 @@ namespace Core
         {
             while (sold.Health > 0 && unit.Health > 0)
             {
-                sold.Attack(unit, sold.Damage);
-                unit.Attack(sold, unit.Damage);
+                sold.Attack(unit);
+                unit.Attack(sold);
 
                 sold.Message();
                 unit.Message();

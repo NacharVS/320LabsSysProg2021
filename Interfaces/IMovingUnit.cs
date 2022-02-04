@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UnitInterfaces
+namespace Interfaces
 {
     public interface IMovingUnit : IUnit
     {
         double WalkingSpeed { get; }
-
-        void Move();
     }
 }

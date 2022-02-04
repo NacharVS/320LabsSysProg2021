@@ -8,11 +8,11 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Soldier sold = new Soldier("Semen",6,40,3,5);
-            Archer arc = new Archer("Bob",10,20,6,2);
-            Archer arc2 = new Archer("Sasha", 20, 40, 12, 4);
+            Soldier sold = new Soldier("Semen",6,40);
+            Archer arc = new Archer("Bob",10,20);
+            Archer arc2 = new Archer("Sasha", 20, 40);
             Battle battle = new Battle();
-            battle.Fighting(sold, arc);
+            battle.Fighting(arc, arc);
             //sold.HealtChangedEvent += ShowMessage;
 
             //Archer arc = new Archer("Anton");

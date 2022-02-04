@@ -10,15 +10,14 @@ namespace Core
         public Bishop(string name, double healCount)
         {
             HealCount = healCount;
+            Name = name;
         }
 
         public double _healCount;
-
         public double HealCount
         {
             get { return _healCount; }
-            set { _healCount = value; }
-            
+            set { _healCount = value; }           
         }
 
         public double WalkingSpeed => 3;
@@ -36,11 +35,15 @@ namespace Core
             else
             {
                 unit.Health += HealCount;
-            }
-            
+            }         
         }
 
         public void Message()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Move()
         {
             throw new NotImplementedException();
         }

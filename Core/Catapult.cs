@@ -7,8 +7,8 @@ namespace Core
 {
     public class Catapult : Unit,IBattleUnit
     {
-        public double AttackSpeed { get; set; }
-        public double Damage { get; set; }
+        public double AttackSpeed => 15;
+        public double Damage => 3;
 
         public bool IsCatapult => true;
 
@@ -17,12 +17,10 @@ namespace Core
 
         public string Name { get => name; set => name = value; }
 
-        public Catapult(string name, double health, double maxHealth, double damage, double attackSpeed)
+        public Catapult(string name, double health, double maxHealth)
         {
             Health = health;
             MaxHealth = maxHealth;
-            Damage = damage;
-            AttackSpeed = attackSpeed;
             Name = name;
         }
 
@@ -31,9 +29,9 @@ namespace Core
             throw new NotImplementedException();
         }
 
-        public void Attack(IBattleUnit unit, double damage)
+        public void Attack(IBattleUnit unit)
         {
-            unit.Health -= damage;
+            unit.Health -= Damage;
         }
 
         public void Message()

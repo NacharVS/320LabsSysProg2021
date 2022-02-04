@@ -7,9 +7,9 @@ namespace Core
 {
     public class Soldier : Unit,IBattleUnit, IMovingUnit
     {
-        public double AttackSpeed { get; set; }
+        public double AttackSpeed => 4;
         public double WalkingSpeed => 10;
-        public double Damage { get; set; }
+        public double Damage => 18;
         public double Health { get => health; set => health = value; }
         public double MaxHealth { get => maxHealth; set => maxHealth = value; }
 
@@ -17,13 +17,11 @@ namespace Core
 
         public string Name { get => name; set => name = value; }
 
-        public Soldier(string name, double health, double maxHealth,double attackSpeed,double damage)
+        public Soldier(string name, double health, double maxHealth)
         {
             Name = name;
             Health = health;
             MaxHealth = maxHealth;
-            AttackSpeed = attackSpeed;
-            Damage = damage;
         }
 
         public double MeleeAttack()
@@ -43,9 +41,14 @@ namespace Core
             Console.WriteLine($"{Name} health: {Health}, max health: {MaxHealth}");
         }
 
-        public void Attack(IBattleUnit unit, double damage)
+        public void Move()
         {
-            unit.Health -= damage;
+            Console.WriteLine($"Moving with walking speed {WalkingSpeed}");
+        }
+
+        public void Attack(IBattleUnit unit)
+        {
+            unit.Health -= Damage;
         }
     }
 }

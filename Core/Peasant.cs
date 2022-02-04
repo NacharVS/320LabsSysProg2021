@@ -23,5 +23,10 @@ namespace Core
         {
             Console.WriteLine($"{Name} helth: {Health}, max health: {MaxHealth}");
         }
+
+        public void Move()
+        {
+            Console.WriteLine($"Moving with walking speed {WalkingSpeed}");
+        }
     }
 }

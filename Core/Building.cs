@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Core
 {
-    public class Building : IUnit
+    public class Building : Unit, IUnit
     {
         private double wall;
         public double Wall
@@ -23,9 +23,9 @@ namespace Core
             }
         }
 
-        public double Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double MaxHealth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double Health { get => health; set => health = value; }
+        public double MaxHealth { get => maxHealth; set => maxHealth = value; }
+        public string Name { get => name; set => name = value; }
 
         public Building(string name, double health)
         {

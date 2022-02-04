@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UnitInterfaces
+namespace Interfaces
 {
     public interface IBattleUnit : IUnit
     {
-        double AttackSpeed { get; }
-        double Damage { get; }
+        double AttackSpeed { get;set; }
+        double Damage { get; set; }
         double MeleeAttack();
         bool IsCatapult { get;  }
-        void Attack(IBattleUnit unit);
+        void Attack(IBattleUnit unit, double damage);
     }
 }
