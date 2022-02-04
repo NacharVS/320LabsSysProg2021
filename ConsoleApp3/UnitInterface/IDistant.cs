@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3.UnitInterface
 {
-	interface IArcher: IUnit, IMovebleUnit, IDistant
+	interface IDistant
 	{
 	}
 }

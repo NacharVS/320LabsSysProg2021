@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3.UnitInterface
 {
-	interface ISoldier : IUnit, IMovebleUnit, IBattlebleUnit
+	interface ISoldier : IUnit, IMovebleUnit, IMelee
 	{
 		public void attack(Unit unit)
         {

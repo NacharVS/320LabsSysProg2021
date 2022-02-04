@@ -6,6 +6,6 @@ namespace ConsoleApp3.UnitInterface
 {
 	interface IMovebleUnit : IUnit
 	{
-
+		void move();
 	}
 }
