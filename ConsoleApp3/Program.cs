@@ -11,7 +11,6 @@ namespace ConsoleApp3
         {
             var soldier = new Soldier("Petya");
             var archer = new Archer("Li");
-            var cleric = new Cleric("Abdul");
 
             Battle(archer, soldier, 1);
         }
