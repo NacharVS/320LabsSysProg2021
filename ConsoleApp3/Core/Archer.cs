@@ -29,4 +29,5 @@ namespace ConsoleApp3
                 return MleeAttack(rnd);
             }
         }
+    }
 }
