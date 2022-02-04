@@ -8,25 +8,26 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Soldier sold = new Soldier("Semen");
+            Soldier sold = new Soldier("Semen",2,10);
+            sold.Message();
             //sold.HealtChangedEvent += ShowMessage;
 
-            Archer arc = new Archer("Anton");
-            arc.HealtChangedEvent += ShowMessage;
+            //Archer arc = new Archer("Anton");
+            //arc.HealtChangedEvent += ShowMessage;
 
-            Peasant peas = new Peasant("Sasha");
-            peas.HealtChangedEvent += ShowMessage;
+            //Peasant peas = new Peasant("Sasha");
+            //peas.HealtChangedEvent += ShowMessage;
 
-            Bishop bishop = new Bishop("Anna", 20);
-            bishop.HealtChangedEvent += ShowMessage;
+            //Bishop bishop = new Bishop("Anna", 20);
+            //bishop.HealtChangedEvent += ShowMessage;
 
-            Building building = new Building("Build", 80);
-            building.HealtChangedEvent += ShowMessage;
+            //Building building = new Building("Build", 80);
+            //building.HealtChangedEvent += ShowMessage;
 
-            Catapult cat = new Catapult();
+            //Catapult cat = new Catapult();
 
-            Battle bat = new Battle();
-            bat.Fighting(sold, arc);
+            //Battle bat = new Battle();
+            //bat.Fighting(sold, arc);
 
             //bat.Fighting(building, cat);
             //bishop.Heal(sold);

@@ -1,4 +1,4 @@
-﻿using Interfaces;
+﻿using UnitInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,9 +25,11 @@ namespace Core
 
         public double Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public double MaxHealth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public Building(string name, double health)
         {
+            Name = name;
             Wall = health;
         }
 

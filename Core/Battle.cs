@@ -36,7 +36,7 @@ namespace Core
         {
             while (sold.Health > 0 && unit.Health > 0)
             {
-                //sold.Attack(sold, unit.MeleeAttack());
+                sold.Attack(sold, unit.MeleeAttack());
                 unit.Attack(unit, sold.MeleeAttack());
 
                 //sold.Health -= unit.MeleeAttack();
