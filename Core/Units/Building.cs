@@ -39,7 +39,7 @@ namespace Core.Units
 
         public override string ToString()
         {
-            return base.ToString() + $"Wall:{Wall}";
+            return base.ToString() + $"Wall:{Wall};";
         }
     }
 }

@@ -20,6 +20,8 @@ namespace StrategyConsole
             Battle battle = new Battle();
 
             Console.WriteLine(battle.Fight(catapult, building));
+            Console.WriteLine("------------------------------");
+            Console.WriteLine(battle.Fight(archer, warrior));
         }
     }
 }

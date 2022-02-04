@@ -56,7 +56,7 @@ namespace Core.Units
 
         public override string ToString()
         {
-            return base.ToString() + $"Ammo:{Ammo}";
+            return base.ToString() + $"Ammo:{Ammo};";
         }
     }
 }
