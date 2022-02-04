@@ -1,45 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ConsoleApp3.Interfaces;
 
 namespace ConsoleApp3
 {
-    class Archer : UnitBattle
+    class Archer : UnitBattle, IRangeUnit
     {
-        private int _arrows { get; set; }
-        private int _rangeDamage;
+        private int _arrows;
+        private int _minRangeDamage;
+        private int _maxRangeDamage;
 
-        public Archer(string name) : base(name, 50, 5, 2, 2)
+        public Archer(string name, int health, int attackSpeed, int walkingSpeed) : base(name, health, attackSpeed, walkingSpeed, 1, 2)
         {
-            _arrows = 3;
-            _rangeDamage = 15;
+            _arrows = 5;
+            _minRangeDamage = 4;
+            _maxRangeDamage = 12;
         }
 
-        public double RangeAttack()
-        {
-            if (_arrows > 0)
-            {
-                double damage = (new Random()).Next((int)(_rangeDamage * 0.8), (int)(_rangeDamage * 1.2) + 1);
-                --_arrows;
-                return damage;
-            }
-            else
-            {
-                return Infighting();
-            }
-        }
-        public override double Infighting()
-        {
-            if (!rage && Health > 0.6 * _maxHealth)
-            {
-                return base.Infighting();
-
-            }
-            else
-            {
-                rage = true;
-                return base.Infighting() * 2;
-            }
-        }
+        public int MinRangeDamage { get => _minRangeDamage; set => _minRangeDamage = value; }
+        public int MaxRangeDamage { get => _maxRangeDamage; set => _maxRangeDamage = value; }
+        public int Ammo { get => _arrows; set => _arrows = value; }
     }
 }

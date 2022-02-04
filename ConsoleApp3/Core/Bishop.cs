@@ -4,10 +4,10 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Bishop : MovingUnit
+    class Bishop
     {
 
-        public Bishop(string name, double health, double damage, double heal) : base(name, health, damage)
+        public Bishop(string name, double health, double damage, double heal)
         {
             HealAmount = heal;
         }

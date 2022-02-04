@@ -21,6 +21,7 @@ namespace ConsoleApp3
 
 		public delegate void HealthChangedDelegate(string message);
 		public event HealthChangedDelegate HealthChangedEvent;
+		internal virtual bool IsCatapult { get => false; }
 
 		private string _name;
 		private double _attackSpeed;
@@ -51,7 +52,7 @@ namespace ConsoleApp3
 				{
 					var pastHealth = Health;
 					_health = value;
-					HealthChangedEvent?.Invoke($"Health: {value}, changed to: {Health - pastHealth}");
+					HealthChangedEvent?.Invoke($"{Name} - health: {value}, changed to: {Health - pastHealth}");
 				}
 				else if (value > _maxHealth)
 				{
@@ -60,7 +61,7 @@ namespace ConsoleApp3
 				else
 				{
 					_health = 0;
-					HealthChangedEvent?.Invoke("Unit died");
+					HealthChangedEvent?.Invoke($"{Name} died");
 				}
 			}
 		}
