@@ -42,7 +42,7 @@ namespace ConsoleApp3
         public double WalkingSpeed => 3;
 
         public string Name { get => name; set => name = value; }
-        public double Health { get => health; set => health = value; }
+        public double Health { get => health; set => health = value < 0 ? 0 : value; }
         public double MaxHealth { get => maxHealth; set => maxHealth = value; }
 
     }

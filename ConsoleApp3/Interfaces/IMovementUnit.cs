@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3.Interfaces
 {
-    interface IMovementUnit : IBattleUnit
+    interface IMovementUnit : IUnit
     {
         double WalkingSpeed { get; }
     }
