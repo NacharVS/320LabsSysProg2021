@@ -1,14 +1,44 @@
 ﻿using ConsoleApp3.Core;
 using System;
+using System.Collections.Generic;
 using System.Threading;
+using System.Reflection;
+using System.Globalization;
+using System.Text;
+using ConsoleApp3.Interfaces;
 
 namespace ConsoleApp3
 {
+
+
     class Program
     {
         static void Main(string[] args)
         {
             Warrior war = new Warrior("Bob");
+
+            //TypeInfo t = typeof(IBattleUnit).GetTypeInfo();
+            //IEnumerable<PropertyInfo> pList = t.DeclaredProperties;
+            //IEnumerable<MethodInfo> mList = t.DeclaredMethods;
+            //StringBuilder sb = new StringBuilder();
+
+            //sb.Append("Properties:");
+            //foreach (PropertyInfo p in pList)
+            //{
+
+            //    sb.Append("\n" + p.DeclaringType.Name + ": " + p.Name);
+            //}
+            //sb.Append("\nMethods:");
+            //foreach (MethodInfo m in mList)
+            //{
+            //    sb.Append("\n" + m.DeclaringType.Name + ": " + m.Name);
+            //}
+
+            //Console.WriteLine(sb.ToString());
+
+
+
+
             //Warrior war2 = new Warrior("Kirill");
             //Peasant peas = new Peasant("Jimmy");
             //Archer arch = new Archer("Salavat");
@@ -18,14 +48,14 @@ namespace ConsoleApp3
             Tower tower = new Tower("Tower");
             
             //war.AttackUnit(peas);
-            Battle bat = new Battle(war, bish, 6);
+            Battle bat = new Battle(war, bish, 0);
 
 
         }
 
         static void attackUnit(Unit attacker, Unit defender)
         {
-            defender.Health -= attacker.Damage;
+           // defender.Health -= attacker.Damage;
         }
 
         
