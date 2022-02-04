@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ConsoleApp3
+namespace CoreLibrary
 {
-    class RangeUnit : Unit
+    public class RangeUnit : Unit
     {
         public double RangeDamage { get; protected set; }
         public double RangeAttackDistance { get; protected set; }

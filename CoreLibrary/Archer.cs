@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ConsoleApp3
+namespace CoreLibrary
 {
-    class Archer : RangeUnit
+    public class Archer : RangeUnit
     {
         public Archer(string name) : base("Archer", name, 100) 
         {

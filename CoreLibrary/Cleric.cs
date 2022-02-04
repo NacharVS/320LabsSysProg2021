@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ConsoleApp3
+namespace CoreLibrary
 {
-    class Cleric : Unit
+    public class Cleric : Unit
     {
         public double Healing { get; private set; }
         public Cleric(string name) : base("Cleric", name, 80)

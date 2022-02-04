@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ConsoleApp3
+namespace CoreLibrary
 {
-    class Unit
+    public class Unit
     {
         public delegate void HealthChangedDelegate(string message);
         public event HealthChangedDelegate HealthChangedEvent; 
