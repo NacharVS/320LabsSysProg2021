@@ -1,26 +1,27 @@
-﻿using System;
+﻿using ConsoleApp3.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleApp3
 {
-    class Bishop : MovingUnits
+    class Bishop : Unit,IMovementUnit
     {
-        private double _healAmount;
-        public double HealAmount
-        {
-            get { return _healAmount; }
-            set { _healAmount = value; }
-        }
-
-        public Bishop(string name, double health, double heal) : base(name, health, 20, 30)
+        private double _healCount;
+        public Bishop(string name, double healCount)
         {
 
-            HealAmount = heal;
+            HealCount = healCount;
         }
-        public void Heal(Unit unit)
+        public double HealCount
         {
-            if (unit.Health + HealAmount < unit.MaxHealth)
+            get { return _healCount; }
+            set { _healCount = value; }
+
+        }
+        public void Heal(IUnit unit)
+        {
+            if (unit.Health + HealCount < unit.MaxHealth)
             {
                 unit.Health += unit.MaxHealth;
             }
@@ -30,5 +31,17 @@ namespace ConsoleApp3
             }
 
         }
+
+        public void Messange()
+        {
+            throw new NotImplementedException();
+        }
+
+        public double WalkingSpeed => throw new NotImplementedException();
+
+        public string Name { get => name; set => name = value; }
+        public double Health { get => health; set => health = value; }
+        public double MaxHealth { get => maxHealth; set => maxHealth = value; }
+
     }
 }
