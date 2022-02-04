@@ -41,17 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Archer.cs" />
     <Compile Include="Battle.cs" />
-    <Compile Include="BattleUnit.cs" />
-    <Compile Include="Bishop.cs" />
-    <Compile Include="Building.cs" />
-    <Compile Include="Catapult.cs" />
-    <Compile Include="MovableUnit.cs" />
-    <Compile Include="Peasant.cs" />
+    <Compile Include="Interfaces\IBattleUnit.cs" />
+    <Compile Include="Interfaces\IBuilding.cs" />
+    <Compile Include="Interfaces\IMovableUnit.cs" />
+    <Compile Include="Interfaces\IRangedUnit.cs" />
+    <Compile Include="Interfaces\IUnit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unit.cs" />
-    <Compile Include="Warrior.cs" />
+    <Compile Include="Units\Archer.cs" />
+    <Compile Include="Units\Building.cs" />
+    <Compile Include="Units\Catapult.cs" />
+    <Compile Include="Units\LongRangeUnit.cs" />
+    <Compile Include="Units\Unit.cs" />
+    <Compile Include="Units\Warrior.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
