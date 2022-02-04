@@ -7,8 +7,6 @@ namespace ConsoleApp3
     abstract class Unit
     {
 		private double _health;
-		private double _AttackSpeed;
-		private double _WalkSpeed;
 		public delegate void HpChangedDelegate(string message);
 
 		public double Hp
