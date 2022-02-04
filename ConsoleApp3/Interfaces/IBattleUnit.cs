@@ -4,12 +4,13 @@ using System.Text;
 
 namespace ConsoleApp3.Interfaces
 {
-    interface IBattleUnit : IUnit
+    public interface IBattleUnit : IUnit
     {
         double Damage { get; }
         double AttackSpeed { get; }
+        bool IsCatapult { get; }
 
-        void MeleeAttack(IUnit unit);
+        void MleeAttack(IUnit unit);
         void Attack(IUnit unit);
     }
 }

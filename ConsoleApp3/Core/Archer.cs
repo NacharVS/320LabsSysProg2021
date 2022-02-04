@@ -1,32 +1,54 @@
-﻿using System;
+﻿using ConsoleApp3.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleApp3
 {
-    class Archer : BattleUnit
+    public class Archer : Unit, IBattleUnit, IMovementUnit
     {
-        private int _minRangeDamage;
-        private int _maxRangeDamage;
-        private int _arrows;
-
-        public Archer(string name, double health, int AttackSpeed, double maxH, int min, int max) : base(name, health, AttackSpeed, maxH, min, max)
+        int Arrows;
+        public Archer(string name, double health, double maxHealth) 
         {
-            _minRangeDamage = 4;
-            _maxRangeDamage = 12;
-            _arrows = 5;
+            Name = name;
+            Arrows = 5;
+            Health = health;
+            MaxHealth = maxHealth;
         }
 
-        public double RangeAttack(Random rnd)
+        public double Damage => 5;
+        public double AttackSpeed => 6;
+        public string Name { get => name; set => name = value; }
+        public double Health { get => health; set => health = value < 0 ? 0 : value; }
+        public double MaxHealth { get => maxHealth; set => maxHealth = value; }
+        public double WalkingSpeed => 3;
+        public bool IsCatapult => false;
+
+        public void Attack(IUnit unit)
         {
-            if (_arrows > 0)
+            RangeAttack(unit);
+        }
+
+        public void Messange()
+        {
+            Console.WriteLine($"{Name} health: {Health}, max health: {MaxHealth}, damage: {Damage}, attack speed: {AttackSpeed}");
+        }
+
+        public void MleeAttack(IUnit unit)
+        {
+             unit.Health -= 4;
+        }
+
+        public void RangeAttack(IUnit unit)
+        {
+            if (Arrows > 0)
             {
-                double currentDamage = Convert.ToDouble(rnd.Next(_minRangeDamage, _maxRangeDamage));
-                return currentDamage;
+                unit.Health -= (new Random()).Next(5, 20);
+                Arrows--;
             }
             else
             {
-                return MleeAttack(rnd);
+                MleeAttack(unit);
             }
         }
     }
