@@ -4,11 +4,12 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Peasant : Unit
+    class Peasant : Unit, IUnit
     {
         public Peasant()
         {
             Health = 300;
+            name = "Мирный житель";
         }
 
     }

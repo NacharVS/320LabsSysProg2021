@@ -4,36 +4,30 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Warrior : Unit
+    class Warrior : Unit, IBattleUnit, IUnit
     {
-        
-        private int _atack;
-        public int Atack
-        { 
-            get { return _atack; }
-            set { _atack = value; }
-        }
 
-        
+
+        public int atack => 50;
 
         public Warrior()
         {
             Health = 70;
-            Atack = 50;
             name = "Warrior";
         }
 
-        public void Damage (Unit unit)
+        public void Damage (IUnit unit)
         {
             if (unit.name != "Build")
             {
-                if (unit.Health - _atack > 0)
-                    unit.Health -= _atack;
+                if (unit.Health - atack > 0)
+                    unit.Health -= atack;
                 else
                     unit.Health = 0;
             }
             else
                 Console.WriteLine("only catapult can attack building");
         }
+
     }
 }

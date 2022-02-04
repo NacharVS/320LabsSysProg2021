@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    abstract class Unit
+    abstract class Unit : IUnit
     {
 		public string name;
 		private double _health;
@@ -18,7 +18,12 @@ namespace ConsoleApp3
 				}
 		}
 
-		public delegate void HealthChangerDelegate(string message);
+		string IUnit.name => name;
+		
+
+        double IUnit.Health { get => Health; set => Health = value; }
+
+        public delegate void HealthChangerDelegate(string message);
 		public event HealthChangerDelegate HealthChanerEvent;
 	}
 }

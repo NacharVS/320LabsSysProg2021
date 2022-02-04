@@ -20,10 +20,15 @@ namespace ConsoleApp3
             archer.HealthChanerEvent += ShowMessage;
             build.HealthChanerEvent += ShowMessage;
             catapult.HealthChanerEvent += ShowMessage;
+            peasant.HealthChanerEvent += ShowMessage;
+            bishop.HealthChanerEvent += ShowMessage;
 
             archer.Damage(build);
             catapult.Damage(build);
-
+            warrior.Damage(peasant);
+            bishop.DoHeal(peasant);
+            archer.Damage(bishop);
+            bishop.DoHeal(bishop);
             
         }
         static void ShowMessage(string mes)

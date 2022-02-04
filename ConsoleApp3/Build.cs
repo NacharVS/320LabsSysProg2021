@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Build : Unit
+    class Build : Unit, IUnit
     {
         public Build()
         {

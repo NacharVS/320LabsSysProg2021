@@ -4,24 +4,23 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Bishop
+    class Bishop : Unit, IUnit, IHealUnit
     {
-        public double HealAmount { get; set; }
 
-        public double Heal()
-        {
-            return HealAmount;
-        }
+        public double Healmount => 30;
+
 
         public Bishop()
         {
-            HealAmount = 30;
+            name = "Bishop";
+            Health = 80;
         }
 
-        public void DoHeal(Unit unit)
+        public void DoHeal(IUnit unit)
         {
-            unit.Health += HealAmount;
+            unit.Health += Healmount;
             
         }
+
     }
 }
