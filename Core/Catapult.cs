@@ -5,23 +5,25 @@ using System.Text;
 
 namespace Core
 {
-    public class Catapult : IBattleUnit
+    public class Catapult : Unit,IBattleUnit
     {
-        public  bool isCatapult => true;
-
-        public double AttackSpeed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double Damage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double AttackSpeed { get; set; }
+        public double Damage { get; set; }
 
         public bool IsCatapult => true;
 
-        public double Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double MaxHealth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double Health { get => health; set => health = value; }
+        public double MaxHealth { get => maxHealth; set => maxHealth = value; }
 
-        public string name = "Catapult";
         public string Name { get => name; set => name = value; }
 
-        public Catapult()/* : base("Catapult", 210, 30, 4, 5)*/
+        public Catapult(string name, double health, double maxHealth, double damage, double attackSpeed)
         {
+            Health = health;
+            MaxHealth = maxHealth;
+            Damage = damage;
+            AttackSpeed = attackSpeed;
+            Name = name;
         }
 
         public double MeleeAttack()
@@ -31,7 +33,7 @@ namespace Core
 
         public void Attack(IBattleUnit unit, double damage)
         {
-            throw new NotImplementedException();
+            unit.Health -= damage;
         }
 
         public void Message()

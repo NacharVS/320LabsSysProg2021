@@ -1,54 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using UnitInterfaces;
 
 namespace Core
 {
     public class Battle
     {
-        public void Fighting(BattleUnit unit1, BattleUnit unit2)
+        public void Fighting(IBattleUnit unit1, IBattleUnit unit2)
         {
             while (unit1.Health > 0 && unit2.Health > 0)
-            {              
-                unit1.Attack(unit1, unit2.MeleeAttack());
-                unit2.Attack(unit2, unit1.MeleeAttack());
-                //unit1.Health = unit1.Health - unit2.MeleeAttack();
-                //unit2.Health = unit2.Health - unit1.MeleeAttack();
+            {
+                unit1.Attack(unit2, unit1.Damage);
+                unit2.Attack(unit1, unit2.Damage);
+
                 unit1.Message();
                 unit2.Message();
             }
         }
 
-        public void Fighting(Archer arc, BattleUnit unit)
+        public void Fighting(Archer arc, IBattleUnit unit)
         {
             while (arc.Health > 0 && unit.Health > 0)
             {
-                arc.Attack(arc, unit.MeleeAttack());
-                unit.Attack(unit, arc.RangeAttack());
-                //arc.Health -= unit.MeleeAttack(); 
-                //unit.Health -= arc.RangeAttack();
+                arc.Health -= unit.MeleeAttack();
+                unit.Health -= arc.RangeAttack();
                 arc.Message();
                 unit.Message();
             }
         }
 
-        public void Fighting(Soldier sold, BattleUnit unit)
+        public void Fighting(Soldier sold, IBattleUnit unit)
         {
             while (sold.Health > 0 && unit.Health > 0)
             {
-                sold.Attack(sold, unit.MeleeAttack());
-                unit.Attack(unit, sold.MeleeAttack());
+                sold.Attack(unit, sold.Damage);
+                unit.Attack(sold, unit.Damage);
 
-                //sold.Health -= unit.MeleeAttack();
-                //unit.Health -= sold.MeleeAttack();
-                //sold.Message();
+                sold.Message();
                 unit.Message();
             }
         }
 
-        public void Fighting(Building build, BattleUnit unit)
+        public void Fighting(Building build, IBattleUnit unit)
         {
-            if (unit.isCatapult)
+            if (unit.IsCatapult)
             {
                 while (build.Health > 0)
                 {

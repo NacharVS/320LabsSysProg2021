@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Core
 {
-    public class Peasant : IMovingUnit
+    public class Peasant : Unit,IMovingUnit
     {
         public double WalkingSpeed => 4;
-        public double Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double MaxHealth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double Health { get => health; set => health=value; }
+        public double MaxHealth { get => maxHealth; set => maxHealth=value; }
+        public string Name { get => name; set => name = value; }
 
-        public Peasant(string name,double health,double maxHealth)/*: base(name,90,2)*/
+        public Peasant(string name,double health,double maxHealth)
         {
             Name = name;
             Health = health;

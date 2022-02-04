@@ -8,8 +8,11 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Soldier sold = new Soldier("Semen",2,10);
-            sold.Message();
+            Soldier sold = new Soldier("Semen",6,40,3,5);
+            Archer arc = new Archer("Bob",10,20,6,2);
+            Archer arc2 = new Archer("Sasha", 20, 40, 12, 4);
+            Battle battle = new Battle();
+            battle.Fighting(sold, arc);
             //sold.HealtChangedEvent += ShowMessage;
 
             //Archer arc = new Archer("Anton");
@@ -38,10 +41,5 @@ namespace ConsoleApp3
         {
             Console.WriteLine(mes);
         }
-        // 1. create methods for imitation of battle between 2 units. All nonBuildingsunits can attack each other
-        // 2. only catapult can attack building
-        // 3. Units: Soldier(Only mlee attack), Archer(RangeAttack (has 5 arrows)),
-        // All units Has AttackSpeed/WalkingSpeed. 
-
     }
 }

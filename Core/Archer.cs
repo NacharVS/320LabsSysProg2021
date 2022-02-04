@@ -5,17 +5,8 @@ using System.Text;
 
 namespace Core
 {
-    public class Archer : IBattleUnit
+    public class Archer : Unit,IBattleUnit
     {
-        private int Arrows { get; set; }
-        public double AttackSpeed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double Damage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double MaxHealth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsCatapult => false;
-
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
         public Archer(string name, double health, double maxHealth,double damage,double attackSpeed)
         {
             Arrows = 5;
@@ -25,6 +16,15 @@ namespace Core
             AttackSpeed = attackSpeed;
             Name = name;
         }
+
+        private int Arrows { get; set; }
+        public double AttackSpeed { get; set; }
+        public double Damage { get; set; }
+        public double Health { get => health; set => health = value; }
+        public double MaxHealth { get => maxHealth; set => maxHealth = value; }
+        public bool IsCatapult => false;
+
+        public string Name { get => name; set => name = value; }
 
         public double RangeAttack()
         {
@@ -42,7 +42,7 @@ namespace Core
 
         public double MeleeAttack()
         {
-            throw new NotImplementedException();
+            return 2;
         }
 
         public void Message()

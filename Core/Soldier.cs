@@ -5,37 +5,36 @@ using UnitInterfaces;
 
 namespace Core
 {
-    public class Soldier : IBattleUnit, IMovingUnit
+    public class Soldier : Unit,IBattleUnit, IMovingUnit
     {
-        public double AttackSpeed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double WalkingSpeed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double Damage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double Health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double MaxHealth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double AttackSpeed { get; set; }
+        public double WalkingSpeed => 10;
+        public double Damage { get; set; }
+        public double Health { get => health; set => health = value; }
+        public double MaxHealth { get => maxHealth; set => maxHealth = value; }
 
         public bool IsCatapult => false;
 
-        public string name;
         public string Name { get => name; set => name = value; }
 
-        public Soldier(string name, double health, double maxHealth)/* : base(name,100,10,5,2)*/
+        public Soldier(string name, double health, double maxHealth,double attackSpeed,double damage)
         {
             Name = name;
             Health = health;
             MaxHealth = maxHealth;
+            AttackSpeed = attackSpeed;
+            Damage = damage;
         }
 
         public double MeleeAttack()
         {
             if (Health > 0.4 * MaxHealth)
             {
-                //return base.MeleeAttack();
-                throw new NotImplementedException();
+                return MeleeAttack();
             }
             else
             {
-                //return base.MeleeAttack() * 2;
-                throw new NotImplementedException();
+                return MeleeAttack() * 2;
             }
         }
 

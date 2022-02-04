@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using UnitInterfaces;
 
 namespace Core
 {
-    public class Bishop : MovingUnits
+    public class Bishop : Unit,IMovingUnit
     {
-        public Bishop(string name, double healCount):base(name,100,2)
+        public Bishop(string name, double healCount)
         {
             HealCount = healCount;
         }
@@ -19,7 +20,14 @@ namespace Core
             set { _healCount = value; }
             
         }
-        public void Heal(Unit unit)
+
+        public double WalkingSpeed => 3;
+
+        public string Name { get => name; set => name = value; }
+        public double Health { get => health; set => health = value; }
+        public double MaxHealth { get => maxHealth; set => maxHealth = value; }
+
+        public void Heal(IUnit unit)
         {
             if (unit.Health + HealCount >= unit.MaxHealth)
             {
@@ -30,6 +38,11 @@ namespace Core
                 unit.Health += HealCount;
             }
             
+        }
+
+        public void Message()
+        {
+            throw new NotImplementedException();
         }
     }
 }
