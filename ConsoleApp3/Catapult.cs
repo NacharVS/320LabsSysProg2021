@@ -4,14 +4,12 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Catapult: BattleUnit
+    class Catapult: BattleUnit, IBattleUnit
     {
         internal override bool IsCatapult => true;
-        public Catapult(string name, double health, double attackPoint): base ("Catapult", health, 5,300,100, 200)
+        public Catapult(): base ("Catapult", 200, 5,300,100, 200)
         {
-            
-            Health = health;
-            DamagePoint = attackPoint;
+           
         }
         public override void Info()
         {

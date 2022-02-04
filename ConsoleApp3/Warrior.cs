@@ -4,11 +4,11 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Warrior : BattleUnit
+    public class Warrior : BattleUnit, IBattleUnit
     {
-        public Warrior(string name, double health, int attackPoint, double maxHealth, int min, int max) : base(name, health,  attackPoint, maxHealth, min, max )
+        public Warrior(string name, double health, int attackSpeed, int walkSpeed, int min, int max) : base(name, health, attackSpeed, walkSpeed, min, max)
         {
-            DamagePoint = attackPoint;
+           
         }
         private double _damage;
 
@@ -17,5 +17,6 @@ namespace ConsoleApp3
             get { return _damage; }
             set { _damage = value; }
         }
+        
     }
 }

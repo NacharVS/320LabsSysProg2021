@@ -4,13 +4,15 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    abstract class Unit
+    public abstract class Unit : IUnit
     {
-		protected Unit(string name, double health)
+		protected Unit(string name, double health, int attackSpeed, int walkingSpeed)
 		{
 			Name = name;
 			Health = health;
 			MaxHealth = health;
+			AttackSpeed = attackSpeed;
+			WalkingSpeed = walkingSpeed;
 			Creation();
 		}
 		public void Creation()
@@ -21,8 +23,13 @@ namespace ConsoleApp3
 		public delegate void HealthChangedDelegate(string message);
 		public event HealthChangedDelegate HealthChangedEvent;
         private string _name;
+		private double _attackSpeed;
+		private double _walkingSpeed;
 
-        public string Name
+		public double AttackSpeed { get { return _attackSpeed; } set { _attackSpeed = value; } }
+		public double WalkingSpeed { get { return _walkingSpeed; } set { _walkingSpeed = value; } }
+
+		public string Name
         {
             get { return _name; }
             set { _name = value; }

@@ -4,18 +4,14 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Building:Unit
+    class Building:Unit, IBuilding
     {
         private double _wall;
-        public Building(string name, double health) : base(name, health)
+        public Building(string name, double health) : base(name, health,0,0)
         {
             Wall = health;
         }
         public double Wall { get => _wall; set => _wall = value; }
-        private void WallIsDestroyed()
-        {
-            Console.WriteLine("One wall was destroyed");
-        }
         public override void Info()
         {
             Console.WriteLine($"Building {Name} has {_wall} walls and {Health}hp");

@@ -4,20 +4,16 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class BattleUnit: MovingUnits
+    public class BattleUnit: Unit, IBattleUnit
     {
         public int minDamage;
         public int maxDamage;
-        public BattleUnit(string name, double health,  int Attackspeed, double maxH, int min, int max) : base(name, health, Attackspeed, maxH)
+        public BattleUnit(string name, double health,  int Attackspeed, int walkSpeed, int min, int max) : base(name, health, Attackspeed, walkSpeed)
         {
             minDamage = min;
             maxDamage = max;
         }
-        public virtual double MleeAttack(Random rnd)
-        {
-            double currentDamage = Convert.ToDouble(rnd.Next(minDamage, maxDamage));
-            return currentDamage;
-
-        }
+        public int MinDamage { get => minDamage; set => minDamage = value; }
+        public int MaxDamage { get => maxDamage; set => maxDamage = value; }
     }
 }
