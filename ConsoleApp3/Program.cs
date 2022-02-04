@@ -7,20 +7,14 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Warrior war = new Warrior();
-            war.HealthChangedEvent += ShowMessage;
-            Peasant peas = new Peasant();
-            peas.HealthChangedEvent += ShowMessage;
-            Console.WriteLine(peas.Health);
-            Bishop bish = new Bishop();
-            bish.HealthChangedEvent += ShowMessage;
-            Archer arch = new Archer();
-            arch.HealthChangedEvent += ShowMessage;
-
-            Battle fig = new Battle();
-
-            fig.Fight(war, peas);
-
+            Unit Bob = new Unit(new Sword(), 10);
+            Unit Max = new Unit(new Sword(), 10);
+            Bob.weapon.InflictDamage(Max);
+            Console.WriteLine(Max._health);
+            var newBow = new Weapon.Bow();
+            Max.weapon = newBow;
+            Max.weapon.InflictDamage(Bob);
+            Console.WriteLine(Bob._health);
 
             //war.Attack(peas);
             //Console.WriteLine(peas.Health);

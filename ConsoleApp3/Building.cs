@@ -4,11 +4,11 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Building : Unit
+    class Building /*: Unit*/
     {
-        public Building()
-        {
-            Health = 150;
-        }
+        //public Building()
+        //{
+        //    Health = 150;
+        //}
     }
 }
