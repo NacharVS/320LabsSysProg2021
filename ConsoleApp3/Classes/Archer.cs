@@ -25,8 +25,6 @@ namespace ConsoleApp3
             Hp = 70;
             _damage = 10;
             _arrow = 5;
-            ASpeed = 15;
-            WSpeed = 25;
         }
         public Archer(double health)
         {

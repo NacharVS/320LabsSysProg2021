@@ -28,16 +28,5 @@ namespace ConsoleApp3
 			}
 		}
 		public event HpChangedDelegate HpChangedEvent;
-
-		public double ASpeed
-		{
-			get { return _AttackSpeed; }
-			set { }
-		}
-		public double WSpeed
-		{
-			get { return _WalkSpeed; }
-			set { }
-		}
 	}
 }

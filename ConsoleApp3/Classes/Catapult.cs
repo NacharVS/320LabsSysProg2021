@@ -7,7 +7,7 @@ namespace ConsoleApp3
 	class Catapult:Unit
 	{
         private double _damage;
-        private double _projectile;
+        private int _projectile;
         public void Shot(Unit unit)
         {
             if (_damage >= 0 && _projectile != 0)
@@ -25,8 +25,6 @@ namespace ConsoleApp3
             Hp = 170;
             _damage = 50;
             _projectile = 10;
-            ASpeed = 5;
-            WSpeed = 7;
         }
         public Catapult(double health)
         {

@@ -12,8 +12,6 @@ namespace ConsoleApp3
         public Bishop()
         {
             Hp = 50;
-            ASpeed = 10;
-            WSpeed = 15;
         }
         public Bishop(double health)
         {

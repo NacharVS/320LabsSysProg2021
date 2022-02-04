@@ -18,11 +18,10 @@ namespace ConsoleApp3.Classes
         {
             Hp = 110;
             _damage = 40;
-            ASpeed = 10;
-            WSpeed = 7;
         }
         public Soldier(double health)
         {
             Hp = health;
         }
     }
+}
