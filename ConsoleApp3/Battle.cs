@@ -14,7 +14,7 @@ namespace ConsoleApp3
                 {
                     unit1.Attack(unit2, unit1.damage);
                 }
-                if (unit2.health != 0)
+                if (unit1.health != 0)
                 {
                     unit2.Attack(unit1, unit2.damage);
                 }
