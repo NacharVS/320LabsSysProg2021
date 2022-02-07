@@ -4,31 +4,35 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Warrior : Unit
+    class Warrior : Unit, IBattleUnit, IMovingUnit
     {
-        private bool _rage = false;
-        public Warrior(string name) : base(name, 200, 15, 100, 400, false, 1)
+        public Warrior(string newName)
         {
-
+            Name = newName;
+            MaxHealth = 400;
+            Health = MaxHealth;
         }
 
-        public override void Hit(Unit defender, double distance)
-        {
-            if (Health > MaxHealth / 2)
-            {
-                defender.Health -= Damage;
-            }
-            else
-            {
-                if (!_rage)
-                {
-                    Console.WriteLine($"{Name} RAGE");
-                    AttackSpeed /= 2;
-                }
-                _rage = true;
-                defender.Health -= Damage;
-            }
+        public double Damage => 15;
+        public double AttackSpeed => 3;
+        public string Name { get => _name; set => _name = value; }
+        public double Health { get => _health; set => _health = value < 0 ? 0 : value; }
+        public double MaxHealth { get => _maxHealth; set => _maxHealth = value; }
+        public double WalkingSpeed => 4;
 
+        public void Attack(IUnit unit)
+        {
+            MeleeAttack(unit);
+        }
+
+        public void MeleeAttack(IUnit unit)
+        {
+            unit.Health -= new Random().Next((int)(0.7 * Damage), (int)(1.3 * Damage) + 1);
+        }
+
+        public void Move()
+        {
+            Console.WriteLine($"{Name} speed {WalkingSpeed}");
         }
     }
 }

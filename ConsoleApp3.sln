@@ -5,9 +5,11 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp3", "ConsoleApp3\ConsoleApp3.csproj", "{998F4CBF-1D59-47BD-B587-DA4CF24614B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timer", "Timer\Timer.csproj", "{63549254-6235-4C42-9A1A-5E7878D8D7FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timer", "Timer\Timer.csproj", "{63549254-6235-4C42-9A1A-5E7878D8D7FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTimer", "WpfTimer\WpfTimer.csproj", "{4B65FC7B-7965-481A-9B09-5279E599FB69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfTimer", "WpfTimer\WpfTimer.csproj", "{4B65FC7B-7965-481A-9B09-5279E599FB69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimerFolder", "TimerFolder", "{C82F6CAA-C722-4C7F-A89D-596CEB2404BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63549254-6235-4C42-9A1A-5E7878D8D7FA} = {C82F6CAA-C722-4C7F-A89D-596CEB2404BD}
+		{4B65FC7B-7965-481A-9B09-5279E599FB69} = {C82F6CAA-C722-4C7F-A89D-596CEB2404BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16BD71D7-70FB-45BA-9CB9-29ECCE2F9EB8}
