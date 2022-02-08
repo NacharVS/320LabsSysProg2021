@@ -46,15 +46,15 @@ namespace WpfAppList
 
         async Task GetList()
         {
-            var rnd = new Random();
-            Thread.Sleep(10000/*rnd.Next(10000, 40000)*/);
             await Task.Run(() => RndString());
         }
 
         void RndString()
         {
+            var rnd = new Random();
             while (n < 10)
             {
+                Thread.Sleep(rnd.Next(10000, 40000));
                 txt_list.Text = listData[n];
             }
         }
