@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimerConsole", "TimerConsol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimerWPF", "TimerWPF\TimerWPF.csproj", "{57AF7BDC-AC44-49AD-8618-CCE1F2A104BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitsClasses", "UnitsClasses\UnitsClasses.csproj", "{7FC733E0-6668-4680-853F-D074D9C75EC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitsClasses", "UnitsClasses\UnitsClasses.csproj", "{7FC733E0-6668-4680-853F-D074D9C75EC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitsInterfaces", "UnitsInterfaces\UnitsInterfaces.csproj", "{6511EC6C-0487-4790-9EB9-E093B24D7138}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitsInterfaces", "UnitsInterfaces\UnitsInterfaces.csproj", "{6511EC6C-0487-4790-9EB9-E093B24D7138}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayData", "DisplayData\DisplayData.csproj", "{29C13D2C-8E8E-4ADA-94C8-58CFEC78ADF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6511EC6C-0487-4790-9EB9-E093B24D7138}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6511EC6C-0487-4790-9EB9-E093B24D7138}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6511EC6C-0487-4790-9EB9-E093B24D7138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C13D2C-8E8E-4ADA-94C8-58CFEC78ADF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C13D2C-8E8E-4ADA-94C8-58CFEC78ADF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C13D2C-8E8E-4ADA-94C8-58CFEC78ADF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C13D2C-8E8E-4ADA-94C8-58CFEC78ADF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
