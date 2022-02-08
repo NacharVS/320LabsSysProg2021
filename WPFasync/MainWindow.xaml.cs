@@ -24,5 +24,10 @@ namespace WPFasync
 		{
 			InitializeComponent();
 		}
+
+		private void Show_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
 	}
 }
