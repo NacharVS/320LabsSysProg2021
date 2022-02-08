@@ -10,12 +10,13 @@ namespace ConsoleApp3
     {
         string battleLog = "";
         public string Fight(IBattleUnit unit1, IBattleUnit unit2)
-        {         
+        {
+            battleLog += $"{unit1.Name} has {unit1.Health}, {unit2.Name} has {unit2.Health} \n";
             while (unit1.Health > 0 && unit2.Health > 0)
             {
                 unit1.Attack(unit2);
                 unit2.Attack(unit1);
-                battleLog += $"{unit1}{Environment.NewLine}{unit2}{Environment.NewLine}";
+                battleLog += $"{unit1.Name} has {unit1.Health}, {unit2.Name} has {unit2.Health} \n";
             }
             return battleLog;
         }
