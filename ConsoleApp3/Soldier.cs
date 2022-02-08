@@ -4,15 +4,23 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Soldier : Battle
+    class Soldier
     {
-        public Soldier() : base(5, 10)
+        public int Health { get; set; }
+        public IWeapon weapon { get; set; }
+
+        public Soldier(IWeapon weapon)
+        {
+            this.weapon = weapon;
+        }
+
+        public void Throw(IThrowableWeapon weapon)
+        {
+            weapon.Throw();
+        }
+        public void Walk()
         {
 
-        }
-        public override double MelleeAttack()
-        {
-            return 2;
         }
     }
 }
