@@ -5,7 +5,7 @@ using UnitsInterfaces;
 
 namespace UnitsClasses
 {
-    public class Building : Unit
+    public class Building : Unit, IBuilding
     {
         private double _wall;
 

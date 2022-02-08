@@ -22,5 +22,9 @@ namespace UnitsInterfaces
                 return MeleeAttack(rnd);
             }
         }
+        new double Attack(Random rnd)
+        {
+            return RangeAttack(rnd);
+        }
     }
 }

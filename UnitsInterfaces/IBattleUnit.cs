@@ -12,5 +12,9 @@ namespace UnitsInterfaces
         {
             return rnd.Next(MinDamage, MaxDamage);
         }
+        double Attack(Random rnd)
+        {
+             return MeleeAttack(rnd);
+        }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UnitsInterfaces
 {
-    interface IBuilding
+    public interface IBuilding : IUnit
     {
         double Wall { get; set; }
     }
