@@ -24,15 +24,11 @@ namespace Core
             MaxHealth = maxHealth;
         }
 
-        public double MeleeAttack()
+        public void MeleeAttack(IUnit unit)
         {
             if (Health > 0.4 * MaxHealth)
             {
-                return MeleeAttack();
-            }
-            else
-            {
-                return MeleeAttack() * 2;
+                MeleeAttack(unit);
             }
         }
 

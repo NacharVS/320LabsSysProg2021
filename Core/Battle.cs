@@ -50,13 +50,13 @@ namespace Core
                 {
                     if (build.Wall > 0)
                     {
-                        build.Wall = build.Wall - unit.MeleeAttack();                
+                        unit.MeleeAttack(unit);                
                         build.Message();
                         unit.Message();
                     }
                     else
                     {
-                        build.Health = build.Health - unit.MeleeAttack();
+                        unit.MeleeAttack(unit);
                         build.Message();
                         unit.Message();
                     }

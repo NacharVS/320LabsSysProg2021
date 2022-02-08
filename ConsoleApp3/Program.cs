@@ -12,7 +12,7 @@ namespace ConsoleApp3
             Archer arc = new Archer("Bob",10,20);
             Archer arc2 = new Archer("Sasha", 20, 40);
             Battle battle = new Battle();
-            battle.Fighting(arc, arc);
+            battle.Fighting(sold, arc);
             //sold.HealtChangedEvent += ShowMessage;
 
             //Archer arc = new Archer("Anton");

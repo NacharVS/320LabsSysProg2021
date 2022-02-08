@@ -8,7 +8,7 @@ namespace UnitInterfaces
     {
         double AttackSpeed { get; }
         double Damage { get; }
-        double MeleeAttack();
+        void MeleeAttack(IUnit unit);
         bool IsCatapult { get;  }
         void Attack(IBattleUnit unit);
     }

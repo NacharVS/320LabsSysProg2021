@@ -36,13 +36,14 @@ namespace Core
             }
             else
             {
-                MeleeAttack();
+                MeleeAttack(unit);
             }
         }
 
-        public double MeleeAttack()
+        public void MeleeAttack(IUnit unit)
         {
-            return 2;
+            double presentDamage = (new Random()).Next(10, 80);
+            unit.Health -= presentDamage;
         }
 
         public void Message()

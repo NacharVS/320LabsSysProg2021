@@ -24,7 +24,7 @@ namespace Core
             Name = name;
         }
 
-        public double MeleeAttack()
+        public void MeleeAttack(IUnit unit)
         {
             throw new NotImplementedException();
         }
