@@ -32,12 +32,14 @@ namespace UnitsClasses
                 if (value > 0)
                 {
                     HealthChangedEvent?.Invoke($"{Name}: Health changed ({value - _health})");
+                    Console.WriteLine($"{Name}: Health changed ({value - _health})");
                     _health = value;
                 }
                 else
                 {
                     _health = 0;
                     HealthChangedEvent?.Invoke($"{Name}: Unit died");
+                    Console.WriteLine($"{Name}: Unit died");
                 }
             }
         }

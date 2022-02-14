@@ -7,23 +7,25 @@ namespace Reflection
     {
         static void Main(string[] args)
         {
-            string dllName = @"D:\Users\gutuf\source\repos\320LabsSysProg2021\UnitsClasses\bin\Debug\netcoreapp3.1\UnitsClasses.dll";
+            string dllName = @"/Users/201913/Projects/320LabsSysProg2021/UnitsClasses/bin/Debug/netcoreapp3.1/UnitsClasses.dll";
 
             Assembly asm = Assembly.LoadFrom(dllName);
 
-            Type type = asm.GetType("UnitsClasses.BattleUnit", true, true);
+            Type buildingType = asm.GetType("UnitsClasses.Building", true, true);
+            Type catapultType = asm.GetType("UnitsClasses.Catapult", true, true);
+            Type battleType = asm.GetType("UnitsClasses.Battle", true, true);
 
             // Get Info
-            Console.WriteLine($"Type: {type.AssemblyQualifiedName}");
+            Console.WriteLine($"Type: {buildingType.AssemblyQualifiedName}");
 
             Console.WriteLine($"Members:");
-            foreach (MemberInfo memberInfo in type.GetMembers())
+            foreach (MemberInfo memberInfo in buildingType.GetMembers())
             {
                 Console.WriteLine($"  {memberInfo.DeclaringType} {memberInfo.MemberType} {memberInfo.Name}");
             }
 
             Console.WriteLine($"Methods:");
-            foreach (MethodInfo method in type.GetMethods())
+            foreach (MethodInfo method in catapultType.GetMethods())
             {
                 Console.Write($"  {method.ReturnType} {method.Name} (");
                 foreach (ParameterInfo param in method.GetParameters())
@@ -36,26 +38,13 @@ namespace Reflection
 
             // Run
             //Option 1
-            //object user = Activator.CreateInstance(type);
-            //object user = Activator.CreateInstance(type, "Alex", 29);
+            object building = Activator.CreateInstance(buildingType, "Building", 100);
+            object catapult = Activator.CreateInstance(catapultType);
+            object battle = Activator.CreateInstance(battleType);
 
-            //MethodInfo methodDisplay = type.GetMethod("Display");
-            //methodDisplay.Invoke(user, new object[] { });
+            MethodInfo fightMethod = battleType.GetMethod("Fight", new Type[] {catapultType, buildingType });
 
-            //MethodInfo methodPayment = type.GetMethod("Payment");
-            //int sum = (int)methodPayment.Invoke(user, new object[] { 10, Type.Missing });
-            //Console.WriteLine(sum);
-
-            ////Option 2
-            //ConstructorInfo ivanConstructor = type.GetConstructor(new Type[] { });
-            //var ivan = ivanConstructor.Invoke(new object[] { });
-
-            //var propertyInfo = type.GetProperty("Name");
-            //var name = propertyInfo.GetValue(ivan);
-            //Console.WriteLine(name);
-
-            //propertyInfo.SetValue(ivan, "Ivan");
-            //Console.WriteLine(propertyInfo.GetValue(ivan));
+            fightMethod.Invoke(battle, new object[] {catapult, building });
         }
 
     }
