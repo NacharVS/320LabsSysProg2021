@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,10 +25,33 @@ namespace WPFasync
 		{
 			InitializeComponent();
 		}
+		private Random _random = new Random(Environment.TickCount);
 
-		private void Show_Click(object sender, RoutedEventArgs e)
+		public string RandomString(int length)
 		{
+			string chars = " частнопредпринимательский ";
+			StringBuilder builder = new StringBuilder(length);
 
+			for (int i = 0; i < length; ++i)
+				builder.Append(chars[_random.Next(chars.Length)]);
+
+			return builder.ToString();
+		}
+
+		private async void Show_Click(object sender, RoutedEventArgs e)
+		{
+			await Task.Run(() => AddList());
+		}
+		private void AddList()
+		{
+			for (int i = 1; i <= 100; i++)
+			{
+				Dispatcher.Invoke((Action)(() =>
+				{
+					List.Items.Add(RandomString(i));
+				}));
+				Thread.Sleep(3000);
+			}
 		}
 	}
 }

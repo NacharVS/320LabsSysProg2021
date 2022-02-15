@@ -13,7 +13,7 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <TextBlock x:Name="List" FontSize="15" Foreground="Snow"/>
+        <ListView x:Name="List" FontSize="15" Foreground="Black"/>
         <Button x:Name="Show" Content="Show List" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Show_Click"/>
     </Grid>
 </Window>
