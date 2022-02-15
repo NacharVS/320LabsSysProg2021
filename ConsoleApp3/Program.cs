@@ -63,10 +63,8 @@ namespace ConsoleApp3
         }
         static void Main(string[] args)
         {
-            MakeCake();
-
-            Console.ReadKey();
-
+            // MongoExamples.AddToMongo().GetAwaiter().GetResult();
+            MongoExamples.GetAllFromMongo().GetAwaiter().GetResult();
 
 
         }
