@@ -39,23 +39,30 @@ namespace WpfAppList
             listData[9] = "Bye-Bye!";
         }
 
-        private void btn_data_Click(object sender, RoutedEventArgs e)
+        private async void btn_data_Click(object sender, RoutedEventArgs e)
         {
-            GetList().GetAwaiter();
+            await Task.Run(() => AddList());
         }
 
-        async Task GetList()
-        {
-            await Task.Run(() => RndString());
-        }
-
-        void RndString()
+        public string GetString()
         {
             var rnd = new Random();
             while (n < 10)
             {
-                Thread.Sleep(rnd.Next(10000, 40000));
-                txt_list.Text = listData[n];
+                return listData[rnd.Next(0, 9)];
+            }
+            return "OK";
+        }
+
+        private void AddList()
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                Dispatcher.Invoke((Action)(() =>
+                {
+                    txt_list.Text += (GetString() + "\n");
+                }));
+                Thread.Sleep(5000);
             }
         }
     }
