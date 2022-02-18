@@ -4,12 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 
 namespace Randomize
 {
     public class DB
     {
+        public void Edit(Entity entity)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Random");
+            var collection = database.GetCollection<Entity>("Random");
+            collection.ReplaceOne(x => x.NameOfEntity == "Ivan", entity);
+        }
         public DB(string nameOfSubEntity, string surnameOfSubEntity)
         {
             NameOfSubEntity = nameOfSubEntity;
@@ -29,7 +37,7 @@ namespace Randomize
             SurnameOfSubEntity = surnameOfSubEntity;
             ListOfSubEntities = new List<DB>();
         }
-
+        [BsonIgnoreIfDefault]
         public ObjectId _id { get; set; }
         public string NameOfEntity { get; set; }
         public string SurnameOfSubEntity { get; set; }

@@ -44,13 +44,13 @@ namespace Randomize
             var collection = database.GetCollection<Entity>("Random");
             var list = await collection.Find(x => true).ToListAsync();
 
-            foreach (var item in list)
-            {
-                txt_Name.Text += (item.ListOfSubEntities[rnd.Next(0, 24)].SurnameOfSubEntity + "\n");
-            }
+            txt_Name.Text += (list[0].ListOfSubEntities[rnd.Next(0, 24)].SurnameOfSubEntity + "\n");
+            txt_Name.Text += (list[0].ListOfSubEntities[rnd.Next(0, 24)].SurnameOfSubEntity + "\n");
+
         }
         private void btn_rnd_Click(object sender, RoutedEventArgs e)
         {
+            txt_Name.Text = "";
             GetAllFromMongo().GetAwaiter();
         }
     }
