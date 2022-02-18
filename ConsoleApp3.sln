@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timer", "Timer\Timer.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAsync", "WpfAsync\WpfAsync.csproj", "{E95226BB-36E9-476C-8EEA-8D656B3E70C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSelectDuty", "WpfSelectDuty\WpfSelectDuty.csproj", "{8F48C1BB-B717-4190-880A-9C0EDA296898}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E95226BB-36E9-476C-8EEA-8D656B3E70C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E95226BB-36E9-476C-8EEA-8D656B3E70C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E95226BB-36E9-476C-8EEA-8D656B3E70C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F48C1BB-B717-4190-880A-9C0EDA296898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F48C1BB-B717-4190-880A-9C0EDA296898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F48C1BB-B717-4190-880A-9C0EDA296898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F48C1BB-B717-4190-880A-9C0EDA296898}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
