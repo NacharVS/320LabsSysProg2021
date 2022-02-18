@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitsInterfaces", "UnitsInt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisplayData", "DisplayData\DisplayData.csproj", "{29C13D2C-8E8E-4ADA-94C8-58CFEC78ADF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection", "Reflection\Reflection.csproj", "{04A1556E-3721-493E-96D5-34758F970DFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reflection", "Reflection\Reflection.csproj", "{04A1556E-3721-493E-96D5-34758F970DFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DutyGenerator", "DutyGenerator\DutyGenerator.csproj", "{C651D857-22F3-4004-B63A-0E5D668F1629}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{04A1556E-3721-493E-96D5-34758F970DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04A1556E-3721-493E-96D5-34758F970DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04A1556E-3721-493E-96D5-34758F970DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C651D857-22F3-4004-B63A-0E5D668F1629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C651D857-22F3-4004-B63A-0E5D668F1629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C651D857-22F3-4004-B63A-0E5D668F1629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C651D857-22F3-4004-B63A-0E5D668F1629}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
