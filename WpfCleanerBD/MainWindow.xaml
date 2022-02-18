@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:WpfCleanerBD"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="BlueViolet">
 
+        <StackPanel >
+            <Frame x:Name="frame_Select" NavigationUIVisibility="Hidden" Height="431" Width="792"/>
+        </StackPanel>
     </Grid>
 </Window>

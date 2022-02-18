@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,21 +12,21 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MongoDB.Bson;
 using MongoDB.Driver;
-
-
+using System.Threading.Tasks;
 
 namespace WpfCleanerBD
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Логика взаимодействия для AllPage.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class AllPage : Page
 	{
-		public MainWindow()
+		public AllPage()
 		{
 			InitializeComponent();
-			frame_Select.NavigationService.Navigate(new SelectPage());
-		}
+            AddToMongo().GetAwaiter();
+            GetAllFromMongo().GetAwaiter();
+        }
         public static async Task AddToMongo()
         {
             var client = new MongoClient("mongodb://localhost");
@@ -37,7 +35,7 @@ namespace WpfCleanerBD
             await collection.InsertOneAsync(MongoExamples.CreateEntity());
         }
 
-        public static async Task GetAllFromMongo()
+        public async Task GetAllFromMongo()
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Cleaners320");
@@ -46,10 +44,16 @@ namespace WpfCleanerBD
 
             foreach (var item in list)
             {
-                System.Console.WriteLine($"{item.Name}");
+                for (int i = 0; i < 25; i++)
+                {
+                    text_Name.Text += (item.ListOfSubEntities[i].SurnameOfSubEntity + " " + item.ListOfSubEntities[i].NameOfSubEntity + "\n" );
+                }
             }
         }
 
-
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }
