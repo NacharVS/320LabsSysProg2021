@@ -13,7 +13,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="Select" Content="Select cleaner" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Click="Select_Click"/>
-        <Button x:Name="All" Content="All students" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="All_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock x:Name="text_All" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock x:Name="text_Cleaner" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="Select" Content="Select cleaner" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Click="Select_Click"/>
+        <Button x:Name="All" Content="All students" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Click="All_Click"/>
     </Grid>
 </Page>

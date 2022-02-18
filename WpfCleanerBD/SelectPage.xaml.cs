@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using System.Threading.Tasks;
 
 namespace WpfCleanerBD
 {
@@ -21,16 +24,49 @@ namespace WpfCleanerBD
 		public SelectPage()
 		{
 			InitializeComponent();
+			AddToMongo().GetAwaiter();
 		}
 
 		private void Select_Click(object sender, RoutedEventArgs e)
 		{
-			NavigationService.Navigate(new CleanerPage());
+			text_Cleaner.Text =  "";
+			GetCleanFromMongo().GetAwaiter();
 		}
 
 		private void All_Click(object sender, RoutedEventArgs e)
 		{
-			NavigationService.Navigate(new AllPage());
+			text_All.Text  = "";
+			GetAllFromMongo().GetAwaiter();
+		}
+		public static async Task AddToMongo()
+		{
+			var client = new MongoClient("mongodb://localhost");
+			var database = client.GetDatabase("Cleaners320");
+			var collection = database.GetCollection<Entity>("320");
+			await collection.InsertOneAsync(MongoExamples.CreateEntity());
+		}
+
+		public async Task GetCleanFromMongo()
+		{
+			var rnd = new Random();
+			var client = new MongoClient("mongodb://localhost");
+			var database = client.GetDatabase("Cleaners320");
+			var collection = database.GetCollection<Entity>("320");
+			var list = await collection.Find(x => true).ToListAsync();
+
+			text_Cleaner.Text += (list[0].ListOfSubEntities[rnd.Next(0, 24)].NameOfSubEntity + "\n");
+			text_Cleaner.Text += (list[0].ListOfSubEntities[rnd.Next(0, 24)].NameOfSubEntity + "\n");
+		}
+		public async Task GetAllFromMongo()
+		{
+			var client = new MongoClient("mongodb://localhost");
+			var database = client.GetDatabase("Cleaners320");
+			var collection = database.GetCollection<Entity>("320");
+			var list = await collection.Find(x => true).ToListAsync();
+				for (int i = 0; i < 25; i++)
+				{
+					text_All.Text += (list[0].ListOfSubEntities[i].SurnameOfSubEntity + " " + list[0].ListOfSubEntities[i].NameOfSubEntity + "\n");
+				}
 		}
 	}
 }
