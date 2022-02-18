@@ -20,8 +20,8 @@
             <ListBoxItem Margin="3">
             </ListBoxItem>
         </ListBox>
-        <Button Content="add" Grid.Column="0" Grid.Row="0" Click="Button_Click"/>
-        <Button Content="clear" Grid.Column="1" Grid.Row="0" Click="Button_Click_1"/>
+        <Button Content="add" Grid.Column="0" Grid.Row="0" Click="ButtonAdd_Click"/>
+        <Button Content="clear" Grid.Column="1" Grid.Row="0" Click="ButtonClear_Click"/>
 
     </Grid>
 </Window>

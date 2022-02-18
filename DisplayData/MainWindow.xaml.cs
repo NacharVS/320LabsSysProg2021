@@ -26,7 +26,7 @@ namespace DisplayData
             DataContext = this;
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
             var rnd = new Random();
             for (int i =0; i<5; i++)
@@ -34,10 +34,9 @@ namespace DisplayData
                 await Task.Delay(1000);
                 Dispatcher.Invoke(() => Numbers.Items.Add(rnd.Next(10, 1000)));
             }
-            
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ButtonClear_Click(object sender, RoutedEventArgs e)
         {
             Numbers.Items.Clear();
         }
