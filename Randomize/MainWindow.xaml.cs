@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace Random
+namespace Randomize
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -27,6 +27,7 @@ namespace Random
             InitializeComponent();
             AddToMongo().GetAwaiter();
         }
+
         public static async Task AddToMongo()
         {
             var client = new MongoClient("mongodb://localhost");
@@ -37,7 +38,7 @@ namespace Random
 
         public async Task GetAllFromMongo()
         {
-            //var rnd = Random;
+            var rnd = new Random();
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Random");
             var collection = database.GetCollection<Entity>("Random");
@@ -45,10 +46,7 @@ namespace Random
 
             foreach (var item in list)
             {
-                for (int i = 0; i <25; i++)
-                {
-                    txt_Name.Text += (item.ListOfSubEntities[i].SurnameOfSubEntity + "\n");
-                }
+                txt_Name.Text += (item.ListOfSubEntities[rnd.Next(0, 24)].SurnameOfSubEntity + "\n");
             }
         }
         private void btn_rnd_Click(object sender, RoutedEventArgs e)

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfAppList", "WpfAppList\Wp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Random", "Random\Random.csproj", "{ED93BF00-6251-41BC-8F33-6269CA612E66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randomize", "Randomize\Randomize.csproj", "{18E8BC1F-DAFF-4E7E-86D6-4D7BA1C9ADDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{ED93BF00-6251-41BC-8F33-6269CA612E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED93BF00-6251-41BC-8F33-6269CA612E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED93BF00-6251-41BC-8F33-6269CA612E66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18E8BC1F-DAFF-4E7E-86D6-4D7BA1C9ADDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18E8BC1F-DAFF-4E7E-86D6-4D7BA1C9ADDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18E8BC1F-DAFF-4E7E-86D6-4D7BA1C9ADDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18E8BC1F-DAFF-4E7E-86D6-4D7BA1C9ADDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
