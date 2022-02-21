@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock x:Name="txt_Name" FontSize="20" Margin="240,64,240,290" TextAlignment="Center"/>
+        <Button x:Name="btn_rnd" Content="Random" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Click="btn_rnd_Click" Margin="0,184,0,0" Width="200"/>
     </Grid>
 </Window>
