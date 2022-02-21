@@ -43,7 +43,7 @@ namespace WpfSelectDuty
             var collection = database.GetCollection<Entity>("Random");
             var list = await collection.Find(x => true).ToListAsync();
 
-            txt_Name.Text += (list[0].ListOfSubEntities[rnd.Next(0, 24)].SurnameOfSubEntity + " " + "\n");
+            txt_Name.Text += (list[0].ListOfSubEntities[rnd.Next(0, 24)].SurnameOfSubEntity + "\n");
             txt_Name.Text += (list[0].ListOfSubEntities[rnd.Next(0, 24)].SurnameOfSubEntity + "\n");
 
         }
