@@ -6,10 +6,10 @@ namespace ConsoleApp3
 {
     class Warrior : Unit, IBattleUnit, IMovingUnit
     {
-        public Warrior(string newName, double newHp)
+        public Warrior(string newName)
         {
             Name = newName;
-            MaxHealth = newHp;
+            MaxHealth = 400;
             Health = MaxHealth;
         }
 
