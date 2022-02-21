@@ -23,6 +23,7 @@ namespace ToChooseACleaner
         public MainWindow()
         {
             InitializeComponent();
+            ForAWorkPlace.Navigate(new WorkPlacePage());
         }
     }
 }
