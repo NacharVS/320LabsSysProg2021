@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -24,10 +25,16 @@ namespace ConsoleApp3
             NumberOfEntity = numberOfEntity;
             ListOfSubEntities = new List<SubEntity>();
         }
-
+        [BsonId]
+        [BsonIgnoreIfDefault]
         public ObjectId _id { get; set; }
+        [BsonIgnoreIfDefault]
         public string NameOfEntity { get; set; }
+        [BsonIgnoreIfDefault]
         public int NumberOfEntity { get; set; }
+        [BsonIgnoreIfDefault]
+        public int NumberOfReferenses { get; set; }
+        [BsonIgnoreIfNull]
         public List<SubEntity> ListOfSubEntities { get; set; }
     }
     class MongoExamples
@@ -38,7 +45,7 @@ namespace ConsoleApp3
             SubEntity sub2 = new SubEntity("Beta", 2);
             SubEntity sub3 = new SubEntity("Gamma", 3);
 
-            Entity entity1 = new Entity("AlphaEntity", 10);
+            Entity entity1 = new Entity("EpsilonEntity", 10);
             entity1.ListOfSubEntities.Add(sub1);
             entity1.ListOfSubEntities.Add(sub2);
             entity1.ListOfSubEntities.Add(sub3);
@@ -65,6 +72,16 @@ namespace ConsoleApp3
             {
                 System.Console.WriteLine($"{item.NameOfEntity}");
             }
+        }
+
+        public static async Task UpdateMongo()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("320GroupTest");
+            var collection = database.GetCollection<Entity>("TestEntities");
+            var definition = Builders<Entity>.Update.Set(x => x.NumberOfReferenses, "BetaEntity");
+            await collection.UpdateOneAsync(x => x.NameOfEntity == "EpsilonEntity", definition);
+            
         }
 
     }

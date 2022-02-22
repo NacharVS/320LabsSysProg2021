@@ -63,8 +63,9 @@ namespace ConsoleApp3
         }
         static void Main(string[] args)
         {
-            // MongoExamples.AddToMongo().GetAwaiter().GetResult();
-            MongoExamples.GetAllFromMongo().GetAwaiter().GetResult();
+            //MongoExamples.AddToMongo().GetAwaiter().GetResult();
+            // MongoExamples.GetAllFromMongo().GetAwaiter().GetResult();
+            MongoExamples.UpdateMongo().GetAwaiter().GetResult();
 
 
         }
