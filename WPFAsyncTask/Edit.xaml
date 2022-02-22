@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPFAsyncTask.Edit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFAsyncTask"
+        mc:Ignorable="d"
+        Title="Edit" Height="450" Width="400">
+    <Grid>
+        <TextBox x:Name="tb_First" HorizontalAlignment="Center" Margin="0,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox x:Name="tb_Last" HorizontalAlignment="Center" Margin="0,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Save" HorizontalAlignment="Center" Margin="0,292,0,0" VerticalAlignment="Top" Height="45" Width="81" Click="Button_Click"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="262,376,0,0" VerticalAlignment="Top" Height="43" Width="74" Click="Delete_Click"/>
+
+
+    </Grid>
+</Window>
