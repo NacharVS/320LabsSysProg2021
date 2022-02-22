@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
+      <!--  <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock/>
-        <ListView Grid.RowSpan="4" Grid.Row="1">
+        <ListView x:Name="lv_phone" Grid.RowSpan="4" Grid.Row="1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="100">Название</GridViewColumn>
@@ -34,6 +34,13 @@
         <TextBox x:Name="txt_name" Grid.Row="1" Grid.Column="1"  FontSize="36" />
         <TextBox x:Name="txt_year" Grid.Column="1" Grid.Row="2" FontSize="36"/>
         <TextBox x:Name="txt_model" Grid.Column="1" Grid.Row="3" FontSize="36"/>
-        <TextBox x:Name="txt_company" Grid.Column="1" Grid.Row="4" FontSize="36"/>
+        <TextBox x:Name="txt_company" Grid.Column="1" Grid.Row="4" FontSize="36"/>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView x:Name="lv_phone" Grid.Row="0" Grid.Column="1">
+        </ListView>
+        <Button x:Name="btn_ok" Click="btn_ok_Click" Grid.Row="1" Width="100" Height="60"></Button>
     </Grid>
 </Window>
