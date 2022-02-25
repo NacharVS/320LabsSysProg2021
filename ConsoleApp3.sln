@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp3", "ConsoleApp3\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dejurnie", "..\..\..\Desktop\320LabsSysProg2021-KhairullinAdel\ToChooseACleaner\dejurnie.csproj", "{481A8F8F-3604-49D1-ABFD-C266701B51DF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncDataShow", "..\..\..\Desktop\320LabsSysProg2021-KhairullinAdel\AsyncDataShow\AsyncDataShow.csproj", "{34440AA8-9A42-4EC6-BFB1-927C8F89DDED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{481A8F8F-3604-49D1-ABFD-C266701B51DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{481A8F8F-3604-49D1-ABFD-C266701B51DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{481A8F8F-3604-49D1-ABFD-C266701B51DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34440AA8-9A42-4EC6-BFB1-927C8F89DDED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34440AA8-9A42-4EC6-BFB1-927C8F89DDED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34440AA8-9A42-4EC6-BFB1-927C8F89DDED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34440AA8-9A42-4EC6-BFB1-927C8F89DDED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
