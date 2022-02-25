@@ -21,8 +21,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="1" Grid.Row="0"/>
-        <Button Margin="20" Content="Select" Grid.ColumnSpan="2" Grid.Row="1" Click="btnSelectClick"/>
-        <ListBox x:Name="list_stud" Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Students}"/>
+        <Button Margin="20" Content="Select" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Click="btnSelectClick"/>
+        <ListBox x:Name="list_stud" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Students}"/>
 
         <StackPanel Grid.Column="3" Grid.Row="0">
             <TextBlock Text="FirstName"/>
@@ -34,6 +34,6 @@
         </StackPanel>
         <Button Margin="20" Content="Add" Grid.Column="3"  Grid.Row="2" Click="btnAddClick"/>
 
-        <Button Margin="20" Content="Edit" Grid.Column="0"  Grid.Row="0" Click="btnEditClick"/>
+        <Button Margin="20" Content="Edit" Grid.Column="1" Grid.ColumnSpan="2"  Grid.Row="0" Click="btnEditClick"/>
     </Grid>
 </Window>
