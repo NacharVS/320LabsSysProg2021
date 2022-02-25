@@ -80,10 +80,13 @@ namespace DutyGenerator
             var filter = Builders<Student>.Filter.Eq("_id", student._id);
             var updateName = Builders<Student>.Update.Set(x => x.FirstName, tbFirstName.Text);
             var updateSurname = Builders<Student>.Update.Set(x => x.LastName, tbLastName.Text);
-            collection.UpdateOne(filter, updateSurname);
-            collection.UpdateOne(filter, updateName);
-            lbStudents.ItemsSource = await collection.Find(x => true).ToListAsync();
-            MessageBox.Show("Студент переименоват");
+            if (student != null)
+            {
+                collection.UpdateOne(filter, updateSurname);
+                collection.UpdateOne(filter, updateName);
+                lbStudents.ItemsSource = await collection.Find(x => true).ToListAsync();
+                MessageBox.Show("Студент переименован");
+            }
         }
     }
 
