@@ -1,0 +1,24 @@
+﻿<Window x:Class="TimerWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimerWpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="lbTime" Grid.Row="0" Grid.Column="1" Content="00:00:00" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>
+        <Button x:Name="consistStart" Grid.Row="1" Grid.Column="2" Content="Start" Height="60" Width="200" FontSize="24" Click="ConsistStart_Click"/>
+        <Button x:Name="asyncStart" Grid.Row="1" Grid.Column="1" Height="60" Width="200"  FontSize="24" Content="Start async" Click="AsyncStart_Click"/>
+        <TextBox x:Name="timeSec" Grid.Row="1" Grid.Column="0" Height="70" Width="100"  FontSize="30"  />
+    </Grid>
+</Window>
