@@ -1,0 +1,67 @@
+﻿@page "/list"
+
+@using ProjectBlazor.Data
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (lisEngl == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in lisEngl)
+            {
+                <tr>
+                    <td>@forecast.Name</td>
+                    <td>@forecast.Model</td>
+                    <td>@forecast.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (lisHome == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in lisHome)
+            {
+                <tr>
+                    <td>@forecast.Name</td>
+                    <td>@forecast.Model</td>
+                    <td>@forecast.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    public List<Game> lisEngl = Game.GetEnglishCarList();
+    public List<Game> lisHome = Game.GetHomeCarList();
+
+}

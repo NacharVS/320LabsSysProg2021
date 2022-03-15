@@ -1,0 +1,11 @@
+﻿@page "/"
+@using Data 
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<Component list="@lisEngl"></Component>
+
+@code {
+    public List<Game> lisEngl = Game.GetEnglishCarList();
+}
