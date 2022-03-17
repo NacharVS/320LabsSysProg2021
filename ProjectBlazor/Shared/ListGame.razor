@@ -1,0 +1,62 @@
+﻿@using ProjectBlazor.Data
+    @if (listEnglish == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Model</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var game in listEnglish)
+                {
+                    <tr>
+                        <td>@game.Name</td>
+                        <td>@game.Model</td>
+                        <td>@game.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+@if (listHome == null)
+{
+        <p><em>Loading...</em></p>
+}
+else
+{
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Model</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var game in listHome)
+                {
+                    <tr>
+                        <td>@game.Name</td>
+                        <td>@game.Model</td>
+                        <td>@game.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
+
+@code {
+    [Parameter]
+    public List<Game> listEnglish { get; set; }
+
+    [Parameter]
+    public List<Game> listHome { get; set; }
+}

@@ -1,11 +1,13 @@
 ﻿@page "/"
-@using Data 
+@using ProjectBlazor.Data 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
-<Component list="@lisEngl"></Component>
+<ListGame  listEnglish="@lisEngl"></ListGame>
+<ListGame  listHome="@lisHome"></ListGame>
 
 @code {
     public List<Game> lisEngl = Game.GetEnglishCarList();
+    public List<Game> lisHome = Game.GetHomeCarList();
 }

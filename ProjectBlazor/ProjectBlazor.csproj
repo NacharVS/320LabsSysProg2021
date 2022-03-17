@@ -4,20 +4,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Content Remove="Shared\Component.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Shared\Component.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Shared\Component.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Shared\Component.razor" />
-  </ItemGroup>
-
 </Project>
