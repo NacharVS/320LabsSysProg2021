@@ -1,0 +1,40 @@
+﻿@page "/ListStudents"
+
+@using BlazorApp.Data
+
+<h1>Студенты</h1>
+
+<p>Простая таблица со студентами.</p>
+
+@if (listStud == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+                <th>Language</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in listStud)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>@item.Age</td>
+                    <td>@item.Language</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    public List<Students> listStud = Students.GetStudents();
+}
