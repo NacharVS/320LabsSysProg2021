@@ -1,0 +1,39 @@
+﻿@page "/UserList"
+
+@using BlazorApp.Data
+
+<h1>User List</h1>
+
+<p>This is a table with users.</p>
+
+@if (listUser == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in listUser)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Email</td>
+                    <td>@item.Role</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    public List<User> listUser = User.GetUserList();
+}
