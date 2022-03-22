@@ -1,7 +1,18 @@
 ﻿@page "/"
+@using BlazorSer.Data
 
-<h1>Hello, world!</h1>
+<div>
+    <button type="button" class="btn btn-primary" @onclick="() => Authorization.Open()">Авторизация</button>
+    <button type="button" class="btn btn-primary" @onclick="() => Registration.Open()">Регистриция</button>
+</div>
 
-Welcome to your new app.
+<Authorization @ref="Authorization"></Authorization>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<Registration @ref="Registration"></Registration>
+
+@code
+{
+    public Authorization Authorization { get; set; }
+
+    public Registration Registration { get; set; }
+}
