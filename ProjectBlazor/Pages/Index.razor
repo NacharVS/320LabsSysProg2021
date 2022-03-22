@@ -1,13 +1,25 @@
 ﻿@page "/"
-@using ProjectBlazor.Data 
-<h1>Hello, world!</h1>
+@using ProjectBlazor.Data
+<h1>Welcome to your new app!</h1>
 
-Welcome to your new app.
 
-<ListGame  listEnglish="@lisEngl"></ListGame>
-<ListGame  listHome="@lisHome"></ListGame>
+<div>
+    <ListGame listEnglish="@lisEngl"></ListGame>
+    <ListGame listHome="@lisHome"></ListGame>
+</div>
+
+<div>
+    <button type="button" class="btn btn-primary" @onclick="() => AuthorizationTemplate.Open()">Sign in</button>
+    <button type="button" class="btn btn-primary" @onclick="() => RegistrationTemplate.Open()">Sign up</button>
+</div>
+
+<AuthorizationTemplate @ref="AuthorizationTemplate"></AuthorizationTemplate>
+<RegistrationTemplate @ref="RegistrationTemplate"></RegistrationTemplate>
 
 @code {
+    public AuthorizationTemplate AuthorizationTemplate { get; set; }
+    public RegistrationTemplate RegistrationTemplate { get; set; }
+
     public List<Game> lisEngl = Game.GetEnglishCarList();
     public List<Game> lisHome = Game.GetHomeCarList();
 }
