@@ -2,9 +2,7 @@
 
 @using ProjectBlazor.Data
 
-<h1>Weather forecast</h1>
-
-<p>This component demonstrates fetching data from a service.</p>
+<h1>Cars</h1>
 
 @if (lisEngl == null)
 {
@@ -63,5 +61,4 @@ else
 @code {
     public List<Game> lisEngl = Game.GetEnglishCarList();
     public List<Game> lisHome = Game.GetHomeCarList();
-
 }
