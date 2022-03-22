@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Web;
 
-namespace BlazorApp5.Data
+namespace WebList.Data
 {
     public class ModalTemplate : ComponentBase
     {

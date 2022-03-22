@@ -1,5 +1,5 @@
 ﻿@page "/"
-@using BlazorApp5.Data
+@using WebList.Data
 
 
 <h1>Builder</h1>
@@ -9,15 +9,24 @@ How its work?
 <div>
     <button type="button" class="btn btn-primary" @onclick="() => ModalTemplate.Open()">Click me! (Template)</button>
     <button type="button" class="btn btn-primary" @onclick="() => HelloWorldModal.Open()">Click me! (Modal)</button>
+    <button type="button" class="btn btn-primary" @onclick="() => Autoris.Open()">Click me! (autoris)</button>
+    <button type="button" class="btn btn-primary" @onclick="() => Regist.Open()">Click me! (regist)</button>
 </div>
 
 <ModalTemplate @ref="ModalTemplate"></ModalTemplate>
 
 <HelloWorldModal @ref="HelloWorldModal"></HelloWorldModal>
 
+<Autoris @ref="Autoris"></Autoris>
+<Regist @ref="Regist"></Regist>
+
 @code
 {
     public ModalTemplate ModalTemplate { get; set; }
 
     public HelloWorldModal HelloWorldModal { get; set; }
+
+    public Autoris Autoris { get; set; }
+
+    public Regist Regist { get; set; }
 }
