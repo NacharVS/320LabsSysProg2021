@@ -1,0 +1,36 @@
+﻿@page "/list"
+
+@using WebApp.Data
+
+<h1>Students List</h1>
+
+
+@if (students == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Group</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in students)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Group</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    public List<Student> students = Student.GetStudents();
+}
