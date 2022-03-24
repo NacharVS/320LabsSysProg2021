@@ -1,0 +1,18 @@
+﻿@page "/"
+@using BlazorApp.Data
+
+<div>
+    <button type="button" class="btn btn-primary" @onclick="() => Authorisation.Open()">Authorisation</button>
+    <button type="button" class="btn btn-primary" @onclick="() => Registration.Open()">Registration</button>
+</div>
+
+<Authorisation @ref="Authorisation"></Authorisation>
+
+<Registration @ref="Registration"></Registration>
+
+@code
+{
+    public Authorisation Authorisation { get; set; }
+
+    public Registration Registration { get; set; }
+}
