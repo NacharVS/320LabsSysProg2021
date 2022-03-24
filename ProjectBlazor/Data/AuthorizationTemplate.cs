@@ -122,8 +122,7 @@ namespace ProjectBlazor.Data
             builder.AddAttribute(++seq, "class", "btn btn-secondary");
             builder.AddAttribute(++seq, "data-dismiss", "modal");
             builder.AddAttribute(++seq, "onclick", EventCallback.Factory.Create<MouseEventArgs>(this, Close));
-            builder.AddContent(++seq, "Close");
-
+            builder.AddContent(++seq, "Sign in");
 
             builder.CloseElement();
             builder.CloseElement();
