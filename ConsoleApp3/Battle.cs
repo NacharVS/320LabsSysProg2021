@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Battle
+    class Battle : IBattle
     {
         public static void Fight(IBattleUnit unit1, IBattleUnit unit2)
         {

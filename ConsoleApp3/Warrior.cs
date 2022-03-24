@@ -6,7 +6,7 @@ namespace ConsoleApp3
 {
     public class Warrior : BattleUnit, IBattleUnit
     {
-        public Warrior(string name, double health, int attackSpeed, int walkSpeed, int min, int max) : base(name, health, attackSpeed, walkSpeed, min, max)
+        public Warrior(string name, double health, int attackSpeed, int walkSpeed, int min, int max) : base(name, health, attackSpeed, walkSpeed, min, maxs)
         {
            
         }
