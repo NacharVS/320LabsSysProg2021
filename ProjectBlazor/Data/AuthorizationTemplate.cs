@@ -123,6 +123,8 @@ namespace ProjectBlazor.Data
             builder.AddAttribute(++seq, "data-dismiss", "modal");
             builder.AddAttribute(++seq, "onclick", EventCallback.Factory.Create<MouseEventArgs>(this, Close));
             builder.AddContent(++seq, "Close");
+
+
             builder.CloseElement();
             builder.CloseElement();
             builder.CloseElement();
@@ -134,6 +136,7 @@ namespace ProjectBlazor.Data
             {
                 builder.OpenElement(++seq, "div");
                 builder.AddAttribute(++seq, "class", "modal-backdrop fade show");
+                
                 builder.CloseElement();
             }
         }
