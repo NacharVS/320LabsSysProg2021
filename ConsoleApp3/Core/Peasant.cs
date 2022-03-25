@@ -4,13 +4,11 @@ using System.Text;
 
 namespace ConsoleApp3
 {
-    class Bishop
+    class Peasant
     {
-        public double HealAmount { get; set; }
-
-        public double Heal()
+        public Peasant(string name, double health, double walkingSpeed)
         {
-            return HealAmount;
+        
         }
     }
 }
