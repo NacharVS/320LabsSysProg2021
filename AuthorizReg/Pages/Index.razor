@@ -1,0 +1,22 @@
+﻿@page "/"
+@using AuorizRegister.Data
+
+<h1>My new Builder Page</h1>
+
+Welcome to your new app.
+
+<div>
+    <button type="button" class="btn btn-primary" @onclick="() => Authoriz.Open()">Click me! (Authoriz)</button>
+    <button type="button" class="btn btn-primary" @onclick="() => Register.Open()">Click me! (Register)</button>
+</div>
+
+<Authoriz @ref="Authoriz"></Authoriz>
+
+<Register @ref="Register"></Register>
+
+@code
+{
+    public Authoriz Authoriz { get; set; }
+
+    public Register Register { get; set; }
+}
