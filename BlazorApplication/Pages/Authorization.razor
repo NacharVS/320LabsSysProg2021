@@ -1,0 +1,17 @@
+﻿@page "/Authorization"
+@using BlazorApplication.Data;
+
+<h1>Авторизация и регистрация</h1>
+
+<div>
+    <button type="button" class="btn btn-primary" @onclick="() => TemplateModal.Open()">Register</button>
+    <button type="button" class="btn btn-primary" @onclick="() => LoginModal.Open()">Login</button>
+</div>
+
+<TemplateModal @ref="TemplateModal"></TemplateModal>
+<LoginModal @ref="LoginModal"></LoginModal>
+
+@code {
+    public TemplateModal TemplateModal { get; set; }
+    public LoginModal LoginModal { get; set; }
+}

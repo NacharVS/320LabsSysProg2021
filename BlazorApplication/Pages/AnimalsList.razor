@@ -1,0 +1,40 @@
+﻿@page "/AnimalsList"
+
+@using BlazorApplication.Data;
+
+<h1>Домашние животные</h1>
+
+<p>Происхождение домашних животных</p>
+
+@if (listOfAnimals == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>WildAncestor</th>
+                <th>PlaceOfDomestication</th>
+                <th>DomesticationTime</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in listOfAnimals)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.WildAncestor</td>
+                    <td>@item.PlaceOfDomestication</td>
+                    <td>@item.DomesticationTime</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    public List<Animal> listOfAnimals = Animal.GetAnimals();
+}
