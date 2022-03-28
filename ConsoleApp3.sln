@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimerConsolee", "TimerConso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coree", "Coree\Coree.csproj", "{783AE3F1-CEA1-4013-8652-A500CDDAEC69}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp5", "..\BlazorKTITS4\BlazorApp5\BlazorApp5.csproj", "{3D5A6D1F-7603-40E4-B5DA-7C2630E40E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp", "..\BlazorKTITS4\BlazorApp5\BlazorApp.csproj", "{3D5A6D1F-7603-40E4-B5DA-7C2630E40E21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
