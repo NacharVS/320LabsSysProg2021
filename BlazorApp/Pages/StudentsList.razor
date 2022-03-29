@@ -2,7 +2,7 @@
 
 @using WebApp.Data
 
-<h1>Students List</h1>
+<h1>Students List1</h1>
 
 
 @if (students == null)
@@ -31,6 +31,36 @@ else
         </tbody>
     </table>
 }
+<h1>Students List2</h1>
+
+
+@if (students1 == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Group</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in students1)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Group</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 @code {
-    public List<Student> students = Student.GetStudents();
+    public List<Student> students = Student.GetStudentsGroup1();
+    public List<Student> students1 = Student.GetStudentsGroup2();
 }
