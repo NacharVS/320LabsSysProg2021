@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BlazorApp.Data
+namespace Blazor.Data
 {
     public class Students
     {
