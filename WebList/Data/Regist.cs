@@ -31,14 +31,14 @@ namespace WebList.Data
                 builder.OpenElement(6, "input");
                 builder.CloseElement();
                 builder.CloseElement();
-                builder.AddContent(4, "Surname");
-                builder.OpenElement(5, "div");
-                builder.OpenElement(6, "input");
+                builder.AddContent(7, "Surname");
+                builder.OpenElement(8, "div");
+                builder.OpenElement(9, "input");
                 builder.CloseElement();
                 builder.CloseElement();
-                builder.AddContent(4, "Password");
-                builder.OpenElement(5, "div");
-                builder.OpenElement(6, "input");
+                builder.AddContent(10, "Password");
+                builder.OpenElement(11, "div");
+                builder.OpenElement(12, "input");
                 builder.CloseElement();
                 builder.CloseElement();
             };
@@ -54,7 +54,7 @@ namespace WebList.Data
                 builder.AddAttribute(++seq, "class", "btn btn-success");
                 builder.AddAttribute(++seq, "data-dismiss", "modal");
                 builder.AddAttribute(++seq, "onclick", EventCallback.Factory.Create<MouseEventArgs>(this, Close));
-                builder.AddContent(++seq, "Зарегестрироваться");
+                builder.AddContent(++seq, "Зарегистрироваться");
                 builder.CloseElement();
             };
         }

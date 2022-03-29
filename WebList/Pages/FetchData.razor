@@ -3,44 +3,70 @@
 @using WebList.Data
 @inject WeatherForecastService ForecastService
 
-<h1>Weather forecast</h1>
+<h1>Motorcycles</h1>
 
-<p>This component demonstrates fetching data from a service.</p>
 
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
+<p>
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Price</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var car in foreignMoto)
+            {
+            <tr>
+                <td>@car.brand</td>
+                <td>@car.model</td>
+                <td>@car.price</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</p>
+<p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in RuMoto)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td>@car.brand</td>
+                    <td>@car.model</td>
+                    <td>@car.price</td>
                 </tr>
             }
         </tbody>
     </table>
-}
+</p>
 
 @code {
-    private WeatherForecast[] forecasts;
-
-    protected override async Task OnInitializedAsync()
+    List<Motorcycle> foreignMoto = new List<Motorcycle>
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+            new Motorcycle{ brand = "Honda", model = "NEO SPORTS CAFE СB300R", price = "999800"},
+            new Motorcycle{ brand = "Suzuki", model = "GSX 250R", price = "180000"},
+            new Motorcycle{ brand = "Yamaha", model = "YZF-R3", price = "230000"},
+        };
+    List<Motorcycle> RuMoto = new List<Motorcycle>
+    {
+            new Motorcycle{ brand = "Восход", model = "3М", price = "30000"},
+            new Motorcycle{ brand = "Урал", model = "С коляской", price = "15000"},
+            new Motorcycle{ brand = "ИЖ", model = "Планета 5", price = "25000"},
+        };
+
+    public class Motorcycle
+    {
+        public string brand { get; set; }
+        public string model { get; set; }
+        public string price { get; set; }
     }
 }
