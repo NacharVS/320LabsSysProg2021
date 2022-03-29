@@ -1,0 +1,32 @@
+﻿@page "/"
+@using BlazorExample.Data
+
+<h1>Builder</h1>
+
+How its work?
+
+<div>
+    <button type="button" class="btn btn-primary" @onclick="() => ModalTemplate.Open()">Button Template</button>
+    <button type="button" class="btn btn-primary" @onclick="() => HelloWorldModal.Open()">Button Modal</button>
+    <button type="button" class="btn btn-primary" @onclick="() => AuthorizationModal.Open()">Button Authorization</button>
+    <button type="button" class="btn btn-primary" @onclick="() => RegistrationModal.Open()">Button Registration</button>
+</div>
+
+<ModalTemplate @ref="ModalTemplate"></ModalTemplate>
+
+<HelloWorldModal @ref="HelloWorldModal"></HelloWorldModal>
+
+<AuthorizationModal @ref="AuthorizationModal"></AuthorizationModal>
+
+<RegistrationModal @ref="RegistrationModal"></RegistrationModal>
+
+@code
+{
+    public ModalTemplate ModalTemplate { get; set; }
+
+    public HelloWorldModal HelloWorldModal { get; set; }
+
+    public AuthorizationModal AuthorizationModal { get; set; }
+
+    public RegistrationModal RegistrationModal { get; set; }
+}

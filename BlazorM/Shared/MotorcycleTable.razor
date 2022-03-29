@@ -1,0 +1,42 @@
+﻿<h3>Motorcycle Table</h3>
+
+@using BlazorExample.Data
+@inject MotorcycleService MotorcycleService
+
+@if (motorcycles == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Engine Capacity</th>
+                <th>Mileage</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var motorcycle in motorcycles)
+            {
+                <tr>
+                    <td>@motorcycle.Name</td>
+                    <td>@motorcycle.EngineCapacity</td>
+                    <td>@motorcycle.Mileage</td>
+                    <td>@motorcycle.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Motorcycle[] motorcycles;
+
+    protected override async Task OnInitializedAsync()
+    {
+        motorcycles = await MotorcycleService.GetMotorcycleAsync();
+    }
+}
