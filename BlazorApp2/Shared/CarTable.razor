@@ -1,6 +1,6 @@
-﻿<h3>Motorcycle Table</h3>
+﻿<h3>Car Table</h3>
 
-@using BlazorApp1.Data
+@using BlazorApp2.Data
 @inject CarServise CarServise
 
 @if (cars == null)
@@ -13,8 +13,8 @@ else
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Engine Capacity</th>
-                <th>Mileage</th>
+                <th>Horse Power</th>
+                <th>MaxSpeed</th>
                 <th>Price</th>
             </tr>
         </thead>
@@ -23,8 +23,8 @@ else
             {
                 <tr>
                     <td>@car.Name</td>
-                    <td>@car.EngineCapacity</td>
-                    <td>@car.Mileage</td>
+                    <td>@car.HP</td>
+                    <td>@car.MaxSpeed</td>
                     <td>@car.Price</td>
                 </tr>
             }

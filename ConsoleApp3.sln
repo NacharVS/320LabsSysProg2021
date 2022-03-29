@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp3", "ConsoleApp3\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorUborki", "..\GeneratorUborki\GeneratorUborki\GeneratorUborki.csproj", "{5A0D3F69-5C97-4186-87B6-2CE62D249E3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp1", "BlazorApp1\BlazorApp1.csproj", "{367F133E-EF5D-4FBC-9A17-CC5E2DEA7582}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp2", "BlazorApp2\BlazorApp2.csproj", "{A83FB6C8-FD3E-4FBC-B7C4-F59DECCE992A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{5A0D3F69-5C97-4186-87B6-2CE62D249E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A0D3F69-5C97-4186-87B6-2CE62D249E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A0D3F69-5C97-4186-87B6-2CE62D249E3F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{367F133E-EF5D-4FBC-9A17-CC5E2DEA7582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{367F133E-EF5D-4FBC-9A17-CC5E2DEA7582}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{367F133E-EF5D-4FBC-9A17-CC5E2DEA7582}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{367F133E-EF5D-4FBC-9A17-CC5E2DEA7582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83FB6C8-FD3E-4FBC-B7C4-F59DECCE992A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83FB6C8-FD3E-4FBC-B7C4-F59DECCE992A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83FB6C8-FD3E-4FBC-B7C4-F59DECCE992A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83FB6C8-FD3E-4FBC-B7C4-F59DECCE992A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
