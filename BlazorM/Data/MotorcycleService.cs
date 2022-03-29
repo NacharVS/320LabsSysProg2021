@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace BlazorExample.Data
+namespace BlazorM.Data
 {
     public class MotorcycleService
     {

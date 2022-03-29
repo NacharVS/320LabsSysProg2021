@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BlazorExample.Data
+namespace BlazorM.Data
 {
     public class Motorcycle
     {

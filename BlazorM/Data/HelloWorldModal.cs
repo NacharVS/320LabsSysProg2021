@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
-namespace BlazorExample.Data
+namespace BlazorM.Data
 {
     public class HelloWorldModal : ModalTemplate
     {

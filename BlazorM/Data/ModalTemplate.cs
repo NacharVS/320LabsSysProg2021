@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Web;
 
-namespace BlazorExample.Data
+namespace BlazorM.Data
 {
     public class ModalTemplate : ComponentBase
     {
