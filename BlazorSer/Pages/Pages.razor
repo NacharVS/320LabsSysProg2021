@@ -1,0 +1,77 @@
+﻿@page "/pagesTable"
+
+<h1>Student table</h1>
+
+<p>
+    This tables show prices for different cars
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First_name</th>
+                <th>Second_name</th>
+                <th>Group</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stud in studSpisok)
+            {
+                <tr>
+                    <td>@stud.First_name</td>
+                    <td>@stud.First_name</td>
+                    <td>@stud.Group</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</p>
+<p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First_name</th>
+                <th>First_name</th>
+                <th>Group</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stud in nextStudSpisok)
+            {
+                <tr>
+                    <td>@stud.First_name</td>
+                    <td>@stud.First_name</td>
+                    <td>@stud.Group</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</p>
+@code {
+    List<Student> studSpisok = new List<Student>
+{
+        new Student { First_name = "Абраров", Second_name = "Салават", Group = "320П"},
+        new Student { First_name = "Аввакумов", Second_name = "Влодимир", Group = "320П"},
+        new Student { First_name = "Артемьев", Second_name = "Егор", Group = "320П"},
+        new Student { First_name = "Барышев", Second_name = "Эмиль", Group = "320П"},
+        new Student { First_name = "Бозин", Second_name = "Андрей", Group = "320П"},
+
+    };
+    List<Student> nextStudSpisok = new List<Student>
+{
+        new Student { First_name = "Валиев", Second_name = "Линар", Group = "320П"},
+        new Student { First_name = "Гаврилов", Second_name = "Даниил", Group = "320П"},
+        new Student { First_name = "Закирова", Second_name = "Камиля", Group = "320П"},
+
+    };
+
+
+
+    public class Student
+    {
+        public string First_name { get; set; }
+
+        public string Second_name { get; set; }
+
+        public string Group { get; set; }
+
+    }
+}

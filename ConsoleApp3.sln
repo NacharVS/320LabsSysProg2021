@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Random", "Random\Random.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randomize", "Randomize\Randomize.csproj", "{18E8BC1F-DAFF-4E7E-86D6-4D7BA1C9ADDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSer", "BlazorSer\BlazorSer.csproj", "{74CDC1E9-61B5-48BC-86E0-A1FA89C4CAA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSer", "BlazorSer\BlazorSer.csproj", "{74CDC1E9-61B5-48BC-86E0-A1FA89C4CAA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
