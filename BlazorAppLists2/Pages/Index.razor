@@ -1,7 +1,22 @@
 ﻿@page "/"
+@using BlazorAppLists2.Data;
 
-<h1>Hello, world!</h1>
+<h1>Hello!!!</h1>
 
-Welcome to your new app.
+How r u?
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<div>
+    <button type="button" class="btn btn-primary" @onclick="() => Authorization.Open()">Авторизация</button>
+    <button type="button" class="btn btn-primary" @onclick="() => Registration.Open()">Регистриция</button>
+</div>
+
+<Authorization @ref="Authorization"></Authorization>
+
+<Registration @ref="Registration"></Registration>
+
+@code
+{
+    public Authorization Authorization { get; set; }
+
+    public Registration Registration { get; set; }
+}
