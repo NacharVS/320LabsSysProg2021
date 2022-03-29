@@ -1,5 +1,38 @@
-﻿<h3>AnimePages</h3>
+﻿@page "/animelist"
+
+@using BlazorAppLists2.Data
+
+<h1>Борись, Борис!!!</h1>
+
+@if (animeList == null)
+{
+    <p><em>List is empty</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Img</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>CountSeries</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in animeList)
+            {
+                <tr>
+                    <td><img src="@item.Img" width="75" height="75"/></td>
+                    <td>@item.Name</td>
+                    <td>@item.Date</td>
+                    <td>@item.CountSeries</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 @code {
-
-}
+    public List<Anime> animeList = Anime.GetAnimes();
+}}
