@@ -1,0 +1,38 @@
+﻿@page "/ClaymoreList"
+@using BlazorApp.Data;
+
+<h1>List of Bows</h1>
+
+
+@if(bowList == null)
+{
+	<p><em>List is empty</em></p>
+}
+else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Image</th>
+				<th>Name</th>
+				<th>Base attack</th>
+				<th>Substat bonus</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var item in bowList)
+			{
+				<tr>
+					<td><img src="@item.Image"/></td>
+					<td>@item.Name</td>
+					<td>@item.BaseAttack</td>
+					<td>@item.SubstatBonus</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@code {
+	public List<Bow> bowList = Bow.GetBows();
+}
