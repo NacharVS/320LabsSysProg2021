@@ -1,4 +1,5 @@
 ﻿@using BlazorTestt.Data;
+@inject CarService CarService
 
 <h1>Cars table</h1>
 
@@ -26,18 +27,9 @@
 </p>
 
 @code {
-    List<Car> Cars = new List<Car>
+    Car[] Cars;
+    protected override async Task OnInitializedAsync()
     {
-        new Car { Name = "Skoda", Model = "Rapid", Price = 2100000},
-        new Car { Name = "Porsche", Model = "Cayenne", Price = 3200000},
-        new Car { Name = "Kia", Model = "Rio", Price = 670000},
-
-    };
-    List<Car> russianCars = new List<Car>
-    {
-        new Car { Name = "LADA", Model = "Granta", Price = 400000},
-        new Car { Name = "LADA", Model = "Vesta", Price = 900000},
-        new Car { Name = "LADA", Model = "Kalina", Price = 410000},
-
-    };
+        Cars = await CarService.GetCarsAsync();
+    }
 }
