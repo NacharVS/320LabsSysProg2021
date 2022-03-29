@@ -1,0 +1,43 @@
+﻿@using BlazorTestt.Data;
+
+<h1>Cars table</h1>
+
+<p>
+    This tables show prices for different cars
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Cars)
+            {
+                <tr>
+                    <td>@car.Name</td>
+                    <td>@car.Model</td>
+                    <td>@car.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</p>
+
+@code {
+    List<Car> Cars = new List<Car>
+    {
+        new Car { Name = "Skoda", Model = "Rapid", Price = 2100000},
+        new Car { Name = "Porsche", Model = "Cayenne", Price = 3200000},
+        new Car { Name = "Kia", Model = "Rio", Price = 670000},
+
+    };
+    List<Car> russianCars = new List<Car>
+    {
+        new Car { Name = "LADA", Model = "Granta", Price = 400000},
+        new Car { Name = "LADA", Model = "Vesta", Price = 900000},
+        new Car { Name = "LADA", Model = "Kalina", Price = 410000},
+
+    };
+}
