@@ -1,0 +1,22 @@
+﻿@page "/"
+@using Blazor
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<div>
+    <button type="button" class="btn btn-primary" @onclick="() => SignIn.Open()">Login</button>
+    <button type="button" class="btn btn-primary" @onclick="() => SignUp.Open()">Register</button>
+</div>
+
+<SignIn @ref="SignIn"></SignIn>
+<SignUp @ref="SignUp"></SignUp>
+
+@code {
+    public SignIn SignIn { get; set; }
+
+    public SignUp SignUp { get; set; }
+}
