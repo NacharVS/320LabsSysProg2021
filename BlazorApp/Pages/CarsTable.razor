@@ -1,4 +1,5 @@
 ﻿@page "/carsTable"
+@using BlazorApp.Data;
 
 <h1>Cars table</h1>
 
@@ -60,16 +61,4 @@
         new Car { Name = "LADA", Model = "Kalina", Price = 410000},
 
     };
-
-
-
-    public class Car
-    {
-        public string Name { get; set; }
-
-        public string Model { get; set; }
-
-        public double Price { get; set; }
-
-    }
 }
