@@ -1,0 +1,22 @@
+﻿@page "/Author"
+@using BlazorApp.Data
+
+
+<h1>Регистрирование и Логирование</h1>
+
+
+<div>
+    <button type="button" class="btn btn-primary" @onclick="() => ModalTemplate.Open()">Register</button>
+    <button type="button" class="btn btn-primary" @onclick="() => LoginModal.Open()">Login</button>
+</div>
+
+<ModalTemplate @ref="ModalTemplate"></ModalTemplate>
+
+<LoginModal @ref="LoginModal"></LoginModal>
+
+@code
+{
+    public ModalTemplate ModalTemplate { get; set; }
+
+    public LoginModal LoginModal { get; set; }
+}
