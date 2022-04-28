@@ -1,0 +1,75 @@
+﻿@page "/listpage"
+@using AuthorizReg.Data
+<h3>Computers</h3>
+
+@if (enList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Videocard</th>
+                <th>CPU</th>
+                <th>RAMCapacity</th>
+                <th>ROMCapacity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in enList)
+            {
+                <tr>
+                    <td>@forecast.Name</td>
+                    <td>@forecast.Videocard</td>
+                    <td>@forecast.CPU</td>
+                    <td>@forecast.RAMCapacity</td>
+                    <td>@forecast.ROMCapacity</td>
+                    <td>@forecast.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ruList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Videocard</th>
+                <th>CPU</th>
+                <th>RAMCapacity</th>
+                <th>ROMCapacity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in ruList)
+            {
+                <tr>
+                    <td>@forecast.Name</td>
+                    <td>@forecast.Videocard</td>
+                    <td>@forecast.CPU</td>
+                    <td>@forecast.RAMCapacity</td>
+                    <td>@forecast.ROMCapacity</td>
+                    <td>@forecast.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    public List<Computer> enList = Computer.GetENComputers();
+    public List<Computer> ruList = Computer.GetRUComputers();
+}
