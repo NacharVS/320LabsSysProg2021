@@ -13,6 +13,11 @@ namespace ConsoleApp3
         public bool CanRangeAttack { get; set; }
         public double MaxRangeAttack { get; set; }
         public double AttackSpeed { get; set; }
+
+        public Warrior() : base("warriorTest", 200)
+        {
+
+        }
         public Warrior(string name) : base(name, 200)
         {
             WalkingSpeed = 1.5;
