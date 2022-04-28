@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reflection", "Reflection\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DutyGenerator", "DutyGenerator\DutyGenerator.csproj", "{C651D857-22F3-4004-B63A-0E5D668F1629}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTestt", "BlazorTestt\BlazorTestt.csproj", "{CAA5A659-AB0E-41F9-AC10-11DDAD4F4322}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTestt", "BlazorTestt\BlazorTestt.csproj", "{CAA5A659-AB0E-41F9-AC10-11DDAD4F4322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
