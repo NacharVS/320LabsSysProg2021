@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFasync", "WPFasync\WPFasy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfCleanerBD", "WpfCleanerBD\WpfCleanerBD.csproj", "{46097A3D-2C07-4F52-889A-823FC5E41FD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebList", "WebList\WebList.csproj", "{4F4FAD6F-FAB1-4692-B502-36D775E492ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebList", "WebList\WebList.csproj", "{4F4FAD6F-FAB1-4692-B502-36D775E492ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
